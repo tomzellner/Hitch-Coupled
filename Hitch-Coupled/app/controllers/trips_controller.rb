@@ -15,12 +15,13 @@ class TripsController < ApplicationController
 	end
 
 	def show
-		trip = Trip.where(id: params[:id]).first
-		if trip
-			render json: {trip: trip}
-		else
-			status 400
-		end
+		@trip = Trip.where(id: params[:id]).first
+		@driver = @trip.driver
+		# if @trip
+		# 	render json: {trip: trip}
+		# else
+		# 	status 400
+		# end
 
 	end
 
