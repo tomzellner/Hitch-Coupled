@@ -1,24 +1,37 @@
-<div>
-  <label>Create new trip here</label><br>
-  <%= form_for @trip do |f| %>
-    <%= f.label(:start_city, 'Start City:') %>
-    <%= f.text_field(:start_city) %>
-    <%= f.label(:start_state, 'Start State') %>
-    <%= f.text_area(:start_state) %>    
-    <%= f.label(:end_city, 'End City') %>
-    <%= f.text_area(:end_city) %>    
-    <%= f.label(:end_state, 'End State') %>
-    <%= f.text_area(:end_state) %>    
-    <%= f.label(:start_date, 'Start Date') %>
-    <%= f.text_area(:start_date) %>    
-    <%= f.label(:end_date, 'End Date') %>
-    <%= f.text_area(:end_date) %>    
-    <%= f.label(:num_passengers, 'Number of Passengers') %>
-    <%= f.text_area(:num_passengers) %>    
+<% if user_signed_in? %>
 
-    <%= f.submit('Create') %>
-  <% end %>
-</div>
+    <div>
+      <label>Create new trip here</label><br>
+      <%= form_for @trip do |f| %>
+        <%= f.label(:start_city, 'Start City:') %>
+        <%= f.text_field(:start_city) %><br>
+
+        <%= f.label(:start_state, 'Start State') %>
+        <%= f.select(:start_state, options_for_select(us_states)) %> <br> 
+
+        <%= f.label(:end_city, 'End City') %>
+        <%= f.text_field(:end_city) %><br>    
+
+        <%= f.label(:end_state, 'End State') %>
+        <%= f.select(:end_state, options_for_select(us_states) )%> <br>
+
+        <%= f.label(:start_date, 'Start Date') %>
+        <%= f.date_field(:start_date) %>    <br>
+
+        <%= f.label(:end_date, 'End Date') %>
+        <%= f.date_field(:end_date) %>    <br>
+
+        <%= f.label(:num_passengers, 'Number of Passengers') %>
+        <%= f.select(:num_passengers, options_for_select(1..7)) %>  <br>  
+
+        <%= f.submit('Create') %>
+      <% end %>
+    </div>
+
+    <% else %>
+
+    <h2>PLEASE SIGN IN</h2>
+    <% end %>
 
 
 

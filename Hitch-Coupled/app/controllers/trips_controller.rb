@@ -7,14 +7,15 @@ class TripsController < ApplicationController
 	def create
 		@trip = Trip.new(trip_params)
 
-		respond_to do |format|
 		@trip.driver = current_user
-		if @trip.save
-      format.html {redirect_to @trip}
-      format.json { render :json => @trip }
-			
-		else
-			status 400
+		respond_to do |format|
+			if @trip.save
+	      format.html {redirect_to @trip}
+	      format.json { render :json => @trip }
+				
+			else
+				status 400
+			end
 		end
 
 	end
