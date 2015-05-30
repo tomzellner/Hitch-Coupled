@@ -1,13 +1,13 @@
 class TripsController < ApplicationController
 
 	def new
-
+		@trip = Trip.new
 	end
 
 	def create
-		new_trip = Trip.new(trip_params)
-		if new_trip.save
-			render json: {trip: trip}
+		@trip = Trip.new(trip_params)
+		if @trip.save
+			render json: {trip: @trip}
 		else
 			status 400
 		end
@@ -65,7 +65,7 @@ class TripsController < ApplicationController
 	private
 
 	def trip_params
-      params.permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
+      params.require(:trip).permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
     end
 
 

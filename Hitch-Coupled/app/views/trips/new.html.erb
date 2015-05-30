@@ -1,6 +1,6 @@
 <div>
   <label>Create new trip here</label><br>
-  <%= form_for @new_trip do |f| %>
+  <%= form_for @trip do |f| %>
     <%= f.label(:start_city, 'Start City:') %>
     <%= f.text_field(:start_city) %>
     <%= f.label(:start_state, 'Start State') %>
