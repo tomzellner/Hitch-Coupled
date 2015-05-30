@@ -3,22 +3,24 @@
   <%= form_for @trip do |f| %>
     <%= f.label(:start_city, 'Start City:') %>
     <%= f.text_field(:start_city) %>
-    <%= f.label(:start_state, 'Start State') %>
-    <%= f.text_area(:start_state) %>    
-    <%= f.label(:end_city, 'End City') %>
-    <%= f.text_area(:end_city) %>    
-    <%= f.label(:end_state, 'End State') %>
-    <%= f.text_area(:end_state) %>    
-    <%= f.label(:start_date, 'Start Date') %>
-    <%= f.text_area(:start_date) %>    
-    <%= f.label(:end_date, 'End Date') %>
-    <%= f.text_area(:end_date) %>    
-    <%= f.label(:num_passengers, 'Number of Passengers') %>
-    <%= f.text_area(:num_passengers) %>    
+    <%= f.label(:start_state, 'Start State:') %>
+    <%= f.text_field(:start_state) %>    
+    <%= f.label(:end_city, 'End City:') %>
+    <%= f.text_field(:end_city) %>    
+    <%= f.label(:end_state, 'End State:') %>
+    <%= f.text_field(:end_state) %>    
+    <%= f.label(:start_date, 'Start Date:') %>
+    <%= f.text_field(:start_date) %>    
+    <%= f.label(:end_date, 'End Date:') %>
+    <%= f.text_field(:end_date) %>    
+    <%= f.label(:num_passengers, 'Number of Passengers:') %>
+    <%= f.text_field(:num_passengers) %>    
 
     <%= f.submit('Create') %>
   <% end %>
 </div>
+
+
 
 
 
