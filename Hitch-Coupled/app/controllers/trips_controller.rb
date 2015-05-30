@@ -1,11 +1,12 @@
 class TripsController < ApplicationController
 
 	def new
-
+		@trip = Trip.new
 	end
 
 	def create
 		@trip = Trip.new(trip_params)
+
 		respond_to do |format|
 		@trip.driver = current_user
 		if @trip.save
@@ -69,7 +70,7 @@ class TripsController < ApplicationController
 	private
 
 	def trip_params
-      params.permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
+      params.require(:trip).permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
     end
 
 
