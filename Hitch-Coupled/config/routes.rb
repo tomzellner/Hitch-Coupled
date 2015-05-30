@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
 
-  resouces :home, only: [:index]
+  resources :home, only: [:index]
 
   resources :users do
     resources :cars
