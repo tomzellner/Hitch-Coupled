@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150531213438) do
 
   create_table "messages", force: :cascade do |t|
     t.integer  "conversation_id"
+    t.integer  "user_id"
     t.string   "text"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

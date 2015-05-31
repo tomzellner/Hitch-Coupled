@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
         has_many :driver_conversations, foreign_key: :driver_id, class_name: "Conversation"
         has_many :passenger_conversations, foreign_key: :passenger_id, class_name: "Conversation"
 
+
 end
 
 
