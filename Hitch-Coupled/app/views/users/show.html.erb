@@ -1,9 +1,14 @@
-<% if @user = current_user %>
+
+<% if @user != current_user %>
+<!-- IF IT IS NOT YOUR PAGE -->
+
+
   <div class="container">
     <h1>Welcome to <%= @user.first_name%>'s Profile</h1>
      <img src="<%= @user.profile_pic %>">
         <p><%= @user.email %></p>
         <p><%= @user.phonenumber %></p>
+        <p>Rating: <%= rated_avg %> </p>
 
 
   </div>
@@ -33,6 +38,7 @@
     <h1>Hello <%= @user.first_name.capitalize %></h1>
         <p><%= @user.email %></p>
         <p><%= @user.phonenumber %></p>
+        <p>Rating: <%= rated_avg %> </p>
 
         <h5><%= link_to 'Edit Profile', controller: "devise/registrations", action: "edit"  %></h5>
       </div>

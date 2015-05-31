@@ -1,16 +1,16 @@
 <% if user_signed_in? %>
 
-<h1>What would you like to do?</h1>
-<div id = 'driver_story'>
+	<h1>What would you like to do?</h1>
+	<div id = 'driver_story'>
+		<%= link_to image_tag('Untitled.jpg'), new_trip_path%>
+	</div>
 
-<%= link_to image_tag('Untitled.jpg'), new_trip_path%>
-</div>
-
-<div id = 'passenger_story'>
-<%= link_to image_tag('Passenger.png'), trips_path %>
-</div>
+	<div id = 'passenger_story'>
+		<%= link_to image_tag('Passenger.png'), trips_path %>
+	</div>
 <% else %>
-<h1>Please Sign In</h1>
+	<h1>Please Sign In</h1>
+
 <% end %>
 
 
