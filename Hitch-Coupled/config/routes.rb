@@ -10,11 +10,15 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :cars
-    resources :ratings
   end
+
+  
+  resources :ratings
 
   resources :trips do
     get 'add_passenger', to: 'trips#add_passenger'
+    patch 'start', to: 'trips#start'
+    patch 'end', to: 'trips#end'
   end
 
 

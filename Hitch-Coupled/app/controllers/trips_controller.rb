@@ -1,4 +1,38 @@
 class TripsController < ApplicationController
+	def add_passenger
+		@trip = Trip.find(params[:trip_id])
+		# rider = RiderRelationship.create(trip_id: @trip.id, passenger_id: current_user.id)
+		if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)
+			@trip.passengers << current_user
+			redirect_to @trip
+		else
+			redirect_to '/'
+		end
+	end
+
+	def start
+		@trip = Trip.find(params[:trip_id])
+		if current_user == @trip.driver
+			@trip.started = true
+			@trip.save
+			redirect_to @trip
+		else
+			redirect_to @trip
+		end
+	end
+	def end
+		@trip = Trip.find(params[:trip_id])
+		if current_user == @trip.driver
+			@trip.ended = true
+			@trip.save
+			redirect_to @trip
+		else
+			redirect_to @trip
+		end
+	end
+
+
+
 
 	def new
 		@trip = Trip.new
@@ -20,15 +54,11 @@ class TripsController < ApplicationController
 
 	end
 
-	def add_passenger
-		@trip = Trip.find(params[:trip_id])
-		rider = RiderRelationship.create(trip_id: @trip.id, passenger_id: current_user.id)
-		redirect_to @trip
-	end
 
 	def show
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
+		@rating = Rating.new
 		# if @trip
 		# 	render json: {trip: trip}
 		# else
