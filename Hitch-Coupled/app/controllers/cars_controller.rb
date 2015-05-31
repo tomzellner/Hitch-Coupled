@@ -5,7 +5,7 @@ class CarsController < ApplicationController
 	end
 
 	def create
-		
+
 		@car = Car.new(car_params)
 		@car.user = current_user
 
@@ -13,13 +13,13 @@ class CarsController < ApplicationController
 			if @car.save
 			      format.html {redirect_to "/"}
 			      format.json { render :json => @car }
-				
+
 			else
 				status 400
 			end
 		end
 
-		
+
 
 	end
 
@@ -56,6 +56,7 @@ class CarsController < ApplicationController
 
 
 	def edit
+		redirect_to @car.user
 
 	end
 

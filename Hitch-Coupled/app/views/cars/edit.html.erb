@@ -1,0 +1,25 @@
+<h1>Edit Car</h1>
+  <%= form_for url: user_path html: { method: :put } do |f| %>
+  <div>
+    <%= f.label(:make, 'Make') %>
+    <%= f.text_field(:make) %>
+  </div>
+
+  <div>
+    <%= f.label(:model, 'Model') %>
+    <%= f.text_field(:model) %>
+  </div>
+
+  <div>
+    <%= f.label(:type_of, 'Type') %>
+    <%= f.text_field(:type_of) %>
+  </div>
+
+  <div>
+    <%= f.label(:year, 'Year') %>
+    <%= f.text_field(:year) %>
+  </div>
+      <%= f.submit('Update') %>
+
+  <% end %>
+

@@ -2,16 +2,16 @@
 
 	<h1>What would you like to do?</h1>
 	<div id = 'driver_story'>
-
-	<%= image_tag 'Untitled.jpg', :id => 'wheel', width: '400', height: '400' %>  
+		<%= link_to image_tag('Untitled.jpg'), new_trip_path%>
 	</div>
 
 	<div id = 'passenger_story'>
-	<%= image_tag 'Passenger.png',  :id => 'passenger', width: '400', height: '400' %>  
+		<%= link_to image_tag('Passenger.png'), trips_path %>
 	</div>
 <% else %>
-
-<h1> Please Sign in Above </h1>
+	<h1>Please Sign In</h1>
 
 <% end %>
+
+
 
