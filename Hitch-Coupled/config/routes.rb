@@ -1,18 +1,21 @@
 Rails.application.routes.draw do
-  
 
 
 
-  devise_for :users
+
+  devise_for :users, :controllers => {registrations: 'registrations'}
 
 
   resources :home, only: [:index]
 
-  resources :users do
-    resources :cars
-  end
+    resources :users do
+    resources :cars do
+    resources :ratings
 
-  
+  end
+end
+
+
   resources :ratings
 
   resources :trips do
