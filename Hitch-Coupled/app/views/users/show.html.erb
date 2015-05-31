@@ -1,6 +1,6 @@
 <% if @user != current_user %>
   <div class="container">
-    <h1>Hello <%= @user.first_name.capitalize %></h1>
+    <h1>Welcome to <%= @user.first_name.capitalize %>'s Profile</h1>
         <p><%= @user.email %></p>
         <p><%= @user.phonenumber %></p>
 
@@ -50,10 +50,12 @@
 
   <div class="car_details">
     <h1>Car Details</h1>
-      <h3>Make</h3>
-      <h3>Model</h3>
-      <h3>Year</h3>
-      <h3>MPG</h3>
+    <% @user.cars.each do |car| %>
+      <h3>Make: <%= car.make %></h3>
+      <h3>Model: <%= car.model %></h3>
+      <h3>Year: <%= car.year %></h3>
+      <h3>Type: <%= car.type_of %></h3>
+    <% end %>
         <%= link_to "Edit Car Details" %>
   </div>
 
