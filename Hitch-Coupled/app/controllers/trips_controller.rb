@@ -1,15 +1,21 @@
 class TripsController < ApplicationController
 
 	def new
-
+		@trip = Trip.new
 	end
 
 	def create
-		trip = Trip.new(trip_params)
-		if trip.save
-			render json: {trip: trip}
-		else
-			status 400
+		@trip = Trip.new(trip_params)
+
+		@trip.driver = current_user
+		respond_to do |format|
+			if @trip.save
+	      format.html {redirect_to @trip}
+	      format.json { render :json => @trip }
+				
+			else
+				status 400
+			end
 		end
 
 	end
@@ -65,7 +71,7 @@ class TripsController < ApplicationController
 	private
 
 	def trip_params
-      params.permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
+      params.require(:trip).permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
     end
 
 
