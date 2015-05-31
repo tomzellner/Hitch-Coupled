@@ -13,10 +13,7 @@
       <% if current_user %>
       <div class="session_buttons">
        	<li>
-          <form id="sign-out" action="/sessions/<%= current_user.id %>" method="post">
-            <input name="_method" type="hidden" value="delete" />
-            <input type="submit" value="Sign Out">
-          </form>
+          <%= link_to "<button>Sign Out</button>".html_safe, "/users/sign_out", method: :delete %>
        </li>
 
       <% else %>
