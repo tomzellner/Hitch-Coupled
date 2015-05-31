@@ -1,7 +1,7 @@
 <% if @user = current_user %>
   <div class="container">
     <h1>Welcome to <%= @user.first_name%>'s Profile</h1>
-
+     <img src="<%= @user.profile_pic %>">
         <p><%= @user.email %></p>
         <p><%= @user.phonenumber %></p>
 
