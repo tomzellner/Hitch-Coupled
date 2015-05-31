@@ -4,11 +4,12 @@ class RatingsController < ApplicationController
 	end
 
 	def create
-		user = User.where(id: params[:user_id]).first
+		
 		rating = Rating.new(rating_params)
+
 		
 		if rating.save
-			render json: {rating: rating}
+			redirect_to :back
 		else
 			status 400
 		end
@@ -60,6 +61,6 @@ class RatingsController < ApplicationController
 	private
 
 	def rating_params
-      params.permit(:rater_id, :rated_id, :score,)
+      params.require(:rating).permit(:rater_id, :rated_id, :score,)
     end
 end
