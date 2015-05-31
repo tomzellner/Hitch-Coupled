@@ -2,7 +2,9 @@
 
 <% @trips.each do |trip| %>
 	<div class ='each_trip'>
-		<p>From: <%=trip.start_city %>, <%= trip.start_state %></p>
-		<p>To: <%=trip.end_city %>, <%= trip.end_state %> </p>
+		<p>From: <%=trip.start_city %>, <%= trip.start_state %>  On: <%= trip.start_date %></p>
+		<p>To: <%=trip.end_city %>, <%= trip.end_state %> On: <%= trip.end_date %> </p>
+		<p> Driver: <%= trip.driver %> </p>
 	</div>
 <% end %>
+
