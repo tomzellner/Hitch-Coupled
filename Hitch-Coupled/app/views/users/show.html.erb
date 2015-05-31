@@ -42,9 +42,12 @@
 
   <div class= "trips">
     <h1>Upcoming Trips</h1>
-      <%= link_to "San Francisco, CA to Los Angeles, CA" %><br>
-      <%= link_to "Los Angeles, CA to Utah, CA" %><br>
-      <%= link_to "Utah to Portland, OR" %>
+      <% @user.driver_trips.each do |t| %>
+
+      
+      <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
+      <% end %>
+      
       <%= button_to "Make A New Trip" %>
   </div>
 
