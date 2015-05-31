@@ -42,7 +42,7 @@
 			</div>
 		<% end %>
 
-		<%= link_to 'View Profile', user_path %>
+			<%= link_to 'View Profile', user_path %>
 
 	</div>
 
@@ -103,7 +103,9 @@
 	</div>
 <% end %>
 
-<%= link_to "add passagger", trip_add_passenger_path(@trip) %>
+	<% if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)%>
+		<%= link_to "add passagger", trip_add_passenger_path(@trip) %>
+	<% end %>
 
 <% else %>
 
