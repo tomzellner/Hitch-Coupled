@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Hello <%= @user.first_name.capitalize %></h1>
+      <p><%= @user.email %></p>
+      <p><%= @user.phonenumber %></p>
+
+      <h5><%= link_to "Edit Profile" %></h5>
+    </div>
+<div class="about_me">
+  <h1>About Me</h1>
+    <p>Hello I am from California and I am a good passenger!!</p>
+
+</div>
+
+<div class= "trips">
+  <h1>Upcoming Trips</h1>
+    <%= link_to "San Francisco, CA to Los Angeles, CA" %><br>
+    <%= link_to "Los Angeles, CA to Utah, CA" %><br>
+    <%= link_to "Utah to Portland, OR" %>
+    <%= button_to "Make A New Trip" %>
+</div>
+
+<div class="car_details">
+  <h1>Car Details</h1>
+    <h3>Make</h3>
+    <h3>Model</h3>
+    <h3>Year</h3>
+    <h3>MPG</h3>
+      <%= link_to "Edit Car Details" %>
+</div>
+
+

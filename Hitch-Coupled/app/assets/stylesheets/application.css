@@ -15,9 +15,22 @@
  */
 
 
-img {
-	float: left;
-}
-div {
-	border: thin solid black
-}
+
+ .container h1 {
+  font-size: 100px;
+  font-family: Helvetica;
+
+  text-align: center;
+
+ }
+
+ .container p {
+  margin-left: 300px;
+ }
+
+ .container h5 {
+  margin-left: 300px;
+
+ }
+
+
