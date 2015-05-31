@@ -13,7 +13,11 @@ Rails.application.routes.draw do
     resources :ratings
   end
 
-  resources :trips
+  resources :trips do
+    get 'add_passenger', to: 'trips#add_passenger'
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

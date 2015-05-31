@@ -20,6 +20,12 @@ class TripsController < ApplicationController
 
 	end
 
+	def add_passenger
+		@trip = Trip.find(params[:trip_id])
+		rider = RiderRelationship.create(trip_id: @trip.id, passenger_id: current_user.id)
+		redirect_to @trip
+	end
+
 	def show
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
