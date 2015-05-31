@@ -1,17 +1,25 @@
 class CarsController < ApplicationController
 	def new
+		@car = Car.new
 
 	end
 
 	def create
-		user = User.where(id: params[:user_id]).first
-		car = Car.new(car_params)
-		car.user = user
-		if car.save
-			render json: {car: car}
-		else
-			status 400
+		
+		@car = Car.new(car_params)
+		@car.user = current_user
+
+		respond_to do |format|
+			if @car.save
+			      format.html {redirect_to "/"}
+			      format.json { render :json => @car }
+				
+			else
+				status 400
+			end
 		end
+
+		
 
 	end
 
@@ -60,6 +68,6 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-      params.permit(:seats, :make, :model, :type, :year)
+      params.require(:car).permit(:seats, :make, :model, :type, :year)
     end
 end
