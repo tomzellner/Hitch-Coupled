@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
 
 
 
@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
 
   resources :home, only: [:index]
+
+  resources :conversations do
+    resources :messages
+  end
 
   resources :users do
     resources :cars
