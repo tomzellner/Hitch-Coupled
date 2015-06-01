@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
         has_many :rater_ratings, foreign_key: :rater_id, class_name: 'Rating'
 
         has_many :rateds, through: :rated_ratings, source: :rated
-        has_many :rated_ratings, foreign_key: :rated_id, class_name: 'Rating'has_many :rated_ratings, foreign_key: :rater_id, class_name: 'Rating'
+        has_many :rated_ratings, foreign_key: :rated_id, class_name: 'Rating'
 
 
         has_many :driver_conversations, foreign_key: :driver_id, class_name: "Conversation"
