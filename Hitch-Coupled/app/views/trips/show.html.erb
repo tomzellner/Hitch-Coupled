@@ -43,7 +43,7 @@
 		<%= @driver.phonenumber %>
 		<%= @driver.profile_pic %>
 
-		<% if @trip.ended && !current_user == @driver && @trip.passengers.include?(current_user)%>
+		<% if @trip.ended && @trip.passengers.include?(current_user) && !current_user == @driver%>
 			<%= form_for @rating do |f| %>
 				<%= f.hidden_field :rater_id, :value => current_user.id %>
 				<%= f.hidden_field :rated_id, :value => @driver.id %>
@@ -62,7 +62,7 @@
 		<div style="border: thin solid black" > 
 			Passenger: <%= p.first_name %> 
 			<%= p.last_name %> 
-		<% if @trip.ended && @trip.passengers.include?(current_user) && p.id != current_user.id  %>
+		<% if @trip.ended && (@trip.passengers.include?(current_user) || @driver == current_user) && p.id != current_user.id  %>
 			<%= form_for @rating do |f| %>
 				<%= f.hidden_field :rater_id, :value => current_user.id %>
 				<%= f.hidden_field :rated_id, :value => p.id %>

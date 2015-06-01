@@ -1,13 +1,20 @@
 <% if user_signed_in? %>
 
 	<h1>What would you like to do?</h1>
+<<<<<<< HEAD
   <div class="container">
 	<div id = 'driver_story'>
 		<%= link_to image_tag('Untitled.jpg'), new_trip_path%>
+=======
+
+	<div id = 'driver_story col' class = 'col span_6'>
+		<%= link_to image_tag('Untitled.jpg', :class => 'col span 6'), new_trip_path%>
+>>>>>>> master
 	</div>
 
-	<div id = 'passenger_story'>
-		<%= link_to image_tag('Passenger.png'), trips_path %>
+	<div id = 'passenger_story' class = 'col span_6'>
+		<%= link_to image_tag('Passenger.png',  :class => 'col span 6'), trips_path %>
+
 	</div>
 </div>
 <% else %>

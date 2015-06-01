@@ -1,4 +1,5 @@
 
+>>>>>>> master:Hitch-Coupled/app/assets/stylesheets/application.css
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -14,6 +15,7 @@
  *
 
  *= require_self
+<<<<<<< HEAD:Hitch-Coupled/app/assets/stylesheets/application.css.scss
  *= require_tree
  */
 
@@ -24,3 +26,40 @@ footer {
   background: #BBB;
 }
 
+=======
+ *= require_tree .
+ */
+
+
+.gutt{
+
+}
+div {
+	border: thin solid black
+}
+
+.container {
+	max-width: 1240px;
+
+	#driver_story{
+				img {max-height: 256px;}}
+	#passenger_story{ }
+	img {display: block;
+    	margin-left: auto;
+    	margin-right: auto}
+		// display: inline;
+
+
+	#new_trip_form {
+
+	}
+
+}
+
+
+
+
+
+
+
+>>>>>>> master:Hitch-Coupled/app/assets/stylesheets/application.css

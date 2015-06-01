@@ -2,6 +2,8 @@
 <% if user_signed_in? %>
 
 
+    <div id='new_trip_form'>
+
       <label>Create new trip here</label><br>
       <%= form_for @trip do |f| %>
         <%= f.label(:start_city, 'Start City:') %>
