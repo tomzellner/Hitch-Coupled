@@ -39,7 +39,9 @@
 	<div style="border: thin solid black" id = 'driver_profile'>
 		Driver: <%= @driver.first_name %>
 		<%= @driver.last_name %><br>
-		
+
+		<%= @driver.phonenumber %>
+		<%= @driver.profile_pic %>
 
 		<% if @trip.ended && !current_user == @driver && @trip.passengers.include?(current_user)%>
 			<%= form_for @rating do |f| %>
@@ -77,4 +79,67 @@
 <% if !current_user == @driver && @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)%>
 	<%= link_to "add passagger", trip_add_passenger_path(@trip) %>
 <% end %>
+
+
+
+
+<head>
+<style>
+
+
+</style>
+<script>
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+	<%# PUT A STAR RATING SYSTEM HERE FOR NOW JUST TO HAVE WORKING CODE APPEAR %>
+<form class="ratings-form">
+	<p><h3>Ratings</h3></p>
+	<p class="starRating">
+		<input id="rating5" type="radio" name="rating" value="5">
+    <label for="rating5">5</label>
+    <input id="rating4" type="radio" name="rating" value="4">
+    <label for="rating4">4</label>
+    <input id="rating3" type="radio" name="rating" value="3">
+    <label for="rating3">3</label>
+    <input id="rating2" type="radio" name="rating" value="2">
+    <label for="rating2">2</label>
+    <input id="rating1" type="radio" name="rating" value="1" checked>
+    <label for="rating1">1</label>
+	</p>
+</form>
+<%# END OF STAR RATING CODE %>
+<p>Drag Your name into the car</p>
+
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
+<div id="passenger-container" >
+
+<div id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<div id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+<br>
+</div>
+
+<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+
+</body>
+<br>
+
+
+
+
 

@@ -1,3 +1,75 @@
 // Place all the styles related to the trips controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#rover-wrapper {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    z-index: -2;
+}
+
+#drag1, #drag2 {
+	width: 50px;
+	height: 50px;
+	position: relative;
+}
+
+#passenger-container {
+	width: 300px;
+	height: 200px;
+	margin-left: 240px;
+	margin-top: 100px;
+	position: absolute;
+	display: inline-block;
+	z-index: 0;
+	border: none;
+}
+
+#seat1, #seat2, #seat3, #seat4{width:50px;height:50px;padding:10px;border:1px solid #aaaaaa; float: left; z-index: 0}
+
+
+
+
+.starRating a{
+  color           : #9c3;
+  text-decoration : none;
+}
+
+.starRating:not(old){
+  display        : inline-block;
+  width          : 7.5em;
+  height         : 1.5em;
+  overflow       : hidden;
+  vertical-align : bottom;
+}
+
+.starRating:not(old) > input{
+  margin-right : -100%;
+  opacity      : 0;
+}
+
+.starRating:not(old) > label{
+  display         : block;
+  float           : right;
+  position        : relative;
+  background      : url('/assets/star-off.svg');
+  background-size : contain;
+}
+
+.starRating:not(old) > label:before{
+  content         : '';
+  display         : block;
+  width           : 1.5em;
+  height          : 1.5em;
+  background      : url('/assets/star-on.svg');
+  background-size : contain;
+  opacity         : 0;
+  transition      : opacity 0.2s linear;
+}
+
+.starRating:not(old) > label:hover:before,
+.starRating:not(old) > label:hover ~ label:before,
+.starRating:not(:hover) > :checked ~ label:before{
+  opacity : 1;
+}
