@@ -1,76 +1,54 @@
+<div class="container">
 
 <% if @user != current_user %>
 <!-- IF IT IS NOT YOUR PAGE -->
 
-
-  <div class="container">
-    <h1>Welcome to <%= @user.first_name%>'s Profile</h1>
-     <img src="<%= @user.profile_pic %>">
-        <p><%= @user.email %></p>
-        <p><%= @user.phonenumber %></p>
-        <p>Rating: <%= rated_avg %> </p>
-
-
+  <div>
+    <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
+    <img src="<%= @user.profile_pic %>">
+    <h5><%= @user.email %></h5>
+    <h5><%= @user.phonenumber %></h5>
+    <h5>Rating: <%= rated_avg %> </h5>
   </div>
-  <div class="about_me">
-    <h1>About Me</h1>
-      <p>Hello I am from California and I am a good passenger!!</p>
-
-  </div>
-
-
-
-  <div class="car_details">
-    <h1>Car Details</h1>
-    <% @user.cars.each do |car| %>
-      <h3>Make: <%= car.make %></h3>
-      <h3>Model: <%= car.model %></h3>
-      <h3>Year: <%= car.year %></h3>
-      <h3>Type: <%= car.type_of %></h3>
-    <% end %>
-  </div>
-
 
 <% else %>
 
-<!-- IF IT IS YOUR PAGE -->
-<div class="container">
-    <h1>Hello <%= @user.first_name.capitalize %></h1>
-        <p><%= @user.email %></p>
-        <p><%= @user.phonenumber %></p>
-        <p>Rating: <%= rated_avg %> </p>
+   <h1>Hello <%= @user.first_name.capitalize %></h1>
+   <img src="<%= @user.profile_pic %>">
+    <p><%= @user.email %></p>
+    <p><%= @user.phonenumber %></p>
+    <p>Rating: <%= rated_avg %> </p>
+<% end %>
+ 
+  <h2>Upcoming Trips</h2>
 
-        <h5><%= link_to 'Edit Profile', controller: "devise/registrations", action: "edit"  %></h5>
+    <% @user.driver_trips.each do |t| %>
+      <div class= "upcomingtrips">
+        <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
+        <% if @user = current_user %>
+          <%= link_to 'edit trip', edit_trip_path(t)  %>
+        <% end %>
       </div>
-  <div class="about_me">
-    <h1>About Me</h1>
-      <p>Hello I am from California and I am a good passenger!!</p>
-
-  </div>
-
-  <div class= "trips">
-    <h1>Upcoming Trips</h1>
-      <% @user.driver_trips.each do |t| %>
+    <% end %>
 
 
-      <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
-      <h5><%= link_to 'edit trip' %></h5>
-      <% end %>
-
-  </div>
 
   <div class="car_details">
-    <h1>Car Details</h1>
+    <h2>Car Details</h2>
     <% @user.cars.each do |car| %>
       <h3>Make: <%= car.make %></h3>
       <h3>Model: <%= car.model %></h3>
       <h3>Year: <%= car.year %></h3>
       <h3>Type: <%= car.type_of %></h3>
-        <%= link_to "Edit Car Details", edit_user_car_path( current_user, car) %>
     <% end %>
   </div>
+</div>
 
 
+
+
+
+<% if @user == current_user  %>
   <%= form_for [@user, @car] do |f| %>
     <%= f.label(:seats, 'Number of Passengers') %>
     <%= f.select(:seats, options_for_select(1..7)) %>
@@ -87,10 +65,12 @@
     <%= f.label(:year, 'Year') %>
     <%= f.text_field(:year) %>
     <%= f.submit('Create') %>
-
   <% end %>
-
+  <% else %>
 
 <% end %>
+
+</div>
+
 
 
