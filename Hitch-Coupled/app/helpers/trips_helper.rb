@@ -55,5 +55,16 @@ module TripsHelper
       ['Wyoming', 'WY']
     ]
 end
-	
+
+  def current_user_trips
+
+  end
+
+  def current_user_driver_trips
+    driver_trips = current_user.driver_trips
+  end
+
+  def current_user_passenger_trips
+    driver_trips = current_user.passenger_trips
+  end
 end
