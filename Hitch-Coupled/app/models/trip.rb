@@ -7,5 +7,5 @@ class Trip < ActiveRecord::Base
 
 	has_many :passengers, through: :rider_relationships, class_name: "User"
 	has_many :rider_relationships
-
+  has_many :conversations
 end
