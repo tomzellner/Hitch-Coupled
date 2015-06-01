@@ -16,9 +16,10 @@ Rails.application.routes.draw do
 
 
     resources :users do
-    resources :cars do
-  end
+
+    resources :cars
 end
+
 
 
   resources :ratings
