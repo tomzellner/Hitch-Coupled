@@ -1,10 +1,25 @@
 <% if current_user == @driver %>
 	<h1>Welcome to Your Trip </h1>
 
-	<h2>From: <%= @trip.start_city %>, <%= @trip.start_state %></h2>
-	<h2>To: <%= @trip.end_city %>, <%= @trip.end_state %></h2>
-	<h2>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h2>
-	<h2>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h2>
+	<% if !@trip.started %>
+		<h2> Waiting for Trip to start </h2>
+		<%= button_to "Start", { action: "start", trip_id: @trip.id },
+                                method: :patch, data: { confirm: "Are you sure?" } %>
+    <% elsif @trip.ended %>
+    	<h2> Trip Ended </h2>
+
+	<% elsif @trip.started %>
+		<h2> Trip in Progress </h2>
+		<%= button_to "End", { action: "end", trip_id: @trip.id },
+                                method: :patch, data: { confirm: "Are you sure?" } %>
+
+
+	<% end %>
+
+	<h4>From: <%= @trip.start_city %>, <%= @trip.start_state %></h2>
+	<h4>To: <%= @trip.end_city %>, <%= @trip.end_state %></h2>
+	<h4>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h2>
+	<h4>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h2>
 		<span> Seats in car: <%= @trip.car.seats %> </span>
 
 	<div style="border: thin solid black" id = 'driver_profile'>
@@ -13,9 +28,21 @@
 		<%= @driver.phonenumber %>
 
 		<% @trip.passengers.each do |p| %>
-			<div style="border: thin solid black" > <%= p.first_name %> <%= p.last_name %> </div>
+			<div style="border: thin solid black" > <%= p.first_name %> <%= p.last_name %> 
+			<% if @trip.ended %>
+				<%= form_for @rating do |f| %>
+					<%= f.hidden_field :rater_id, :value => current_user.id %>
+					<%= f.hidden_field :rated_id, :value => p.id %>
+					<%= f.label(:score, 'Score') %>
+        			<%= f.select(:score, options_for_select(1..5)) %>
+        			<%= f.submit('Rate') %>
+    			<% end %>
+			<% end %>
+
+			</div>
 		<% end %>
 
+			<%= link_to 'View Profile', user_path %>
 
 	</div>
 
@@ -26,24 +53,59 @@
 
 <h1>Welcome to <%= @driver.first_name %> <%= @driver.last_name %>'s Trip </h1>
 
-<h2>From: <%= @trip.start_city %>, <%= @trip.start_state %></h2>
-<h2>To: <%= @trip.end_city %>, <%= @trip.end_state %></h2>
-<h2>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h2>
-<h2>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h2>
+<% if !@trip.started %>
+	<h2> Waiting for Trip to Start </h2>
+<% elsif @trip.ended %>
+    	<h2> Trip Ended </h2>
+<% elsif @trip.started %>
+		<h2> Trip in Progress </h2>
+
+<% end %>
+
+<h4>From: <%= @trip.start_city %>, <%= @trip.start_state %></h2>
+<h4>To: <%= @trip.end_city %>, <%= @trip.end_state %></h2>
+<h4>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h2>
+<h4>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h2>
 	<span> Seats in car: <%= @trip.car.seats %> </span>
 
 <div style="border: thin solid black" id = 'driver_profile'>
 	<%= @driver.first_name %>
 	<%= @driver.last_name %><br>
 	<%= @driver.phonenumber %>
+	<% if @trip.ended && @trip.passengers.include?(current_user)%>
+		<%= form_for @rating do |f| %>
+			<%= f.hidden_field :rater_id, :value => current_user.id %>
+			<%= f.hidden_field :rated_id, :value => @driver.id %>
+			<%= f.label(:score, 'Score') %>
+			<%= f.select(:score, options_for_select(1..5)) %>
+			<%= f.submit('Rate') %>
+		<% end %>
+	<% end %>
+
 
 </div>
 
 <% @trip.passengers.each do |p| %>
-			<div style="border: thin solid black" > <%= p.first_name %> <%= p.last_name %> </div>
+	<div style="border: thin solid black" > <%= p.first_name %> <%= p.last_name %> 
+	<% if p.id != current_user.id %>
+		<% if @trip.ended && @trip.passengers.include?(current_user) %>
+			<%= form_for @rating do |f| %>
+				<%= f.hidden_field :rater_id, :value => current_user.id %>
+				<%= f.hidden_field :rated_id, :value => p.id %>
+				<%= f.label(:score, 'Score') %>
+    			<%= f.select(:score, options_for_select(1..5)) %>
+    			<%= f.submit('Rate') %>
+			<% end %>
 		<% end %>
+	<% end %>
 
-<%= link_to "add passagger", trip_add_passenger_path(@trip) %>
+
+	</div>
+<% end %>
+
+	<% if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)%>
+		<%= link_to "add passagger", trip_add_passenger_path(@trip) %>
+	<% end %>
 
 <% else %>
 
