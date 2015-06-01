@@ -1,0 +1,7 @@
+<div class = "message_box">
+    <%= image_tag message.user.profile_pic, :class => "chat_avatars" %>
+  <div class = "chat_content">
+    <h4> <%= message.user.first_name.capitalize + " " + message.user.last_name.capitalize %></h4>
+    <p> <%=message.text %> </p>
+  </div>
+</div>

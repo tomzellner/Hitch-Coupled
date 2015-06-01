@@ -1,22 +1,12 @@
 <div>
-    <h3><%= @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
-    <h4> <%= @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
-    <%= link_to "Add to Trip", trip_add_passenger_path(@conversation.trip)%>
+    <%= render '/conversations/conversation_header' %>
     <div>
       <%@conversation.messages.each do |message| %>
-      <div>
-        <h4> <%= message.user.first_name.capitalize + " " + message.user.last_name.capitalize %></h4>
-        <p> <%=message.text %> </p>
-      </div>
+        <%= render partial: '/messages/message_template', locals: {message: message} %>
       <%end%>
     </div>
 </div>
 
 <div>
-  <%= form_for [@conversation, @message] do |f| %>
-        <%=  f.hidden_field :user_id, :value => current_user.id %>
-        <%=  f.hidden_field :conversation_id, :value => @conversation.id %>
-        <%= f.text_area :text, size: "60x6" %><br>
-        <%= f.submit "New Message" %>
-  <% end%>
+  <%= render '/messages/message_form' %>
 </div>
