@@ -1,6 +1,7 @@
 <div>
     <h3><%= @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
     <h4> <%= @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
+    <%= link_to "Add to Trip", trip_add_passenger_path(@conversation.trip)%>
     <div>
       <%@conversation.messages.each do |message| %>
       <div>
