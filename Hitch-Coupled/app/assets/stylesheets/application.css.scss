@@ -1,12 +1,4 @@
-@import "normalize";
-@import "bourbon";
-@import "base/base";
-@import "neat";
-@import "cars";
-@import "home";
-@import "ratings";
-@import "trips";
-@import "users";
+
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -20,23 +12,15 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- 
+
  *= require_self
+ *= require_tree
  */
-$mobile-width: 480px;
-$tablet-width: 760px;
-
-$tablet: new-breakpoint(min-width $mobile-width max-width $tablet-width);
-$desktop: new-breakpoint(min-width $tablet-width);
 
 
-
-div {
-	border: thin solid black
+footer {
+  line-height: 15em;
+  text-align: center;
+  background: #BBB;
 }
-
-
- 
-
-
 

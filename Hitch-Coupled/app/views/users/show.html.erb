@@ -3,7 +3,7 @@
 <% if @user != current_user %>
 <!-- IF IT IS NOT YOUR PAGE -->
 
-  <div>
+  <div ="profile">
     <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
     <img src="<%= @user.profile_pic %>">
     <h5><%= @user.email %></h5>
@@ -19,7 +19,7 @@
     <p><%= @user.phonenumber %></p>
     <p>Rating: <%= rated_avg %> </p>
 <% end %>
- 
+
   <h2>Upcoming Trips</h2>
 
     <% @user.driver_trips.each do |t| %>
