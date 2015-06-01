@@ -83,11 +83,11 @@ class TripsController < ApplicationController
 
 
 	def update
-		trip = Trip.find(params[:id])
-    if trip.update_attributes(trip_params)
-      render json: {trip: trip}
-    # else
-    #   render 'edit'
+		@trip = Trip.find(params[:id])
+    if @trip.update_attributes(trip_params)
+      redirect_to @trip
+    else
+      render 'edit'
     end
 
 	end
@@ -95,6 +95,8 @@ class TripsController < ApplicationController
 
 
 	def edit
+		@trip = Trip.find(params[:id])
+
 
 	end
 
