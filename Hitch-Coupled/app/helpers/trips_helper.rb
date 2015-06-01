@@ -57,7 +57,7 @@ module TripsHelper
 end
 
   def current_user_trips
-
+    all_trips = current_user_driver_trips.concat(current_user_passenger_trips)
   end
 
   def current_user_driver_trips
@@ -65,6 +65,15 @@ end
   end
 
   def current_user_passenger_trips
-    driver_trips = current_user.passenger_trips
+    passenger_trips = current_user.passenger_trips
+  end
+
+  def riders
+      @trip = Trip.find(params[:id])
+      riders =[]
+      @trip.conversations.each do |convo|
+        person = convo.passenger
+        riders.push(person)
+      end
   end
 end
