@@ -1,6 +1,6 @@
 class Trip < ActiveRecord::Base
 	belongs_to :car
-	
+
 
 
 	belongs_to :driver, foreign_key: 'driver_id', class_name: "User"

@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150531213438) do
   create_table "conversations", force: :cascade do |t|
     t.integer  "driver_id"
     t.integer  "passenger_id"
+    t.integer  "trip_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
