@@ -3,14 +3,23 @@ Rails.application.routes.draw do
 
 
 
+
   devise_for :users, :controllers => {registrations: 'registrations'}
 
 
   resources :home, only: [:index]
 
+
+  resources :conversations do
+    resources :messages
+  end
+
+
     resources :users do
-      resources :cars
-    end
+
+    resources :cars
+end
+
 
 
   resources :ratings
