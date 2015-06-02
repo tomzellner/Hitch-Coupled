@@ -51,23 +51,7 @@
 
 
 <% if @user == current_user  %>
-  <%= form_for [@user, @car] do |f| %>
-    <%= f.label(:seats, 'Number of Passengers') %>
-    <%= f.select(:seats, options_for_select(1..7)) %>
-
-    <%= f.label(:make, 'Make') %>
-    <%= f.text_field(:make) %>
-
-    <%= f.label(:model, 'model') %>
-    <%= f.text_field(:model) %>
-
-    <%= f.label(:type_of, 'Type') %>
-    <%= f.text_field(:type_of) %>
-
-    <%= f.label(:year, 'Year') %>
-    <%= f.text_field(:year) %>
-    <%= f.submit('Create') %>
-  <% end %>
+  <%= render 'cars/car_form' %>
   <% else %>
 
 <% end %>

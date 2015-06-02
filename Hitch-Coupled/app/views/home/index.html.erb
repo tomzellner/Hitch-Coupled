@@ -1,13 +1,15 @@
-<% if user_signed_in? %>
+<div id='homediv'>
 
+<% if user_signed_in? %>
+	
 	<h1>What would you like to do?</h1>
 
 	<div id = 'driver_story col' class = 'col span_6'>
-		<%= link_to image_tag('Untitled.jpg', :class => 'col span 6'), new_trip_path%>
+		<%= link_to image_tag('Untitled.jpg', :class => 'col span 6', id: 'driver_pic'), new_trip_path%>
 	</div>
 
 	<div id = 'passenger_story' class = 'col span_6'>
-		<%= link_to image_tag('Passenger.png',  :class => 'col span 6'), trips_path %>
+		<%= link_to image_tag('Passenger.png',  :class => 'col span 6', id: 'passenger_pic'), trips_path %>
 
 	</div>
 <% else %>
@@ -16,4 +18,12 @@
 <% end %>
 
 
+</div>
 
+<% if user_signed_in?  %>
+	<div hidden id = 'hidden_form' >
+		<%= render "trips/trip_form" %> 
+	</div>
+
+
+<% end %>

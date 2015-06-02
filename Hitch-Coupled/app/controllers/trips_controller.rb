@@ -20,6 +20,7 @@ class TripsController < ApplicationController
 			redirect_to @trip
 		end
 	end
+
 	def end
 		@trip = Trip.find(params[:trip_id])
 		if current_user == @trip.driver
@@ -35,11 +36,21 @@ class TripsController < ApplicationController
 
 
 	def new
+		@car = Car.new
+		@user = current_user
 		@trip = Trip.new
+		respond_to do |format|
+			
+	      format.html 
+	      # format.json { render 'trips/new' }
+	  end
 	end
 
 	def create
 		@trip = Trip.new(trip_params)
+		if !@trip.car 
+			@trip.car = current_user.car.last
+		end
 
 		@trip.driver = current_user
 		respond_to do |format|
@@ -56,9 +67,11 @@ class TripsController < ApplicationController
 
 
 	def show
+		@user = current_user
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
 		@rating = Rating.new
+		@car = @trip.car
 		# if @trip
 		# 	render json: {trip: trip}
 		# else
@@ -96,6 +109,9 @@ class TripsController < ApplicationController
 
 	def edit
 		@trip = Trip.find(params[:id])
+		@car = @trip.car
+		@user = current_user
+
 
 
 	end

@@ -11,8 +11,8 @@ class CarsController < ApplicationController
 
 		respond_to do |format|
 			if @car.save
-			      format.html {redirect_to "/"}
 			      format.json { render :json => @car }
+			      format.html {redirect_to "/"}
 
 			else
 				status 400
