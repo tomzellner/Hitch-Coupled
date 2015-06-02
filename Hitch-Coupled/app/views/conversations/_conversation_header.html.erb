@@ -1,8 +1,11 @@
     <h3><%= "Convo w/ " + @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
     <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
+
+    <% if @trip.passengers.to_a.include?(@conversation.passenger) == false %>
     <%= form_for [@trip, @passenger] do |f| %>
         <%= f.hidden_field :driver_id, :value => current_user.id %>
         <%= f.hidden_field :passenger_id, :value => @conversation.passenger.id %>
         <%= f.hidden_field :trip_id, :value => @trip.id %>
         <%= f.submit("Add to Trip!" ) %>
     <% end %>
+    <%end%>
