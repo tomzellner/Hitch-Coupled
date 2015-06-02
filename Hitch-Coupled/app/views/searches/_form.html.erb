@@ -15,20 +15,19 @@
   <% end %>
 
  <p>
-    <%= f.label :start_city %><br>
-    <%= f.text_field :start_city %>
-  </p>
-  <p>
-    <%= f.label :start_state %><br>
-    <%= f.text_field :start_state %>
-  </p>
-  <p>
-    <%= f.label :end_city %><br>
-    <%= f.text_field :end_city %>
-  </p>
-  <p>
-    <%= f.label :end_state %><br>
-    <%= f.text_field :end_state %>
+        <%= f.label(:start_city, 'Start City:') %> <br>
+        <%= f.text_field(:start_city) %>
+        <%= f.select(:start_state, options_for_select(us_states)) %>
+    </p>
+
+    <p> 
+        <%= f.label(:end_city, 'End City') %>
+    <br>
+        <%= f.text_field(:end_city) %>
+        <%= f.select(:end_state, options_for_select(us_states) )%>
+    </p>
+
+  
   
   
   <div class="actions">
