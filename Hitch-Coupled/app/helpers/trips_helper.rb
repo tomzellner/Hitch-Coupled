@@ -1,4 +1,16 @@
 module TripsHelper
+  def start_geo
+    Geocoder.coordinates(@trip.start_city)
+  end
+
+  def end_geo
+    Geocoder.coordinates(@trip.end_city)
+  end
+
+
+
+
+
 	def us_states
     [
       ['Alabama', 'AL'],

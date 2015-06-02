@@ -1,4 +1,11 @@
 class Trip < ActiveRecord::Base
+
+
+
+	# geocoded_by :city   # can also be an IP address
+	# after_validation :geocode          # auto-fetch coordinates
+
+
 	belongs_to :car
 
 

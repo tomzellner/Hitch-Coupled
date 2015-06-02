@@ -25,6 +25,15 @@
 	<% end %>
 <% end %>
 
+<p  id='start_geog' class ='<%=start_geo%>'>  </p>
+<p  id='end_geog' class = '<%=end_geo%>'>  </p>
+
+<div class='col span_12' >
+  <div id="directions" class='col span_12' style= 'height: 20em'>
+  
+  </div>
+</div>
+
 
 <div>
 	<h4>From: <%= @trip.start_city %>, <%= @trip.start_state %></h4>
@@ -126,17 +135,22 @@ function drop(ev) {
 <%# END OF STAR RATING CODE %>
 <p>Drag Your name into the car</p>
 
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
-<div id="passenger-container" >
+<div id="drag-stack">
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
+	<div id="passenger-container-outside" >
+		<div id="passenger-container-inside">
+			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat5" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat6" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat7" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+		</div>
+	</div>
 
-<div id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
-</div>
-
-<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+	<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+	</div>
 
 
 <div id = "conversations-container" >

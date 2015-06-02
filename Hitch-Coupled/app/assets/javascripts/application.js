@@ -12,5 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require handlebars
 //= require turbolinks
+//= require handlebars
+//= require underscore
+//= require gmaps/google
 //= require_tree .
