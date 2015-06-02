@@ -1,6 +1,6 @@
 <div>
     <%= render '/conversations/conversation_header' %>
-    <div>
+    <div id ="message-container">
       <%@conversation.messages.each do |message| %>
         <%= render partial: '/messages/message_template', locals: {message: message} %>
       <%end%>
