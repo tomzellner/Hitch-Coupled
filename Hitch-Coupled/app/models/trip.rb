@@ -26,6 +26,17 @@ class Trip < ActiveRecord::Base
 		self.end_state = self.end_city.titleize
 	end
 
+##################################################
+#SEARCH###########################################
+##################################################
+	def self.search(start_city_search, end_city_search)
+	  if search
+	    where('start_city LIKE ? AND end_city LIKE ?', "%#{start_city_search}%, %#{end_city_search}% ")
+	  else
+	    find(:all)
+	  end
+end
+
 
 
 

@@ -26,6 +26,7 @@ var showCarForm = function(event) {
 var newCar = function(event) {
 	event.preventDefault()
 	var cForm = $(this)
+	debugger
 		
 	$.ajax({
 		method: 'POST',
