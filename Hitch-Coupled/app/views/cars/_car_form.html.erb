@@ -1,0 +1,24 @@
+<label>Add a Car</label><br>
+<%= form_for [@user, @car], :html => {:class => "car_form", :id => current_user.id} do |f| %>
+<p>
+   <%= f.label(:seats, 'Number of Passengers') %>
+    <%= f.select(:seats, options_for_select(1..7)) %>
+</p>
+<p>
+    <%= f.label(:make, 'Make') %>
+    <%= f.text_field(:make) %>
+</p>
+<p>
+    <%= f.label(:model, 'Model') %>
+    <%= f.text_field(:model) %>
+</p>
+<p>
+    <%= f.label(:type_of, 'Type') %>
+    <%= f.text_field(:type_of) %>
+</p>
+<p>
+    <%= f.label(:year, 'Year') %>
+    <%= f.text_field(:year) %>
+</p>
+    <%= f.submit('Create') %>
+  <% end %>
