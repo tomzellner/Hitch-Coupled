@@ -11,7 +11,8 @@ var addMessage = function(event){
 
 
       var data = $('#new_message').serialize();
-      var url = $(this).attr("action")
+      var url = $(this).attr("action");
+      $('textarea#message_text').val("");
 
       var request = $.ajax({
         url: url,
@@ -21,6 +22,7 @@ var addMessage = function(event){
       }).done(function(response){
         var source = $('#message-template').html();
         var template = Handlebars.compile(source);
+
         $('#message-container').append(template(response))
       })
 }
