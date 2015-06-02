@@ -31,12 +31,12 @@
 	border: none;
 }
 
-#seat1, #seat2, #seat3, #seat4, #seat5, #seat6, #seat7 { 
+#seat1, #seat2, #seat3, #seat4, #seat5, #seat6, #seat7 {
 list-style: none;
 width: 50px;
 height: 50px;
 
-border:1px solid #aaaaaa; 
+border:1px solid #aaaaaa;
 position: absolute;
 z-index: 0}
 
@@ -45,32 +45,32 @@ top: 20px;
 left: 20px;
 }
 
-#seat2 { 
+#seat2 {
 top: 20px;
 left: 110px;
 }
- 
-#seat3 { 
+
+#seat3 {
 top: 130px;
 left: 20px;
 }
 
-#seat4 { 
+#seat4 {
 top: 130px;
 left: 110px;
 }
 
-#seat5 { 
+#seat5 {
 top: 45px;
 left: 210px;
 }
 
-#seat6 { 
+#seat6 {
 top: 110px;
 left: 210px;
 }
 
-#seat7 { 
+#seat7 {
 top: 75px;
 left: 110px;
 }
@@ -132,4 +132,5 @@ img.avatars {
   border: solid black 1px;
   border-radius: 20px;
 }
+
 

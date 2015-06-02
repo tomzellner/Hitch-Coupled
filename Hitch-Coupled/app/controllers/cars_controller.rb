@@ -6,15 +6,16 @@ require 'imgur'
 	end
 
 	def create
-		imgur_client = Imgur.new("57a446e074f93b5")
-   	image_path = params[:car][:car_pic].tempfile.path
-   	image = Imgur::LocalImage.new(image_path)
-  	image_url = imgur_client.upload(image).link
-   	puts image_url
-   	params[:car][:car_pic] = image_url
+		# imgur_client = Imgur.new("57a446e074f93b5")
+	 #   	image_path = params[:car][:car_pic].tempfile.path
+	 #   	image = Imgur::LocalImage.new(image_path)
+	 #  	image_url = imgur_client.upload(image).link
+	 #   	puts image_url
+	 #   	params[:car][:car_pic] = image_url
+
 		@car = Car.new(car_params)
 		@car.user = current_user
-		params.require(:car).permit(:make, :model, :type_of, :year, :car_pic)
+
 
 		respond_to do |format|
 			if @car.save
@@ -22,7 +23,8 @@ require 'imgur'
 			      format.html {redirect_to "/"}
 
 			else
-				status 400
+			format.html { redirect_to @trip }
+        	format.json { render :json => @car.errors.full_messages, :status => :unprocessable_entity }
 			end
 		end
 
@@ -76,6 +78,6 @@ require 'imgur'
 	private
 
 	def car_params
-      params.require(:car).permit(:seats, :make, :model, :type_of, :year)
+      params.require(:car).permit(:seats, :make, :model, :type_of, :year, :car_pic)
     end
 end

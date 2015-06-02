@@ -4,7 +4,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def sign_up_params
    imgur_client = Imgur.new("57a446e074f93b5")
+  
    image_path = params[:user][:profile_pic].tempfile.path
+   
    image = Imgur::LocalImage.new(image_path)
    image_url = imgur_client.upload(image).link
    puts image_url

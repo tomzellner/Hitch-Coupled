@@ -16,6 +16,7 @@
 	<% end %>
 <% else %>
 	<h1>Welcome to <%= @driver.first_name %> <%= @driver.last_name %>'s Trip </h1>
+
 	<% if !@trip.started %>
 		<h2> Waiting for Trip to Start </h2>
 	<% elsif @trip.ended %>
@@ -33,6 +34,15 @@
 
 <% end %>
 
+<p  id='start_geog' class ='<%=start_geo%>'>  </p>
+<p  id='end_geog' class = '<%=end_geo%>'>  </p>
+
+<div class='col span_12' >
+  <div id="directions" class='col span_12' style= 'height: 20em'>
+  
+  </div>
+</div>
+
 
 <div>
 	<h4>From: <%= @trip.start_city %>, <%= @trip.start_state %></h4>
@@ -43,7 +53,7 @@
 
 </div>
 <!-- DRIVERS DIV -->
-
+<div>
 <%= link_to user_path(@driver) do  %>
 	<div style="border: thin solid black" id = 'driver_profile'>
 		Driver: <%= @driver.first_name %>
@@ -165,6 +175,7 @@ function drop(ev) {
 
 </body>
 <br>
+</div>
 
 
 

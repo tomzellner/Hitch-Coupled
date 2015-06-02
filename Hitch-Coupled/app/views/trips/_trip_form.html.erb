@@ -1,31 +1,51 @@
+
+<% if @trip.errors.any? %>
+    <% @trip.errors.full_messages.each do |msg| %>  
+      <li style='color: red;'><%= msg %></li>  
+    <% end %>  
+<% end %>
+
+
 <label>Create new trip here</label><br>
       <%= form_for @trip do |f| %>
-        <%= f.label(:start_city, 'Start City:') %>
-        <%= f.text_field(:start_city) %><br>
+   <p>
+        <%= f.label(:start_city, 'Start City:') %> <br>
+        <%= f.text_field(:start_city) %>
+        <%= f.select(:start_state, options_for_select(us_states)) %>
+    </p>
 
-        <%= f.label(:start_state, 'Start State') %>
-        <%= f.select(:start_state, options_for_select(us_states)) %> <br> 
-
+    <p> 
         <%= f.label(:end_city, 'End City') %>
-        <%= f.text_field(:end_city) %><br>    
+    <br>
+        <%= f.text_field(:end_city) %>
+        <%= f.select(:end_state, options_for_select(us_states) )%>
+    </p>
 
-        <%= f.label(:end_state, 'End State') %>
-        <%= f.select(:end_state, options_for_select(us_states) )%> <br>
-
+    <p> 
         <%= f.label(:start_date, 'Start Date') %>
-        <%= f.date_field(:start_date) %>    <br>
+    <br>
+        <%= f.date_field(:start_date) %>  
+    </p>
 
+    <p>  
         <%= f.label(:end_date, 'End Date') %>
-        <%= f.date_field(:end_date) %>    <br>
-
-        <%= f.label(:num_passengers, 'Number of Passengers') %>
-        <%= f.select(:num_passengers, options_for_select(1..7)) %>  <br> 
-
+    <br>
+        <%= f.date_field(:end_date) %>  
+    </p>
+    <p> 
         <%= f.label(:car_id, 'Car') %>
-        <%= f.select(:car_id, options_for_select(current_user_cars)) %>  <br> 
+    <br>
+        <%= f.select(:car_id, options_for_select(current_user_cars)) %>  
+    </p>
+    <p>  
+        <%= f.label(:num_passengers, 'Number of Passengers') %>
+    <br>
+        <%= f.select(:num_passengers, options_for_select(1..7)) %> 
+    </p>
 
-
+    <p>
         <%= f.submit('Create Trip') %>
+    </p>
 
       <% end %>
         <a id='new_car_link' href="#">Add a new Car </a> for this trip <br>
