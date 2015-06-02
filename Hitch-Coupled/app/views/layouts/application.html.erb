@@ -18,7 +18,11 @@
       <% if current_user %>
 
 
-          <%= link_to "<button>Sign Out</button>".html_safe, "/users/sign_out", method: :delete %>
+          <%= link_to conversations_path do %>
+            <%= image_tag "message_icon.png", :id => "message_icon", :class => "nav_button" %>
+          <% end %>
+
+          <%= link_to '<button class="nav_button">Sign Out</button>'.html_safe, "/users/sign_out", method: :delete %>
 
 
 

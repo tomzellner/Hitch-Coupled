@@ -2,8 +2,8 @@ class TripsController < ApplicationController
 	def add_passenger
 		@trip = Trip.find(params[:trip_id])
 		# rider = RiderRelationship.create(trip_id: @trip.id, passenger_id: current_user.id)
-		if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)
-			@trip.passengers << current_user
+		if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(User.find(:passenger_id))
+			@trip.passengers << User.find(:passenger_id)
 			redirect_to @trip
 		else
 			redirect_to '/'
@@ -40,8 +40,8 @@ class TripsController < ApplicationController
 		@user = current_user
 		@trip = Trip.new
 		respond_to do |format|
-			
-	      format.html 
+
+	      format.html
 	      # format.json { render 'trips/new' }
 	  end
 	end
@@ -50,7 +50,7 @@ class TripsController < ApplicationController
 		@user = current_user
 		@car = Car.new
 		@trip = Trip.new(trip_params)
-		if !@trip.car 
+		if !@trip.car
 			@trip.car = current_user.car.last
 		end
 
@@ -74,7 +74,7 @@ class TripsController < ApplicationController
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
 		@rating = Rating.new
-
+		@conversation = Conversation.new
 		@car = @trip.car
 
 		# if @trip
@@ -136,7 +136,7 @@ class TripsController < ApplicationController
 
 	def trip_params
       params.require(:trip).permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
-    end
+  end
 
 
 end

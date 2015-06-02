@@ -28,6 +28,7 @@ end
     get 'add_passenger', to: 'trips#add_passenger'
     patch 'start', to: 'trips#start'
     patch 'end', to: 'trips#end'
+    resources :rider_relationships
   end
 
 

@@ -24,6 +24,14 @@
 	<% elsif @trip.started %>
 		<h2> Trip in Progress </h2>
 	<% end %>
+
+    <%= form_for @conversation do |f| %>
+        <%= f.hidden_field :driver_id, :value => @driver.id %>
+        <%= f.hidden_field :passenger_id, :value => current_user.id %>
+        <%= f.hidden_field :trip_id, :value => @trip.id %>
+        <%= f.submit("I'm Interested!") %>
+    <% end %>
+
 <% end %>
 
 <p  id='start_geog' class ='<%=start_geo%>'>  </p>
@@ -42,6 +50,7 @@
 	<h4>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h4>
 	<h4>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h4>
 	<span> Seats in car: <%= @trip.car.seats %> </span>
+
 </div>
 <!-- DRIVERS DIV -->
 <div>
@@ -157,8 +166,8 @@ function drop(ev) {
 <div id = "conversations-container" >
   <h1>Pending Passengers</h1>
   <div id= "avatars">
-    <% riders.each do |rider| %>
-    <%= image_tag rider.passenger.profile_pic, :class => "avatars", :id => rider.passenger.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <% pending_passengers.each do |rider| %>
+    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :dragable => "true", :ondragstart => "drag(event)" %>
     <%end%>
 
   </div>

@@ -1,12 +1,10 @@
 <div>
 <h1> Welcome to the Message Center </h1>
 
-<% @driver_convos.each do |convo| %>
-  <%= link_to conversation_path(convo) do %>
-  <div>
-    <h3><%= convo.passenger.first_name.capitalize + " " + convo.passenger.last_name.capitalize  %> </h3>
-    <p><%=convo.messages.last.text%></p>
+<div class = "messages-divider" >
+<%= render '/conversations/driver_convos' %>
+</div>
 
-  </div>
-  <%end%>
-<%end%>
+<div class = "messages-divider" >
+<%= render '/conversations/passenger_convos' %>
+</div>

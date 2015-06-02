@@ -26,6 +26,15 @@ height:50px;
     font: white;
 }
 
+button.nav_button{
+  display: inline-block;
+}
+
+img#message_icon{
+  height: 50px;
+  width: 50px;
+}
+
 #header button{
   background:#EEEEEE;
 }
