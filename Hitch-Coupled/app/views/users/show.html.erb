@@ -1,27 +1,33 @@
-<div class="container">
 
 <% if @user != current_user %>
 <!-- IF IT IS NOT YOUR PAGE -->
 
 
+<div class="container">
     <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
-    <div class="profile">
-    <img src="<%= @user.profile_pic %>">
-  </div>
-    <h5><%= @user.email %></h5>
-    <h5><%= @user.phonenumber %></h5>
-    <h5>Rating: <%= rated_avg %> </h5>
+      <div class="profile">
+        <img src="<%= @user.profile_pic %>">
+      </div>
+         <div id="view_user">
+            <h5><%= @user.email %></h5>
+            <h5><%= @user.phonenumber %></h5>
+             <h5>Rating: <%= rated_avg %> </h5>
+          </div>
 
 
 <% else %>
 
 
    <h1>Hello <%= @user.first_name.capitalize %></h1>
-   <img src="<%= @user.profile_pic %>">
-    <p><%= @user.email %></p>
-    <p><%= @user.phonenumber %></p>
-    <p>Rating: <%= rated_avg %> </p>
-<% end %>
+    <div class=" profile">
+      <img src="<%= @user.profile_pic %>">
+    </div>
+       <div id="user_info" >
+         <h5><%= @user.email %></h5>
+        <h5><%= @user.phonenumber %></h5>
+        <h5>Rating: <%= rated_avg %> </h5>
+       </div>
+    <% end %>
 
 
   <h2>Upcoming Trips</h2>
@@ -29,9 +35,9 @@
     <% @user.driver_trips.each do |t| %>
       <div class= "upcomingtrips">
         <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
-        <% if @user = current_user %>
+          <% if @user = current_user %>
           <%= link_to 'edit trip', edit_trip_path(t)  %>
-        <% end %>
+    <% end %>
       </div>
     <% end %>
 
@@ -39,6 +45,7 @@
 
   <div class="car_details">
     <h2>Car Details</h2>
+
     <% @user.cars.each do |car| %>
     <div>
       <h3>Make: <%= car.make %></h3>
@@ -49,6 +56,7 @@
       <img src="<%= @car.car_pic %>">
       </div>
     <% end %>
+
   </div>
 </div>
 

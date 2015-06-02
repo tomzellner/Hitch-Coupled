@@ -15,7 +15,7 @@ require 'imgur'
 
 		@car = Car.new(car_params)
 		@car.user = current_user
-		
+
 
 		respond_to do |format|
 			if @car.save
