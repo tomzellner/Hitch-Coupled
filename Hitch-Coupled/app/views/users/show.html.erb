@@ -15,12 +15,14 @@
 
 <% else %>
 
+
    <h1>Hello <%= @user.first_name.capitalize %></h1>
    <img src="<%= @user.profile_pic %>">
     <p><%= @user.email %></p>
     <p><%= @user.phonenumber %></p>
     <p>Rating: <%= rated_avg %> </p>
 <% end %>
+
 
   <h2>Upcoming Trips</h2>
 
