@@ -89,7 +89,8 @@ end
   end
 
   def confirmed_passengers
-    @trip = Trip.find(params[:id]).passengers
+    @trip = Trip.find(params[:id])
+    passengers = @trip.passengers
   end
 
   def pending_passengers
