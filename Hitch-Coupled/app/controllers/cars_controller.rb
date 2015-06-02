@@ -76,6 +76,6 @@ require 'imgur'
 	private
 
 	def car_params
-      params.require(:car).permit(:seats, :make, :model, :type, :year)
+      params.require(:car).permit(:seats, :make, :model, :type_of, :year)
     end
 end
