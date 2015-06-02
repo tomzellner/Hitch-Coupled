@@ -5,7 +5,7 @@ $(document).on('page:load', function(){
   tripShowBindings();
 })
 
-var tripShowBindings = (function (){
+var tripShowBindings = function (){
 	
 
 
@@ -39,6 +39,6 @@ var tripShowBindings = (function (){
 
 	});
 
-})
+}
 
 

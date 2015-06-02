@@ -26,7 +26,7 @@ var showCarForm = function(event) {
 var newCar = function(event) {
 	event.preventDefault()
 	var cForm = $(this)
-	
+		
 	$.ajax({
 		method: 'POST',
 		data: $(this).serialize(),
@@ -37,6 +37,10 @@ var newCar = function(event) {
 		console.log(data)
 		$('#trip_car_id').append('<option value="'+data.id+'">'+data.make + ' ' + data.model + '</option>' )
 		$('#trip_new_car').hide()
+		}
+	).fail(function(data) {
+		console.log(data)
+		$('#error').append('<li> FILL OUT ALL INPUTS </li>')
 	})
 
 }

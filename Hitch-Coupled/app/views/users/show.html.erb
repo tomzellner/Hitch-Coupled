@@ -45,14 +45,18 @@
 
   <div class="car_details">
     <h2>Car Details</h2>
-      <% @user.cars.each do |car| %>
-        <h3>Make: <%= car.make %></h3>
-        <h3>Model: <%= car.model %></h3>
-        <h3>Year: <%= car.year %></h3>
-        <h3>Type: <%= car.type_of %></h3>
-        <h3>Seats: <%= car.seats %></h3>
-        <img src="<%= @car.car_pic %>">
-      <% end %>
+
+    <% @user.cars.each do |car| %>
+    <div>
+      <h3>Make: <%= car.make %></h3>
+      <h3>Model: <%= car.model %></h3>
+      <h3>Year: <%= car.year %></h3>
+      <h3>Type: <%= car.type_of %></h3>
+      <h3>Seats: <%= car.seats %></h3>
+      <img src="<%= @car.car_pic %>">
+      </div>
+    <% end %>
+
   </div>
 </div>
 
@@ -61,8 +65,10 @@
 
 
 <% if @user == current_user  %>
-
+ <a id='new_car_link' href="#">Add a new Car </a><br>
+ <div hidden id='trip_new_car'>
   <%= render 'cars/car_form' %>
+  </div>
 
 
   <% else %>
