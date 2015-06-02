@@ -65,6 +65,7 @@
 
 
 <% if @user == current_user  %>
+<div class='container' >
  <a id='new_car_link' href="#">Add a new Car </a><br>
  <div hidden id='trip_new_car'>
   <%= render 'cars/car_form' %>
@@ -75,6 +76,7 @@
 
 <% end %>
 
+</div>
 </div>
 
 
