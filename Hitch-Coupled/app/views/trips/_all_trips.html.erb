@@ -1,0 +1,29 @@
+<% @trips.each do |trip| %>
+	<div class ='each_trip'>
+		<p>From: <%=trip.start_city %>, <%= trip.start_state %>  On: <%= trip.start_date.to_time.strftime('%B %e 20%y') %></p>
+		<p>To: <%=trip.end_city %>, <%= trip.end_state %> On: <%= trip.end_date.to_time.strftime('%B %e 20%y') %> </p>
+		<p> Driver: <%= link_to trip.driver.first_name %> </p>
+		<p>Passengers: <%= trip.passengers.length %>/<%= trip.num_passengers %> </p>
+		<p><%= link_to 'Show', trip %> </p>
+	</div>
+
+
+
+
+<script id="trips-template" type="text/x-handlebars-template">
+    {{#each trip}}
+        <div class ='each_trip'>
+        <p>From: {{start_city}}, {{start_state}} On: <%= trip.start_date.to_time.strftime('%B %e 20%y') %> </p>
+        <p>To: {{end_city}}, {{end_state}} On: <%= trip.end_date.to_time.strftime('%B %e 20%y') %>  </p>
+
+        <p>LINK TO DRIVER </p>
+
+    	<p>Passengers: <%= trip.passengers.length %>/<%= trip.num_passengers %>  </p>
+
+        <p><%= link_to 'Show', trip %></p>
+
+
+        </div>
+    {{/each}}
+</script>
+    <% end %>

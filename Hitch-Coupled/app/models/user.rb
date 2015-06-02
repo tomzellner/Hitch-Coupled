@@ -1,6 +1,15 @@
 class User < ActiveRecord::Base
     validates_presence_of :first_name, :last_name, :birthdate, :profile_pic
 
+    before_save :tileize_info
+    before_create :tileize_info
+
+    def tileize_info
+      self.first_name = self.first_name.titleize
+      self.last_name = self.last_name.titleize
+      
+    end
+
 
 
 

@@ -1,8 +1,8 @@
 
 <% if @trip.errors.any? %>
-    <% @trip.errors.full_messages.each do |msg| %>  
-      <li style='color: red;'><%= msg %></li>  
-    <% end %>  
+    <% @trip.errors.full_messages.each do |msg| %>
+      <li style='color: red;'><%= msg %></li>
+    <% end %>
 <% end %>
 
 
@@ -11,36 +11,36 @@
    <p>
         <%= f.label(:start_city, 'Start City:') %> <br>
         <%= f.text_field(:start_city) %>
-        <%= f.select(:start_state, options_for_select(us_states)) %>
+        <%= f.select(:start_state, options_for_select(us_states), {:prompt => 'Select State'}) %>
     </p>
 
-    <p> 
+    <p>
         <%= f.label(:end_city, 'End City') %>
     <br>
         <%= f.text_field(:end_city) %>
-        <%= f.select(:end_state, options_for_select(us_states) )%>
+        <%= f.select(:end_state, options_for_select(us_states), {:prompt => 'Select State'} )%>
     </p>
 
-    <p> 
+    <p>
         <%= f.label(:start_date, 'Start Date') %>
     <br>
-        <%= f.date_field(:start_date) %>  
+        <%= f.date_field(:start_date) %>
     </p>
 
-    <p>  
+    <p>
         <%= f.label(:end_date, 'End Date') %>
     <br>
-        <%= f.date_field(:end_date) %>  
+        <%= f.date_field(:end_date) %>
     </p>
-    <p> 
+    <p>
         <%= f.label(:car_id, 'Car') %>
     <br>
-        <%= f.select(:car_id, options_for_select(current_user_cars)) %>  
+        <%= f.select(:car_id, options_for_select(current_user_cars)) %>
     </p>
-    <p>  
+    <p>
         <%= f.label(:num_passengers, 'Number of Passengers') %>
     <br>
-        <%= f.select(:num_passengers, options_for_select(1..7)) %> 
+        <%= f.select(:num_passengers, options_for_select(1..7)) %>
     </p>
 
     <p>

@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150602224732) do
     t.integer  "user_id"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.string   "car_pic"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -58,6 +59,16 @@ ActiveRecord::Schema.define(version: 20150602224732) do
     t.integer  "trip_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string   "start_city"
+    t.string   "start_state"
+    t.string   "end_city"
+    t.string   "end_state"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "trip_id"
   end
 
   create_table "trips", force: :cascade do |t|
