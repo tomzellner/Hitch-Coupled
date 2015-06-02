@@ -26,8 +26,13 @@ height:50px;
     font: white;
 }
 
-#header button{
+button.nav_button{
+  display: inline-block;
+}
 
+img#message_icon{
+  height: 50px;
+  width: 50px;
 }
 
 footer {
