@@ -75,7 +75,6 @@ top: 75px;
 left: 110px;
 }
 
-
 #drag1, #drag2 {
 	width: 50px;
 	height: 50px;
@@ -124,4 +123,11 @@ left: 110px;
 .starRating:not(old) > label:hover ~ label:before,
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
+}
+
+img.avatars {
+  height: 100px;
+  width: 100px;
+  border: solid black 1px;
+  border-radius: 20px;
 }
