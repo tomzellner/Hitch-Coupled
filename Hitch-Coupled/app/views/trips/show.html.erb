@@ -16,6 +16,7 @@
 	<% end %>
 <% else %>
 	<h1>Welcome to <%= @driver.first_name %> <%= @driver.last_name %>'s Trip </h1>
+
 	<% if !@trip.started %>
 		<h2> Waiting for Trip to Start </h2>
 	<% elsif @trip.ended %>
@@ -43,7 +44,7 @@
 	<span> Seats in car: <%= @trip.car.seats %> </span>
 </div>
 <!-- DRIVERS DIV -->
-
+<div>
 <%= link_to user_path(@driver) do  %>
 	<div style="border: thin solid black" id = 'driver_profile'>
 		Driver: <%= @driver.first_name %>
@@ -136,7 +137,7 @@ function drop(ev) {
 <p>Drag Your name into the car</p>
 
 <div id="drag-stack">
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
 	<div id="passenger-container-outside" >
 		<div id="passenger-container-inside">
 			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
@@ -165,6 +166,7 @@ function drop(ev) {
 
 </body>
 <br>
+</div>
 
 
 
