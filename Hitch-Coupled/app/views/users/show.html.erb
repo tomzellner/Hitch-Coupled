@@ -53,10 +53,10 @@
       <h3>Year: <%= car.year %></h3>
       <h3>Type: <%= car.type_of %></h3>
       <h3>Seats: <%= car.seats %></h3>
-      <img src="<%= @car.car_pic %>">
+
       </div>
     <% end %>
-
+      <%= image_tag @car.image.url(:medium) %>
   </div>
 </div>
 
