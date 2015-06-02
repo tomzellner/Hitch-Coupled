@@ -1,6 +1,6 @@
-$(document).ready(tripShowBindings)
+// $(document).ready(tripShowBindings)
 
-$(document).on('page:load', function(){
+$(document).on('ready page:load', function(){
   
   tripShowBindings();
 })

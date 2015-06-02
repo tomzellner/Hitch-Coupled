@@ -29,8 +29,8 @@ var displaySearch = function(event) {
 	).done(function(data){
 		$('#search_div').toggle(false)
 		var context = {trip: data};
-		$('#all_trips').empty();
-		debugger
+		$('#all_trips div' ).empty();
+		// debugger
 		$('#all_trips').append(template(context));
 
 		}
