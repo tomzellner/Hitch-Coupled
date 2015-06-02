@@ -11,14 +11,14 @@
    <p>
         <%= f.label(:start_city, 'Start City:') %> <br>
         <%= f.text_field(:start_city) %>
-        <%= f.select(:start_state, options_for_select(us_states)) %>
+        <%= f.select(:start_state, options_for_select(us_states), {:prompt => 'Select State'}) %>
     </p>
 
     <p> 
         <%= f.label(:end_city, 'End City') %>
     <br>
         <%= f.text_field(:end_city) %>
-        <%= f.select(:end_state, options_for_select(us_states) )%>
+        <%= f.select(:end_state, options_for_select(us_states), {:prompt => 'Select State'} )%>
     </p>
 
     <p> 
