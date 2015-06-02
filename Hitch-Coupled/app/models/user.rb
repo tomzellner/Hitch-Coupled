@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    validates_presence_of :first_name, :last_name, :birthdate, :profile_pic, :image
+    validates_presence_of :first_name, :last_name, :birthdate, :profile_pic
 
 
 
@@ -29,9 +29,6 @@ class User < ActiveRecord::Base
         has_many :driver_conversations, foreign_key: :driver_id, class_name: "Conversation"
         has_many :passenger_conversations, foreign_key: :passenger_id, class_name: "Conversation"
 
-
-        # has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-        # validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 end
 
