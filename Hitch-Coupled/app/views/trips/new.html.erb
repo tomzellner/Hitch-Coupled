@@ -1,9 +1,11 @@
 
 <% if user_signed_in? %>
 
+
     <div id='new_trip_form'>
       <%= render 'trips/trip_form' %>
     </div>
+
 
     <% else %>
 
@@ -19,6 +21,6 @@
 
 
     <%# f.label(:driver_id, 'Driver Profile') %>
-    <%# f.text_area(:driver_id) %>    
+    <%# f.text_area(:driver_id) %>
     <%# f.label(:car_id, 'Car Description') %>
     <%# f.text_area(:car_id) %>

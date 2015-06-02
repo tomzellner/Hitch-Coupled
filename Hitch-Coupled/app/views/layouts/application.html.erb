@@ -9,30 +9,30 @@
 <body>
 
  <div id='header'>
-  
+
 
       <% if current_user %>
-     
-    
+
+
           <%= link_to "<button>Sign Out</button>".html_safe, "/users/sign_out", method: :delete %>
-      
+
 
 
       <% else %>
-      
-     
+
+
        <form action="/users/sign_in">
         <input type="submit" value="Sign In">
       </form>
-    
+
        <form action="/users/sign_up">
         <input type="submit" value="Sign Up">
       </form>
-    
+
 
       <% end %>
-   
-  
+
+
   </div>
 
   <div class='container'>

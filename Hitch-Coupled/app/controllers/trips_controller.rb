@@ -57,7 +57,7 @@ class TripsController < ApplicationController
 			if @trip.save
 	      format.html {redirect_to @trip}
 	      format.json { render :json => @trip }
-				
+
 			else
 				status 400
 			end
@@ -71,7 +71,9 @@ class TripsController < ApplicationController
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
 		@rating = Rating.new
+
 		@car = @trip.car
+
 		# if @trip
 		# 	render json: {trip: trip}
 		# else
@@ -89,7 +91,7 @@ class TripsController < ApplicationController
       format.json { render :json => @trips }
     end
 
-		
+
 
 	end
 

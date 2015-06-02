@@ -16,7 +16,7 @@
 }
 
 #passenger-container {
-	width: 300px;
+	width: 400px;
 	height: 200px;
 	margin-left: 240px;
 	margin-top: 100px;
@@ -26,7 +26,7 @@
 	border: none;
 }
 
-#seat1, #seat2, #seat3, #seat4{width:50px;height:50px;padding:10px;border:1px solid #aaaaaa; float: left; z-index: 0}
+#seat1, #seat2, #seat3, #seat4{width:100px;height:100px;border:1px solid #aaaaaa; float: left; z-index: 0}
 
 
 
@@ -73,3 +73,12 @@
 .starRating:not(:hover) > :checked ~ label:before{
   opacity : 1;
 }
+
+
+img.avatars {
+  height: 100px;
+  width: 100px;
+  border: solid black 1px;
+  border-radius: 20px;
+}
+
