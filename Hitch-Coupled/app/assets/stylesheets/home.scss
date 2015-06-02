@@ -1,5 +1,6 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
+
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
@@ -8,3 +9,15 @@ $visual-grid: true;
 
   font-weight: bold;
 }
+#driver_story{
+
+ display: block;
+    margin: 0 auto;
+    height: auto;
+    width: 40%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+  }
