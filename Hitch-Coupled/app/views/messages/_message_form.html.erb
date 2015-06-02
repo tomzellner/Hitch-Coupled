@@ -1,0 +1,6 @@
+<%= form_for [@conversation, @message] do |f| %>
+        <%=  f.hidden_field :user_id, :value => current_user.id %>
+        <%=  f.hidden_field :conversation_id, :value => @conversation.id %>
+        <%= f.text_area :text%><br>
+        <%= f.submit "New Message" %>
+  <% end%>
