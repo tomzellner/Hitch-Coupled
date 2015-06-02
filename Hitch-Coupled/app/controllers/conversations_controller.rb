@@ -21,6 +21,7 @@ class ConversationsController < ApplicationController
     @trip = @conversation.trip
     @message = Message.new
     @passenger = RiderRelationship.new
+    @relationship = RiderRelationship.find_by(passenger_id: current_user, trip_id: @trip.id)
   end
 
   private

@@ -11,8 +11,16 @@ class RiderRelationshipsController < ApplicationController
         status 400
       end
     end
-
   end
+
+    def destroy
+      @trip = Trip.find(params[:trip_id])
+      @relationship = RiderRelationship.find(params[:id])
+       @conversation = Conversation.find_by(trip_id: @trip, passenger_id: @relationship.passenger_id)
+      @conversation.destroy
+      @relationship.destroy
+      redirect_to trip_path(@trip)
+    end
 
   private
   def passenger_params
