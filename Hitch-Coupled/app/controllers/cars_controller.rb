@@ -1,13 +1,24 @@
 class CarsController < ApplicationController
+	require 'imgur'
 	def new
 		@car = Car.new
 
 	end
 
 	def create
-
+		puts '*' * 50
+		p params[:car][:car_pic]
 		@car = Car.new(car_params)
 		@car.user = current_user
+		imgur_client = Imgur.new("57a446e074f93b5")
+
+   image_path = params[:car][:car_pic].tempfile.path
+
+   image = Imgur::LocalImage.new(image_path)
+   image_url = imgur_client.upload(image).link
+   puts image_url
+   params[:car][:car_pic] = image_url
+   @car.car_pic = image_url
 
 
 		respond_to do |format|
@@ -20,9 +31,6 @@ class CarsController < ApplicationController
         	format.json { render :json => @car.errors.full_messages, :status => :unprocessable_entity }
 			end
 		end
-
-
-
 	end
 
 	def show
@@ -71,6 +79,6 @@ class CarsController < ApplicationController
 	private
 
 	def car_params
-      params.require(:car).permit(:seats, :make, :model, :type_of, :year, :image)
+      params.require(:car).permit(:seats, :make, :model, :type_of, :year, :car_pic)
     end
 end
