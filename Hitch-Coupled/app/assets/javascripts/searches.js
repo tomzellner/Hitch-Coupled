@@ -4,14 +4,26 @@ $(document).on('ready page:load',function(){
 });
 
 var searchBindings = function(){ 
-	$('#show_form').on('click', showSearchForm);
+	$('.container').on('click', '#show_form', showSearchForm);
+	$('.container').on('click', '#hide_form', hideSearchForm);
+
 	$('#new_search').on('submit', displaySearch);
 }
 
 var showSearchForm = function(event) {
 	event.preventDefault()
 	$('#search_div').toggle(true)
+	$('#show_form').html('Hide Search')
+	$('#show_form').attr('id', 'hide_form')
 }
+var hideSearchForm = function(event) {
+	event.preventDefault()
+	$('#search_div').toggle(false)
+	$('#hide_form').html('Search Trips')
+	$('#hide_form').attr('id', 'show_form')
+}
+
+
 
 var displaySearch = function(event) {
 	var source = $('#trips-template').html();
