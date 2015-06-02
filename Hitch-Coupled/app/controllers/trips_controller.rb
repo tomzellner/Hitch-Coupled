@@ -2,8 +2,8 @@ class TripsController < ApplicationController
 	def add_passenger
 		@trip = Trip.find(params[:trip_id])
 		# rider = RiderRelationship.create(trip_id: @trip.id, passenger_id: current_user.id)
-		if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(current_user)
-			@trip.passengers << current_user
+		if @trip.passengers.length < @trip.num_passengers && !@trip.passengers.include?(User.find(:passenger_id))
+			@trip.passengers << User.find(:passenger_id)
 			redirect_to @trip
 		else
 			redirect_to '/'

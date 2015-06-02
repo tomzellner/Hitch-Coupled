@@ -18,7 +18,9 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
+    @trip = @conversation.trip
     @message = Message.new
+    @passenger = RiderRelationship.new
   end
 
   private
