@@ -40,15 +40,15 @@ class TripsController < ApplicationController
 		@user = current_user
 		@trip = Trip.new
 		respond_to do |format|
-			
-	      format.html 
+
+	      format.html
 	      # format.json { render 'trips/new' }
 	  end
 	end
 
 	def create
 		@trip = Trip.new(trip_params)
-		if !@trip.car 
+		if !@trip.car
 			@trip.car = current_user.car.last
 		end
 
@@ -71,7 +71,7 @@ class TripsController < ApplicationController
 		@trip = Trip.where(id: params[:id]).first
 		@driver = @trip.driver
 		@rating = Rating.new
-
+		@conversation = Conversation.new
 		@car = @trip.car
 
 		# if @trip

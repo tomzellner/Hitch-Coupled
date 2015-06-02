@@ -23,6 +23,14 @@
 	<% elsif @trip.started %>
 		<h2> Trip in Progress </h2>
 	<% end %>
+
+    <%= form_for @conversation do |f| %>
+        <%= f.hidden_field :driver_id, :value => @driver.id %>
+        <%= f.hidden_field :passenger_id, :value => current_user.id %>
+        <%= f.hidden_field :trip_id, :value => @trip.id %>
+        <%= f.submit("I'm Interested!") %>
+    <% end %>
+
 <% end %>
 
 
@@ -32,6 +40,7 @@
 	<h4>Start Date: <%= @trip.start_date.to_time.strftime('%B %e 20%y') %></h4>
 	<h4>End Date: <%= @trip.end_date.to_time.strftime('%B %e 20%y') %></h4>
 	<span> Seats in car: <%= @trip.car.seats %> </span>
+
 </div>
 <!-- DRIVERS DIV -->
 
@@ -127,7 +136,7 @@ function drop(ev) {
 <p>Drag Your name into the car</p>
 
 <div id="drag-stack">
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
 	<div id="passenger-container-outside" >
 		<div id="passenger-container-inside">
 			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
