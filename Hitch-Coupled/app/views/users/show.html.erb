@@ -3,13 +3,15 @@
 <% if @user != current_user %>
 <!-- IF IT IS NOT YOUR PAGE -->
 
-  <div>
+
     <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
+    <div class="profile">
     <img src="<%= @user.profile_pic %>">
+  </div>
     <h5><%= @user.email %></h5>
     <h5><%= @user.phonenumber %></h5>
     <h5>Rating: <%= rated_avg %> </h5>
-  </div>
+
 
 <% else %>
 
@@ -19,7 +21,7 @@
     <p><%= @user.phonenumber %></p>
     <p>Rating: <%= rated_avg %> </p>
 <% end %>
- 
+
   <h2>Upcoming Trips</h2>
 
     <% @user.driver_trips.each do |t| %>
@@ -41,7 +43,7 @@
       <h3>Year: <%= car.year %></h3>
       <h3>Type: <%= car.type_of %></h3>
       <h3>Seats: <%= car.seats %></h3>
-
+      <img src="<%= @car.car_pic %>">
     <% end %>
   </div>
 </div>
@@ -51,23 +53,10 @@
 
 
 <% if @user == current_user  %>
-  <%= form_for [@user, @car] do |f| %>
-    <%= f.label(:seats, 'Number of Passengers') %>
-    <%= f.select(:seats, options_for_select(1..7)) %>
 
-    <%= f.label(:make, 'Make') %>
-    <%= f.text_field(:make) %>
+  <%= render 'cars/car_form' %>
 
-    <%= f.label(:model, 'model') %>
-    <%= f.text_field(:model) %>
 
-    <%= f.label(:type_of, 'Type') %>
-    <%= f.text_field(:type_of) %>
-
-    <%= f.label(:year, 'Year') %>
-    <%= f.text_field(:year) %>
-    <%= f.submit('Create') %>
-  <% end %>
   <% else %>
 
 <% end %>
