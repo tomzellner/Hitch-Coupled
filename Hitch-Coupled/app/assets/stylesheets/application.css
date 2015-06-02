@@ -16,6 +16,10 @@
  *= require_self
  *= require_tree
  */
+ .hidden {
+  visibility: visible;
+ }
+
 
 #header {
 height:50px;
@@ -41,11 +45,13 @@ table#nav_buttons{
 
 #header button{
   background:#EEEEEE;
+  height: 100%;
 }
 
 #header a {
   color :#373737;
   float: right;
+   height: 100%;
 }
 
 #header form {
