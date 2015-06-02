@@ -1,4 +1,8 @@
+    <% if @conversation.driver == current_user %>
     <h3><%= "Convo w/ " + @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
+    <% else %>
+    <h3><%= "Convo w/ " + @conversation.driver.first_name.capitalize + " " + @conversation.driver.last_name.capitalize%> </h3>
+    <%end%>
     <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
 
     <% if @trip.passengers.to_a.include?(@conversation.passenger) == false %>
