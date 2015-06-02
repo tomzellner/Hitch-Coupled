@@ -47,6 +47,8 @@ class TripsController < ApplicationController
 	end
 
 	def create
+		@user = current_user
+		@car = Car.new
 		@trip = Trip.new(trip_params)
 		if !@trip.car 
 			@trip.car = current_user.car.last
@@ -59,7 +61,8 @@ class TripsController < ApplicationController
 	      format.json { render :json => @trip }
 
 			else
-				status 400
+			format.html { render action: 'new' }
+        	format.json { render :json => @trip.errors.full_messages, :status => :unprocessable_entity }
 			end
 		end
 
@@ -99,11 +102,16 @@ class TripsController < ApplicationController
 
 	def update
 		@trip = Trip.find(params[:id])
-    if @trip.update_attributes(trip_params)
-      redirect_to @trip
-    else
-      render 'edit'
-    end
+    	respond_to do |format|
+		if @trip.update_attributes(trip_params)
+	      format.html {redirect_to @trip}
+	      format.json { render :json => @trip }
+
+		else
+			format.html { redirect_to @trip }
+        	format.json { render :json => @trip.errors.full_messages, :status => :unprocessable_entity }
+		end
+	end
 
 	end
 

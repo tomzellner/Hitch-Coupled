@@ -1,5 +1,6 @@
-<label>Add a Car</label><br>
+<ul id='error'> </ul>
 <%= form_for [@user, @car], :html => {:class => "car_form", :id => current_user.id} do |f| %>
+
 <p>
    <%= f.label(:seats, 'Number of Passengers') %>
     <%= f.select(:seats, options_for_select(1..7)) %>

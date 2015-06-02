@@ -1,3 +1,9 @@
+<% if @trip.errors.any? %>
+    <% @trip.errors.full_messages.each do |msg| %>  
+      <li style='color: red;'><%= msg %></li>  
+    <% end %>  
+<% end %>
+
 <label>Create new trip here</label><br>
       <%= form_for @trip do |f| %>
         <%= f.label(:start_city, 'Start City:') %>
