@@ -16,6 +16,9 @@
  *= require_self
  *= require_tree
  */
+ .hidden {
+  visibility: visible;
+ }
 
 
 #header {

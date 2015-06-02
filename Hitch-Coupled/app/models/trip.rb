@@ -2,19 +2,27 @@ class Trip < ActiveRecord::Base
 	validates_presence_of :start_city, :start_state, :end_city, :end_state, :start_date,  :num_passengers, :driver_id, :car_id
 	validate :start_date_future
 	validate :ends_after
+	validate :car_seats_valid
 
 	before_save :tileize_info
 	before_create :tileize_info
 
+	def car_seats_valid
+		if num_passengers > self.car.seats
+			errors.add(:num_passengers, "can't have more seats than the Trip's Car")
+		end
+
+	end
+
 	def start_date_future
 		if start_date.present? && start_date < Date.today 
-		errors.add(:start_date, "can't be in the past")
+		errors.add(:start_date, "Can't be in the past")
 		end
 	end
 
 	def ends_after
 		if start_date.present? && end_date <= start_date 
-		errors.add(:end_date, "can't be before start date")
+		errors.add(:end_date, "Can't be before start date")
 		end
 
 	end
@@ -23,7 +31,7 @@ class Trip < ActiveRecord::Base
 		self.start_city = self.start_city.titleize
 		self.start_state = self.start_state.titleize
 		self.end_city = self.end_city.titleize
-		self.end_state = self.end_city.titleize
+		self.end_state = self.end_state.titleize
 	end
 
 ##################################################
