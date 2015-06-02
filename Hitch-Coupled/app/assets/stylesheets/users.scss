@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-    .container img {
+   .profile img {
     display: block;
     margin: 0 auto;
-    height: auto;
-    width: 40%;
+    height: 300px;
+    width: 300px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -15,14 +15,25 @@
     border-radius: 50%;
 }
 
-  p {
-  margin-left: 480px;
+  #user_info {
+    line-height:30px;
+    height:150px;
+    width:250px;
+    margin-left: 446px;
+
 }
 
-.container {
-border-radius: 45px;
-}
- #header {
-    border-radius: 45px;
- }
+  #view_user {
+    line-height:30px;
+    height:150px;
+    width:250px;
+    margin-left: 446px;
 
+}
+
+#drag_stack {
+position: center;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}

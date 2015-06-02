@@ -14,7 +14,6 @@ require 'imgur'
    	params[:car][:car_pic] = image_url
 		@car = Car.new(car_params)
 		@car.user = current_user
-		params.require(:car).permit(:make, :model, :type_of, :year, :car_pic)
 
 		respond_to do |format|
 			if @car.save
