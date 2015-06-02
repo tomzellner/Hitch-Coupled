@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    validates_presence_of :first_name, :last_name, :birthday, :profile_pic
+    validates_presence_of :first_name, :last_name, :birthdate, :profile_pic
 
 
 
