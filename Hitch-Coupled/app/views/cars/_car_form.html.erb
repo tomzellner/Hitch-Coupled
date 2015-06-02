@@ -1,5 +1,5 @@
 <ul id='error'> </ul>
-<%= form_for [@user, @car], :html => {:class => "car_form", :id => current_user.id} do |f| %>
+<%= form_for [@user, @car], :html => {:multipart => true, :class => "car_form", :id => current_user.id} do |f| %>
 
 <p>
    <%= f.label(:seats, 'Number of Passengers') %>
@@ -25,6 +25,9 @@
     <%= f.label(:year, 'Year') %>
     <br>
     <%= f.text_field(:year) %>
+</p>
+<p>
+    <%= f.file_field(:image) %>
 </p>
     <%= f.submit('Create') %>
   <% end %>
