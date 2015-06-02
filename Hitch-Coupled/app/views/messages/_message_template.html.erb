@@ -1,16 +1,31 @@
+
+<% if message.user == current_user %>
+
 <div class = "message_box">
-    <%= image_tag message.user.profile_pic, :class => "chat_avatars" %>
+  <%= image_tag message.user.profile_pic, :class => "chat_avatars" %>
   <div class = "chat_content">
     <h4> <%= message.user.first_name.capitalize + " " + message.user.last_name.capitalize %></h4>
     <p> <%=message.text %> </p>
   </div>
 </div>
 
-<script id="message-template" type="text/x-handlebars-template">
- <div class = "message_box">
-  <%= image_tag message.user.profile_pic, :class => "chat_avatars" %>
+<%else%>
+
+<div class = "message_box">
   <div class = "chat_content">
     <h4> <%= message.user.first_name.capitalize + " " + message.user.last_name.capitalize %></h4>
+    <p> <%=message.text %> </p>
+  </div>
+   <%= image_tag message.user.profile_pic, :class => "chat_avatars" %>
+</div>
+
+<%end%>
+
+<script id="message-template" type="text/x-handlebars-template">
+ <div class = "message_box">
+  <%= image_tag current_user.profile_pic, :class => "chat_avatars" %>
+  <div class = "chat_content">
+    <h4> <%= current_user.first_name.capitalize + " " + current_user.last_name.capitalize %></h4>
     <p> {{text }} </p>
   </div>
   </div>
