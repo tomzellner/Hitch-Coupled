@@ -59,10 +59,12 @@
 
 <% @trip.passengers.each do |p| %>
 	<%= link_to user_path(p) do  %>
-		<div style="border: thin solid black" > 
-			Passenger: <%= p.first_name %> 
-			<%= p.last_name %> 
+
+		<div style="border: thin solid black" >
+			Passenger: <%= p.first_name %>
+			<%= p.last_name %>
 		<% if @trip.ended && (@trip.passengers.include?(current_user) || @driver == current_user) && p.id != current_user.id  %>
+
 			<%= form_for @rating do |f| %>
 				<%= f.hidden_field :rater_id, :value => current_user.id %>
 				<%= f.hidden_field :rated_id, :value => p.id %>
@@ -124,7 +126,7 @@ function drop(ev) {
 <%# END OF STAR RATING CODE %>
 <p>Drag Your name into the car</p>
 
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
 <div id="passenger-container" >
 
 <div id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -135,6 +137,17 @@ function drop(ev) {
 </div>
 
 <img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+
+
+<div id = "conversations-container" >
+  <h1>Pending Passengers</h1>
+  <div id= "avatars">
+    <% riders.each do |rider| %>
+    <%= image_tag rider.passenger.profile_pic, :class => "avatars", :id => rider.passenger.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <%end%>
+
+  </div>
+</div>
 
 </body>
 <br>
