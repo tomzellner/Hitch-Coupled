@@ -1,0 +1,11 @@
+<h2> Trips You're Trying to Join </h2>
+<% passenger_convos.each do |convo| %>
+  <%= link_to conversation_path(convo) do %>
+  <div>
+    <h3><%= convo.driver.first_name.capitalize + " " + convo.driver.last_name.capitalize  %> </h3>
+    <% if convo.messages.count > 0 %>
+    <p><%=convo.messages.last.text%></p>
+    <%end %>
+  </div>
+  <%end%>
+<%end%>

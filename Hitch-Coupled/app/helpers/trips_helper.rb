@@ -68,12 +68,19 @@ end
     passenger_trips = current_user.passenger_trips
   end
 
-  def riders
-      @trip = Trip.find(params[:id])
+  def interested_parties
+      @conversations = Conversation.where(trip_id: params[:id]).to_a
       riders =[]
-      @trip.conversations.each do |convo|
-        person = convo.passenger
-        riders.push(person)
+      all_interested = @conversations.map do |convo|
+        convo.passenger
       end
+  end
+
+  def confirmed_passengers
+    @trip = Trip.find(params[:id]).passengers
+  end
+
+  def pending_passengers
+    interested_parties - confirmed_passengers
   end
 end

@@ -156,8 +156,8 @@ function drop(ev) {
 <div id = "conversations-container" >
   <h1>Pending Passengers</h1>
   <div id= "avatars">
-    <% riders.each do |rider| %>
-    <%= image_tag rider.passenger.profile_pic, :class => "avatars", :id => rider.passenger.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <% pending_passengers.each do |rider| %>
+    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :dragable => "true", :ondragstart => "drag(event)" %>
     <%end%>
 
   </div>
