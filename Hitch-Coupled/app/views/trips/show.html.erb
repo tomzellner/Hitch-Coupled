@@ -124,17 +124,22 @@ function drop(ev) {
 <%# END OF STAR RATING CODE %>
 <p>Drag Your name into the car</p>
 
+<div id="drag-stack">
 <%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>  
-<div id="passenger-container" >
+	<div id="passenger-container-outside" >
+		<div id="passenger-container-inside">
+			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat5" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat6" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+			<li id="seat7" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+		</div>
+	</div>
 
-<div id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<div id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-<br>
-</div>
-
-<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+	<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
+	</div>
 
 </body>
 <br>
