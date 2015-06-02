@@ -23,7 +23,7 @@ class Trip < ActiveRecord::Base
 		self.start_city = self.start_city.titleize
 		self.start_state = self.start_state.titleize
 		self.end_city = self.end_city.titleize
-		self.end_state = self.end_city.titleize
+		self.end_state = self.end_state.titleize
 	end
 
 ##################################################
