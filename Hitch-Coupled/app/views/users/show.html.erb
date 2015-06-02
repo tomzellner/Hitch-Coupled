@@ -17,6 +17,7 @@
 
 <% else %>
 
+
    <h1>Hello <%= @user.first_name.capitalize %></h1>
     <div class=" profile">
       <img src="<%= @user.profile_pic %>">
@@ -27,6 +28,7 @@
         <h5>Rating: <%= rated_avg %> </h5>
        </div>
     <% end %>
+
 
   <h2>Upcoming Trips</h2>
 
