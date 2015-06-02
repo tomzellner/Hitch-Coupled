@@ -2,33 +2,84 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#drag-stack {
+	position: relative;
+	border: none;
+}
 #rover-wrapper {
-    position: relative;
+    position: absolute;
     left: 0px;
     top: 0px;
     z-index: -2;
 }
 
-#drag1, #drag2 {
-	width: 50px;
-	height: 50px;
-	position: relative;
+#passenger-container-outside {
+	width: 300px;
+	height: 200px;
+	left: 255px;
+	top: 100px;
+	position: absolute;
+	z-index: -1;
+	border: none;
 }
 
-#passenger-container {
-	width: 400px;
-	height: 200px;
-	margin-left: 240px;
-	margin-top: 100px;
-	position: absolute;
-	display: inline-block;
+#passenger-container-inside {
+	position: relative;
+	width: 299px;
+	height: 199px;
 	z-index: 0;
 	border: none;
 }
 
-#seat1, #seat2, #seat3, #seat4{width:100px;height:100px;border:1px solid #aaaaaa; float: left; z-index: 0}
+#seat1, #seat2, #seat3, #seat4, #seat5, #seat6, #seat7 { 
+list-style: none;
+width: 50px;
+height: 50px;
 
+border:1px solid #aaaaaa; 
+position: absolute;
+z-index: 0}
 
+#seat1 {
+top: 20px;
+left: 20px;
+}
+
+#seat2 { 
+top: 20px;
+left: 110px;
+}
+ 
+#seat3 { 
+top: 130px;
+left: 20px;
+}
+
+#seat4 { 
+top: 130px;
+left: 110px;
+}
+
+#seat5 { 
+top: 45px;
+left: 210px;
+}
+
+#seat6 { 
+top: 110px;
+left: 210px;
+}
+
+#seat7 { 
+top: 75px;
+left: 110px;
+}
+
+#drag1, #drag2 {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+}
 
 
 .starRating a{
