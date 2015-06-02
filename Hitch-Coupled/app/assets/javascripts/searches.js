@@ -40,6 +40,8 @@ var displaySearch = function(event) {
 		}
 	).done(function(data){
 		$('#search_div').toggle(false)
+		$('#hide_form').html('Search Trips')
+		$('#hide_form').attr('id', 'show_form')
 		var context = {trip: data};
 		$('#all_trips div' ).empty();
 		// debugger
