@@ -1,3 +1,8 @@
     <h3><%= "Convo w/ " + @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
     <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
-    <%= link_to "Add to Trip", trip_add_passenger_path(@conversation.trip)%>
+    <%= form_for trip_add_passenger_path(@conversation.trip) do |f| %>
+        <%= f.hidden_field :driver_id, :value => 1 %>
+        <%= f.hidden_field :passenger_id, :value => current_user.id %>
+        <%= f.hidden_field :trip_id, :value => 1 %>
+        <%= f.submit("Add " + @conversation.passenger.first_name.capitalize + " to Trip!" ) %>
+    <% end %>

@@ -128,7 +128,7 @@ class TripsController < ApplicationController
 
 	def trip_params
       params.require(:trip).permit(:start_city, :start_state, :end_city, :end_state, :start_date, :end_date, :num_passengers, :driver_id, :car_id,)
-    end
+  end
 
 
 end
