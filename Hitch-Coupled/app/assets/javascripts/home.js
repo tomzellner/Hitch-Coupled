@@ -14,7 +14,8 @@ function homeBindings(){
 
 var driverForm = function(event) {
 	event.preventDefault()
-	$('#homediv').remove('div')
+	debugger
+	$(this).parent().parent().parent().hide()
 	$('#hidden_form').show()
 }
 
