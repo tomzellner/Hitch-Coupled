@@ -51,3 +51,12 @@ display: block;
     border-radius: 50%;
 
 }
+
+a.upcoming_trip{
+    text-decoration: none;
+    color: black;
+}
+
+div.upcoming:hover{
+    background-color: red;
+}
