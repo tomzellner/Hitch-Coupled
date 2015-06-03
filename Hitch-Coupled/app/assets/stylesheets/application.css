@@ -25,7 +25,7 @@
 height:50px;
     background:#373737;
     border:1px solid #CCC;
-    width:960px;
+    width:100%;
     margin:0px auto;
     font: white;
 }
@@ -66,7 +66,7 @@ footer {
 }
 
 body {
-  background-color: #EEEEEE;
+  background-color: white;
 }
 
 
