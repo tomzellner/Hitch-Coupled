@@ -73,11 +73,11 @@ end
   end
 
   def current_user_driver_trips
-    driver_trips = current_user.driver_trips
+    driver_trips = current_user.driver_trips.to_a
   end
 
   def current_user_passenger_trips
-    passenger_trips = current_user.passenger_trips
+    passenger_trips = current_user.passenger_trips.to_a
   end
 
   def interested_parties

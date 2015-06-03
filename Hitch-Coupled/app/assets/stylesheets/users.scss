@@ -53,7 +53,6 @@ position: center;
     -o-border-radius: 50%;
     border-radius: 50%;
 
-
 }
 
 .container h1{
@@ -62,5 +61,17 @@ position: center;
 
 .container h2 {
     margin-left: 25px;
+}
+
+
+
+
+a.upcoming_trip{
+    text-decoration: none;
+    color: black;
+}
+
+div.upcoming:hover{
+    background-color: red;
 }
 

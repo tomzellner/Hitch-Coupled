@@ -20,15 +20,11 @@
 /*	MAIN CONTAINER
 	Set the width to whatever you want the width of your site to be. */
 .container {
-	max-width: 700px;
+	max-width: 100%;
 	margin: 0 auto;
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif, Proxima nova;
-	background-color: white;
+	background-color: transparent;
 	color:black;
-
-
-
-
 
 }
 
