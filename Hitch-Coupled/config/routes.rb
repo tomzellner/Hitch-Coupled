@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :images, only: [:index]
 
 
 
 
+resources :searches
 
   devise_for :users, :controllers => {registrations: 'registrations'}
 
@@ -10,13 +12,12 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
 
 
-  resources :conversations do
+resources :conversations do
     resources :messages
-  end
+end
 
 
-    resources :users do
-
+resources :users do
     resources :cars
 end
 

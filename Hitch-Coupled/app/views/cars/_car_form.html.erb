@@ -1,11 +1,6 @@
 <ul id='error'> </ul>
-<%= form_for [@user, @car], :html => {:class => "car_form", :id => current_user.id} do |f| %>
+<%= form_for [@user, @car], {:class => "car_form", :id => current_user.id} do |f| %>
 
-<p>
-   <%= f.label(:seats, 'Number of Passengers') %>
-   <br>
-    <%= f.select(:seats, options_for_select(1..7)) %>
-</p>
 <p>
     <%= f.label(:make, 'Make') %>
     <br>
@@ -17,14 +12,18 @@
     <%= f.text_field(:model) %>
 </p>
 <p>
-    <%= f.label(:type_of, 'Type') %>
-    <br>
-    <%= f.text_field(:type_of) %>
+    <%= f.select(:seats, options_for_select(1..7), {:prompt => 'Number of Seats'}) %>
+
+    <%= f.select(:type_of, options_for_select(type_of_cars), {:prompt => 'Type of Car'}) %>
 </p>
 <p>
     <%= f.label(:year, 'Year') %>
     <br>
-    <%= f.text_field(:year) %>
+    
+    <%= f.select(:year, options_for_select([*1970..2016].reverse), {:prompt => 'Year'}) %>
+</p>
+<p>
+    <%= f.file_field :car_pic %>
 </p>
     <%= f.submit('Create') %>
   <% end %>

@@ -1,0 +1,6 @@
+<%= form_for @conversation do |f| %>
+        <%= f.hidden_field :driver_id, :value => @driver.id %>
+        <%= f.hidden_field :passenger_id, :value => current_user.id %>
+        <%= f.hidden_field :trip_id, :value => params[:id] %>
+        <%= f.submit("I'm Interested!") %>
+    <% end %>

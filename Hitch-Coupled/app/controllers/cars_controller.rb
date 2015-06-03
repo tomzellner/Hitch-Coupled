@@ -1,20 +1,28 @@
 class CarsController < ApplicationController
-require 'imgur'
+	require 'imgur'
 	def new
 		@car = Car.new
 
 	end
-
 	def create
-		# imgur_client = Imgur.new("57a446e074f93b5")
-	 #   	image_path = params[:car][:car_pic].tempfile.path
-	 #   	image = Imgur::LocalImage.new(image_path)
-	 #  	image_url = imgur_client.upload(image).link
-	 #   	puts image_url
-	 #   	params[:car][:car_pic] = image_url
-
+		puts '*' * 50
+		p params[:car][:car_pic]
 		@car = Car.new(car_params)
 		@car.user = current_user
+
+		if params[:car][:car_pic].nil?
+			image_url = 'http://i.imgur.com/8dy2FlX.png'
+		else
+			imgur_client = Imgur.new("57a446e074f93b5")
+
+		   image_path = params[:car][:car_pic].tempfile.path
+
+		   image = Imgur::LocalImage.new(image_path)
+		   image_url = imgur_client.upload(image).link
+		end
+		   puts image_url
+		   params[:car][:car_pic] = image_url
+		   @car.car_pic = image_url
 
 
 		respond_to do |format|
@@ -27,9 +35,6 @@ require 'imgur'
         	format.json { render :json => @car.errors.full_messages, :status => :unprocessable_entity }
 			end
 		end
-
-
-
 	end
 
 	def show
