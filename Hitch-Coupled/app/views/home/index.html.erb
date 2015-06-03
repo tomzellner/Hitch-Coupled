@@ -1,22 +1,24 @@
 
-<div id='homediv'> 
+<div  id='homediv'> 
 	<div id='sticky' style="height: 100%;">
 
-<video autoplay loop style="width: 100%; position: fixed;">
-  <source src="/assets/cloud.mp4" type="video/mp4">
+<video controls muted autoplay loop style="width: 100%; position: fixed;">
+  <source src="/assets/drive.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
-	</div>
 
+
+	</div>
+<div class='container'>
 <nav>
 <% if user_signed_in? %>
 
 	<div id="headerz">
-	<h1>What would you like to do?</h1>
-</div>
-
-
 	<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>
+</nav>
+
+
+	
 
 
 	<div id = 'driver_story' class = 'col span_6'>
@@ -42,5 +44,5 @@ Your browser does not support the video tag.
 	</div>
 
 <% end %>
-</nav>
+</div>
 </div>

@@ -14,6 +14,7 @@ $visual-grid: true;
   font-weight: bold;
   position: fixed;
   top: 0;
+  z-index: 999999;
 }
 
 #homediv{
@@ -42,12 +43,7 @@ background: rgba(0,0,0,0.5);
  display: block;
     margin: 0 auto;
     height: 625px;
-    width: 40%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
+   
   }
 
 
