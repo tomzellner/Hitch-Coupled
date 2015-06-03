@@ -13,13 +13,15 @@ $visual-grid: true;
   color: #FFF;
   font-weight: bold;
   position: fixed;
+  top: 0;
 }
 
 #homediv{
-  
+
     overflow-y: scroll;
     width: 100%;
     height: 1300px;
+
 }
 
 #homediv nav {

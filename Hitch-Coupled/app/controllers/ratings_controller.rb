@@ -5,13 +5,21 @@ class RatingsController < ApplicationController
 
 	def create
 		
-		rating = Rating.new(rating_params)
+		@rating = Rating.new(rating_params)
+		@rating.score.to_i
+
+		respond_to do |format|
+	        if @rating.save
+	          format.json { render :json => @rating }
+	          format.html {redirect :back}
+	        else
+	        	format.json { render :json => @rating.errors.full_messages, :status => :unprocessable_entity  }
+	          	format.html {redirect :back}
+	          end
+	          
 
 		
-		if rating.save
-			redirect_to :back
-		else
-			status 400
+
 		end
 
 	end

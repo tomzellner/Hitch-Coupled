@@ -15,13 +15,13 @@ function homeBindings(){
 var driverForm = function(event) {
 	event.preventDefault()
 	debugger
-	$(this).parent().parent().parent().hide()
-	$('#hidden_form').show()
+	$(this).parent().parent().parent().slideUp()
+	$('#hidden_form').slideToggle()
 }
 
 var showCarForm = function(event) {
 	event.preventDefault()
-	$('#trip_new_car').show()
+	$('#trip_new_car').slideToggle()
 }
 
 var newCar = function(event) {
