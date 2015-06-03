@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150602184954) do
+ActiveRecord::Schema.define(version: 20150602174952) do
 
   create_table "cars", force: :cascade do |t|
     t.integer  "seats"
@@ -20,13 +20,8 @@ ActiveRecord::Schema.define(version: 20150602184954) do
     t.string   "type_of"
     t.integer  "year"
     t.integer  "user_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "car_pic"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "conversations", force: :cascade do |t|
