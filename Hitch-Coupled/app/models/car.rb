@@ -11,7 +11,7 @@ class Car < ActiveRecord::Base
 	def tileize_info
 		self.make = self.make.titleize
 		self.model = self.model.titleize
-		self.type_of = self.end_city.titleize
+		self.type_of = self.type_of.titleize
 	end
 
 

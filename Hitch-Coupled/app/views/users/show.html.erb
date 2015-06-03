@@ -32,14 +32,21 @@
 
   <h2>Upcoming Trips</h2>
 
-    <% @user.driver_trips.each do |t| %>
-      <div class= "upcomingtrips">
-        <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
-          <% if @user = current_user %>
-          <%= link_to 'edit trip', edit_trip_path(t)  %>
-    <% end %>
-      </div>
-    <% end %>
+    <%current_user_trips.each do |trip| %>
+    <%= link_to trip_path(trip), :class =>  "upcoming_trip" do %>
+    <div class = "upcoming">
+      <h3><%= trip.start_city + " to " + trip.end_city %> (<%=trip.start_date.to_time.strftime('%B %e 20%y')%>)</h3>
+
+      Car: <%= image_tag trip.car.car_pic, :class => "nav_button" %>
+      Driver: <%= image_tag trip.driver.profile_pic, :class => "nav_button" %>
+      Passengers: <% trip.passengers.each do |passenger| %>
+        <%= image_tag passenger.profile_pic, :class => "nav_button" %>
+      <% end %>
+    </div>
+    <%end%>
+    <%end%>
+
+
 
 
 
