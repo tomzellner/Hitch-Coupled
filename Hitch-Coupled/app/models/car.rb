@@ -2,6 +2,7 @@ class Car < ActiveRecord::Base
 	 validates_presence_of :make, :model, :year, :type_of, :seats
 	 validates :seats, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 7}
 
+
 	before_save :tileize_info
 	before_create :tileize_info
 
@@ -24,6 +25,7 @@ class Car < ActiveRecord::Base
 		self.model = self.model.titleize
 		self.type_of = self.type_of.titleize
 	end	
+
 
 	belongs_to :user
 	has_many :trips

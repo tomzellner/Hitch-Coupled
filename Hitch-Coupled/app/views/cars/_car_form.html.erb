@@ -1,5 +1,5 @@
 <ul id='error'> </ul>
-<%= form_for [@user, @car], :html => {:multipart => true, :class => "car_form", :id => current_user.id} do |f| %>
+<%= form_for [@user, @car], {:class => "car_form", :id => current_user.id} do |f| %>
 
 <p>
     <%= f.label(:make, 'Make') %>
