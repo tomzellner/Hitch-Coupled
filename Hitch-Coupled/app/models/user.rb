@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
 
-    validates_presence_of :first_name, :last_name, :birthdate
-
+    validates_presence_of :first_name, :last_name, :birthdate, :profile_pic
 
     before_save :tileize_info
     before_create :tileize_info
@@ -19,6 +18,7 @@ class User < ActiveRecord::Base
         self.profile_pic = 'http://www.topnotchentertainment.in/images/artist/default.jpg'
       end
     end
+
 
 
 

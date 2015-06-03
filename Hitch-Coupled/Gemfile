@@ -30,8 +30,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'handlebars_assets', '~> 0.4.4'
 gem 'sprockets'
 gem 'imgur-api'
-gem 'bourbon'
-gem 'neat'
 
 gem 'geocoder'
 gem 'gmaps4rails'
