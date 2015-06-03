@@ -40,10 +40,13 @@ position: center;
 }
 
 .car_details img {
-display: block;
-    margin: 0 auto;
-    height: 300px;
-    width: 300px;
+    position: static;
+    display: inline;
+    float-left: 600px;
+    float-right: 200px;
+    margin-left: 300px;
+    height: 250px;
+    width: 250px;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
@@ -51,3 +54,24 @@ display: block;
     border-radius: 50%;
 
 }
+
+.container h1{
+    margin-left: 35px;
+}
+
+.container h2 {
+    margin-left: 25px;
+}
+
+
+
+
+a.upcoming_trip{
+    text-decoration: none;
+    color: black;
+}
+
+div.upcoming:hover{
+    background-color: red;
+}
+

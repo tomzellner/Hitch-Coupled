@@ -4,16 +4,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
+ 
+#hidden_form {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 #header {
   color: #FFF;
   font-weight: bold;
   position: fixed;
+  top: 0;
+  z-index: 999999;
 }
 
 #homediv{
+
     overflow-y: scroll;
     width: 100%;
     height: 1300px;
+
 }
 
 #homediv nav {
@@ -30,18 +39,29 @@ $visual-grid: true;
 }
 
 #driver_story {
-background-color: white;
+background: rgba(0,0,0,0.5);
  display: block;
     margin: 0 auto;
-    height: 625px;;
-
+    height: 625px;
+   
   }
+
+
+
+#headerz{
+ background: #333;
+ border-top-left-radius: 90px 90px;
+ border-top-right-radius: 90px 90px;
+ color: white;
+}
+
 
   #driver_pic {
   float: right;
   }
 
   #passenger_story {
-  background-color: white;
+  background: rgba(0,0,0,0.5);
   height: 625px;
   }
+

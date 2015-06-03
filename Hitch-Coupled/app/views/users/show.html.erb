@@ -1,10 +1,13 @@
-
+<div class='container'>
 <% if @user != current_user %>
 <!-- IF IT IS NOT YOUR PAGE -->
 
 
 <div class="container">
-    <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
+
+  <div id="head">
+    <h1>Welcome to <%= @user.first_name%>'s Profile</h1>
+    </div>
       <div class="profile">
         <img src="<%= @user.profile_pic %>">
       </div>
@@ -17,14 +20,15 @@
 
 <% else %>
 
-
+  <div id="head_er">
    <h1>Hello <%= @user.first_name.capitalize %></h1>
+  </div>
     <div class=" profile">
       <img src="<%= @user.profile_pic %>">
     </div>
        <div id="user_info" >
-         <h5><%= @user.email %></h5>
-        <h5><%= @user.phonenumber %></h5>
+         <h5>Email: <%= @user.email %></h5>
+        <h5>Phone: <%= @user.phonenumber %></h5>
         <h5>Rating: <%= rated_avg %> </h5>
        </div>
     <% end %>
@@ -32,14 +36,21 @@
 
   <h2>Upcoming Trips</h2>
 
-    <% @user.driver_trips.each do |t| %>
-      <div class= "upcomingtrips">
-        <a href='/trips/<%=t.id%>'> <%= t.end_city %> </a><br>
-          <% if @user = current_user %>
-          <%= link_to 'edit trip', edit_trip_path(t)  %>
-    <% end %>
-      </div>
-    <% end %>
+    <%current_user_trips.each do |trip| %>
+    <%= link_to trip_path(trip), :class =>  "upcoming_trip" do %>
+    <div class = "upcoming">
+      <h3><%= trip.start_city + " to " + trip.end_city %> (<%=trip.start_date.to_time.strftime('%B %e 20%y')%>)</h3>
+
+      Car: <%= image_tag trip.car.car_pic, :class => "nav_button" %>
+      Driver: <%= image_tag trip.driver.profile_pic, :class => "nav_button" %>
+      Passengers: <% trip.passengers.each do |passenger| %>
+        <%= image_tag passenger.profile_pic, :class => "nav_button" %>
+      <% end %>
+    </div>
+    <%end%>
+    <%end%>
+
+
 
 
 
@@ -77,6 +88,7 @@
 
 <% end %>
 
+</div>
 </div>
 </div>
 

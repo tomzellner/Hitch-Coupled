@@ -20,11 +20,12 @@
 /*	MAIN CONTAINER
 	Set the width to whatever you want the width of your site to be. */
 .container {
-	max-width: 100%;
+	max-width: 80%;
 	margin: 0 auto;
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif, Proxima nova;
 	background-color: transparent;
 	color:black;
+
 }
 
 
@@ -63,6 +64,10 @@
 		margin-left: 0;
 	}
 }
+
+/*body {
+	background-color: #FFC04D;
+}*/
 
 
 
