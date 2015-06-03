@@ -8,6 +8,7 @@ var ratingBindings = function(){
 }
 
 var rateStar = function(){
+	var thiss $(this)
 
 	
 	$.ajax({
@@ -17,6 +18,8 @@ var rateStar = function(){
 		dataType: 'JSON'
 		}
 	).done(function(data){
+		debugger
+		
 		
 		}
 	).fail(function(data){
