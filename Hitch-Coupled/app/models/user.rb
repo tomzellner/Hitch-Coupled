@@ -1,14 +1,24 @@
 class User < ActiveRecord::Base
+
     validates_presence_of :first_name, :last_name, :birthdate, :profile_pic
 
     before_save :tileize_info
     before_create :tileize_info
 
+    before_save :default_photo
+    before_create :default_photo
+
     def tileize_info
       self.first_name = self.first_name.titleize
       self.last_name = self.last_name.titleize
-      
     end
+
+    def default_photo
+      if !self.profile_pic
+        self.profile_pic = 'http://www.topnotchentertainment.in/images/artist/default.jpg'
+      end
+    end
+
 
 
 
