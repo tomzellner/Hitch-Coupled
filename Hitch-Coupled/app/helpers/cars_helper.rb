@@ -8,4 +8,11 @@ module CarsHelper
 		car_array
 
 	end
+
+	def type_of_cars
+		['Sedan', 'Truck', 'Compact', 'SUV', 'Convertable', 'Van', 'Mini-Van']
+
+	end
+
+
 end

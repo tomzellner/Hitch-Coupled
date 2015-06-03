@@ -6,18 +6,42 @@ $visual-grid: true;
 
 #header {
   color: #FFF;
-
   font-weight: bold;
+  position: fixed;
 }
-#driver_story{
 
+#homediv{
+    overflow-y: scroll;
+    width: 100%;
+    height: 1300px;
+}
+
+#homediv nav {
+    margin-top: 825px;
+    z-index: 1000;
+    background-color: white;
+}
+
+#sticky {
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    z-index: -1;
+}
+
+#driver_story {
+background-color: white;
  display: block;
     margin: 0 auto;
-    height: auto;
-    width: 40%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
+    height: 625px;;
+
+  }
+
+  #driver_pic {
+  float: right;
+  }
+
+  #passenger_story {
+  background-color: white;
+  height: 625px;
   }
