@@ -35,20 +35,20 @@ height:50px;
 
 
 .nav_button{
-  display: inline-block;
-  height: 35px;
-  width: 35px;
-  background-color: #FFB566;
-  border-radius: 10px;
-  -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-  -moz-box-shadow:    1px 1px 3px 5px #8080FF;
-  -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
-  box-shadow:         1px 1px 3px 5px #8080FF;
-}
+    display: absolute ;
+    height: 40px;
+    width: 35px;
+    /*background-color: #FFB566;*/
+    /*border-radius: 10px;*/
+    -webkit-border-ra/*dius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      border-radius: 50%;*/
+   /* -moz-box-shadow:    1px 1px 3px 5px #8080FF;
+    -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
+    box-shadow:         1px 1px 3px 5px #8080FF;*/
+  }
 
 table#nav_buttons{
   float: right;
@@ -109,10 +109,11 @@ div {
 
 
 #header button{
-border-radius: 25px;
--moz-box-shadow:    1px 1px 3px 5px #8080FF;
+  height: 3em;
+/*border-radius: 25px;*/
+/*-moz-box-shadow:    1px 1px 3px 5px #8080FF;
 -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
-box-shadow:         1px 1px 3px 5px #8080FF;
+box-shadow:         1px 1px 3px 5px #8080FF;*/
 }
 
 #head_er {
