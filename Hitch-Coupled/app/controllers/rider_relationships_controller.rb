@@ -9,6 +9,7 @@ class RiderRelationshipsController < ApplicationController
         format.json { render :json => @passenger }
       else
         status 400
+
       end
     end
   end
