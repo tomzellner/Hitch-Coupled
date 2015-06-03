@@ -1,8 +1,9 @@
 <div id='homediv'>
 
 <% if user_signed_in? %>
-	
+	<div id="headerz">
 	<h1>What would you like to do?</h1>
+</div>
 
 	<div id = 'driver_story col' class = 'col span_6'>
 
@@ -25,7 +26,7 @@
 
 <% if user_signed_in?  %>
 	<div hidden class = 'container' id = 'hidden_form' >
-		<%= render "trips/trip_form" %> 
+		<%= render "trips/trip_form" %>
 	</div>
 
 

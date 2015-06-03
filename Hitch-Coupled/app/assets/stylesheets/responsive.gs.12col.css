@@ -25,7 +25,9 @@
 	font-family: Helvetica Neue,Helvetica,Arial,sans-serif, Proxima nova;
 	background-color: white;
 	color:black;
-	
+
+
+
 
 
 }
@@ -65,6 +67,10 @@
 	.gutters .col:first-child {
 		margin-left: 0;
 	}
+}
+
+body {
+	background-color: #FFC04D;
 }
 
 

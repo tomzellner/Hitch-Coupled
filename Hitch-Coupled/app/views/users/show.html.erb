@@ -4,7 +4,10 @@
 
 
 <div class="container">
-    <h3>Welcome to <%= @user.first_name%>'s Profile</h3>
+
+  <div id="head">
+    <h1>Welcome to <%= @user.first_name%>'s Profile</h1>
+    </div>
       <div class="profile">
         <img src="<%= @user.profile_pic %>">
       </div>
@@ -17,8 +20,9 @@
 
 <% else %>
 
-
+  <div id="head_er">
    <h1>Hello <%= @user.first_name.capitalize %></h1>
+  </div>
     <div class=" profile">
       <img src="<%= @user.profile_pic %>">
     </div>
