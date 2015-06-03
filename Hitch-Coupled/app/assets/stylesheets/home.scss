@@ -33,9 +33,24 @@ $visual-grid: true;
 background-color: white;
  display: block;
     margin: 0 auto;
-    height: 625px;;
-
+    height: 625px;
+    width: 40%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
   }
+
+
+
+#headerz{
+ background: #333;
+ border-top-left-radius: 90px 90px;
+ border-top-right-radius: 90px 90px;
+ color: white;
+}
+
 
   #driver_pic {
   float: right;
@@ -45,3 +60,4 @@ background-color: white;
   background-color: white;
   height: 625px;
   }
+

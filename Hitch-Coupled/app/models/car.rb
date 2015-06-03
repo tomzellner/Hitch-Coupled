@@ -24,7 +24,6 @@ class Car < ActiveRecord::Base
 		self.make = self.make.titleize
 		self.model = self.model.titleize
 		self.type_of = self.type_of.titleize
-
 	end
 
 

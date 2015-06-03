@@ -23,19 +23,33 @@
 
 #header {
 height:50px;
-    background:#373737;
+    background:#333;
     border:1px solid #CCC;
+<<<<<<< HEAD
+    width:975px;
+=======
     width:100%;
+>>>>>>> master
     margin:0px auto;
     font: white;
 }
+
+
 
 .nav_button{
   display: inline-block;
   height: 35px;
   width: 35px;
-  background-color: white;
+  background-color: #FFB566;
   border-radius: 10px;
+  -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+  -moz-box-shadow:    1px 1px 3px 5px #8080FF;
+  -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
+  box-shadow:         1px 1px 3px 5px #8080FF;
 }
 
 table#nav_buttons{
@@ -65,29 +79,39 @@ footer {
   background: #BBB;
 }
 
-body {
-  background-color: white;
+
+#head {
+    background: #333;
 }
+
+
 
 
 
 
 div {
-	border: thin solid black
+  border: thin solid black;
 }
 
 .container {
-	max-width: 1240px;
+  max-width: 1240px;
   background-color: white;
-
-
-
-
+   border-radius: 90px;
 }
 
 
 
+#header button{
+border-radius: 25px;
+-moz-box-shadow:    1px 1px 3px 5px #8080FF;
+-webkit-box-shadow: 1px 1px 3px 5px #8080FF;
+box-shadow:         1px 1px 3px 5px #8080FF;
+}
 
-
-
+#head_er {
+    background: #333;
+    border-top-left-radius: 90px 90px;
+    border-top-right-radius: 90px 90px;
+    color: white;
+}
 

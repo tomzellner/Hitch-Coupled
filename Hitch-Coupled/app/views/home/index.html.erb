@@ -1,4 +1,4 @@
-<div id='homediv'> 
+<div id='homediv'>
 	<div id='sticky'>
 <video autoplay loop style="width: 100%; position: fixed;">
   <source src="/assets/cloud.mp4" type="video/mp4">
@@ -8,8 +8,12 @@ Your browser does not support the video tag.
 
 <nav>
 <% if user_signed_in? %>
-	
+	<div id="headerz">
+	<h1>What would you like to do?</h1>
+</div>
+
 	<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>
+
 
 	<div id = 'driver_story' class = 'col span_6'>
 
@@ -28,7 +32,7 @@ Your browser does not support the video tag.
 
 <% if user_signed_in?  %>
 	<div hidden class = 'container' id = 'hidden_form' >
-		<%= render "trips/trip_form" %> 
+		<%= render "trips/trip_form" %>
 	</div>
 
 <% end %>
