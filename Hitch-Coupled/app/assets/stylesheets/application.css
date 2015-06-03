@@ -70,11 +70,13 @@ body {
 }
 
 
-
-
-div {
-	border: thin solid black
+#driver_profile:hover{
+  background-color: #FDC468
 }
+
+/*div {
+	border: thin solid black
+}*/
 
 .container {
 	max-width: 1240px;
