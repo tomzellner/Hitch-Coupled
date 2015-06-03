@@ -4,16 +4,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
+ 
+#hidden_form {
+    background: rgba(0, 0, 0, 0.1);
+}
+
 #header {
   color: #FFF;
   font-weight: bold;
   position: fixed;
+  top: 0;
 }
 
 #homediv{
+
     overflow-y: scroll;
     width: 100%;
     height: 1300px;
+
 }
 
 #homediv nav {
@@ -30,7 +38,7 @@ $visual-grid: true;
 }
 
 #driver_story {
-background-color: white;
+background: rgba(0,0,0,0.5);
  display: block;
     margin: 0 auto;
     height: 625px;
@@ -57,7 +65,7 @@ background-color: white;
   }
 
   #passenger_story {
-  background-color: white;
+  background: rgba(0,0,0,0.5);
   height: 625px;
   }
 
