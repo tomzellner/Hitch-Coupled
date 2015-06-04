@@ -1,12 +1,12 @@
 // $(document).ready(tripShowBindings)
 
 $(document).on('ready page:load', function(){
-  
+
   tripShowBindings();
 })
 
 var tripShowBindings = function (){
-	
+
 
 
 	var startGeo = $('#start_geog').attr('class').replace('[', '').replace(']', '').split(',')
@@ -40,5 +40,6 @@ var tripShowBindings = function (){
 	});
 
 }
+
 
 

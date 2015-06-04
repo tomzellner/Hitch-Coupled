@@ -3,10 +3,11 @@ class RiderRelationshipsController < ApplicationController
   def create
     @trip = Trip.find(params[:trip_id])
     @passenger = RiderRelationship.new(passenger_params)
+    @user = User.find(@passenger.passenger_id)
     respond_to do |format|
       if @passenger.save
         format.html {redirect_to @trip}
-        format.json { render :json => @passenger }
+        format.json { render :json => @user }
       else
         status 400
 

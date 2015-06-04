@@ -6,22 +6,29 @@
   position: fixed;
 }
 
+
+
+
 #drag-stack {
 	position: relative;
 	border: none;
+  width:65%;
 }
 #rover-wrapper {
     position: absolute;
     left: 0px;
     top: 0px;
     z-index: -2;
+    background-color: red;
+    width: 320px;
+    height: 210px;
 }
 
 #passenger-container-outside {
-	width: 300px;
-	height: 200px;
-	left: 255px;
-	top: 100px;
+	width: 150px;
+	height: 100px;
+	left: 125px;
+	top: 50px;
 	position: absolute;
 	z-index: -1;
 	border: none;
@@ -29,38 +36,40 @@
 
 #passenger-container-inside {
 	position: relative;
-	width: 299px;
-	height: 199px;
+	width: 149px;
+	height: 99px;
 	z-index: 0;
 	border: none;
+
 }
 
 #seat1, #seat2, #seat3, #seat4, #seat5, #seat6, #seat7 {
 list-style: none;
-width: 50px;
-height: 50px;
+width: 35px;
+height: 35px;
 
 border:1px solid #aaaaaa;
 position: absolute;
+background-color: blue;
 z-index: 0}
 
 #seat1 {
-top: 20px;
+top: 15px;
 left: 20px;
 }
 
 #seat2 {
-top: 20px;
+top: 15px;
 left: 110px;
 }
 
 #seat3 {
-top: 130px;
+top: 60px;
 left: 20px;
 }
 
 #seat4 {
-top: 130px;
+top: 60px;
 left: 110px;
 }
 
@@ -149,3 +158,4 @@ img#car_trip_show{
   border-radius: 50%;
 
 }
+
