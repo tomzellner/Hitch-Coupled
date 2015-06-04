@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #message_head {
-  background: #333;
+  background: tomato;
  color: white;
+}
+
+.messages-divider {
+  border-bottom: black 1px;
 }
