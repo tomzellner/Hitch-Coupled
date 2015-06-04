@@ -25,7 +25,13 @@
 height:50px;
     background:#333;
     border:1px solid #CCC;
+<<<<<<< HEAD
     width:975px;
+=======
+
+    width:100%;
+
+>>>>>>> master
     margin:0px auto;
     font: white;
     font-family:  LeagueGothicRegular, Helvetica, Arial, Sans Serif;
@@ -38,6 +44,7 @@ a button{
 
 
 
+<<<<<<< HEAD
 
 
 .nav_button1{
@@ -126,6 +133,7 @@ a button{
 
 
 
+
 table#nav_buttons{
   float: right;
   padding: auto;
@@ -165,6 +173,14 @@ footer {
 }
 
 
+#driver_profile:hover{
+  background-color: #FDC468
+}
+
+
+/*div {
+	border: thin solid black
+}*/
 
 
 
@@ -172,6 +188,7 @@ footer {
 div {
   border: thin solid black;
 }
+
 
 .container {
   max-width: 1240px;
@@ -182,6 +199,7 @@ div {
 
 
 #header button{
+<<<<<<< HEAD
 border-radius: 25px;
 -moz-box-shadow:    1px 1px 1px 1px #8080FF;
 -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
@@ -189,6 +207,13 @@ box-shadow:         1px 1px 1px 1px #8080FF;
 transition: 1s;
 background: #FFB566;
 
+=======
+  height: 3em;
+/*border-radius: 25px;*/
+/*-moz-box-shadow:    1px 1px 3px 5px #8080FF;
+-webkit-box-shadow: 1px 1px 3px 5px #8080FF;
+box-shadow:         1px 1px 3px 5px #8080FF;*/
+>>>>>>> master
 }
 
 #head_er {

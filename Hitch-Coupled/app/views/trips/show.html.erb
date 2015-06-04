@@ -23,6 +23,8 @@ function drop(ev) {
 
 <body>
 
+<div class='container'>
+
 
 <% if current_user == @driver %>
 	<h2>Welcome to Your Trip </h2>
@@ -61,11 +63,11 @@ function drop(ev) {
 <p  id='start_geog' class ='<%=start_geo%>'>  </p>
 <p  id='end_geog' class = '<%=end_geo%>'>  </p>
 
-<div class='col span_12' >
+
   <div id="directions" class='col span_12' style= 'height: 20em'>
 
   </div>
-</div>
+
 
 
 <div>
@@ -81,24 +83,38 @@ function drop(ev) {
 <div>
   <h3>Driver: </h3>
 </div>
-<%= link_to user_path(@driver) do  %>
 	<div id = 'driver_profile'>
 
+<%= link_to user_path(@driver) do  %>
 		<%= image_tag @driver.profile_pic, :class => "avatars" %>
+<% end %>
     <p><%= @driver.first_name.capitalize + " " + @driver.last_name.capitalize %></p>
-	</div>
   <div>
-    <% if @trip.ended && @trip.passengers.include?(current_user) && !current_user == @driver%>
-			<%= form_for @rating do |f| %>
-				<%= f.hidden_field :rater_id, :value => current_user.id %>
-				<%= f.hidden_field :rated_id, :value => @driver.id %>
-				<%= f.label(:score, 'Score') %>
-				<%= f.select(:score, options_for_select(1..5)) %>
-				<%= f.submit('Rate') %>
-			<% end %>
+    <% if @trip.ended && @trip.passengers.include?(current_user) && current_user != @driver%>
+		<form action='/ratings' method='POST' class="ratings-form">
+			<p><h3>Ratings</h3></p>
+			<p class="starRating">
+				<input type="hidden" name="rating[rater_id]" value="<%= current_user.id %>">
+				<input type="hidden" name="rating[rated_id]" value="<%= @driver.id %>">
+				
+				<input id="rating5" type="radio" name="rating[score]" value=5>
+			    <label for="rating5">1</label>
+			    <input id="rating4" type="radio" name="rating[score]" value=4>
+			    <label for="rating4">2</label>
+			    <input id="rating3" type="radio" name="rating[score]" value=3>
+			    <label for="rating3">3</label>
+			    <input id="rating2" type="radio" name="rating[score]" value=2>
+			    <label for="rating2">4</label>
+			    <input id="rating1" type="radio" name="rating[score]" value=1 checked>
+			    <label for="rating1">5</label><br>
+			</p>
+		</form>
+
+			
+
 		<% end %>
 	</div>
-<% end %>
+	</div>
 </div>
 
 
@@ -109,21 +125,33 @@ function drop(ev) {
   <h3>Passengers:</h3>
 </div>
   <% @trip.passengers.each do |p| %>
-	 <%= link_to user_path(p) do  %>
 
 		<div style="border: thin solid black" >
+	 <%= link_to user_path(p) do  %>
 			<%= image_tag p.profile_pic, :class => "avatars" %>
+		<% end %>
       <p><%= p.first_name.capitalize + " " + p.last_name.capitalize %></p>
 		<% if @trip.ended && (@trip.passengers.include?(current_user) || @driver == current_user) && p.id != current_user.id  %>
+				<form action='/ratings' method='POST' class="ratings-form">
+					<p><h3>Ratings</h3></p>
+					<p class="starRating">
+						<input type="hidden" name="rating[rater_id]" value="<%= current_user.id %>">
+						<input type="hidden" name="rating[rated_id]" value="<%= p.id %>">
+						
+						<input id="rating5" type="radio" name="rating[score]" value=5>
+					    <label for="rating5">1</label>
+					    <input id="rating4" type="radio" name="rating[score]" value=4>
+					    <label for="rating4">2</label>
+					    <input id="rating3" type="radio" name="rating[score]" value=3>
+					    <label for="rating3">3</label>
+					    <input id="rating2" type="radio" name="rating[score]" value=2>
+					    <label for="rating2">4</label>
+					    <input id="rating1" type="radio" name="rating[score]" value=1 checked>
+					    <label for="rating1">5</label><br>
+					</p>
+				</form>
 
-			<%= form_for @rating do |f| %>
-				<%= f.hidden_field :rater_id, :value => current_user.id %>
-				<%= f.hidden_field :rated_id, :value => p.id %>
-				<%= f.label(:score, 'Score') %>
-				<%= f.select(:score, options_for_select(1..5)) %>
-				<%= f.submit('Rate') %>
-			<% end %>
-		<% end %>
+			
 		</div>
 	<% end %>
 <% end %>
@@ -139,7 +167,7 @@ function drop(ev) {
 
 
 	<%# PUT A STAR RATING SYSTEM HERE FOR NOW JUST TO HAVE WORKING CODE APPEAR %>
-<div>
+<!-- <div>
 <form class="ratings-form">
 	<p><h3>Ratings</h3></p>
 	<p class="starRating">
@@ -155,7 +183,7 @@ function drop(ev) {
     <label for="rating1">1</label>
 	</p>
 </form>
-</div>
+</div> -->
 <%# END OF STAR RATING CODE %>
 
 
@@ -192,7 +220,7 @@ function drop(ev) {
 </div>
 
 
-
+</div>
 
 </body>
 

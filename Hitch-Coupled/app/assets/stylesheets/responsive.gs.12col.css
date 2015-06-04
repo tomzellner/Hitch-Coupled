@@ -20,7 +20,7 @@
 /*	MAIN CONTAINER
 	Set the width to whatever you want the width of your site to be. */
 .container {
-	max-width: 100%;
+	max-width: 80%;
 	margin: 0 auto;
 	background-color: transparent;
 	color:black;
@@ -67,6 +67,7 @@
 body {
 	background-color: white;
 }
+
 
 
 

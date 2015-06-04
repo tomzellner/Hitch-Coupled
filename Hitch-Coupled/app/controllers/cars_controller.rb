@@ -28,7 +28,7 @@ class CarsController < ApplicationController
 		respond_to do |format|
 			if @car.save
 			      format.json { render :json => @car }
-			      format.html {redirect_to "/"}
+			      format.html {redirect_to '/'}
 
 			else
 			format.html { redirect_to @trip }
