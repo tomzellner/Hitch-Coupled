@@ -5,6 +5,7 @@ $(document).on('ready page:load', function(){
 
 var signBindings = function() {
 	$('#hidden_sign_up').on('click', showSignUp);
+	
 	$('#all-form-slider').on('click', slideForms)
 
 
