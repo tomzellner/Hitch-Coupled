@@ -22,7 +22,6 @@
 .container {
 	max-width: 100%;
 	margin: 0 auto;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif, Proxima nova;
 	background-color: transparent;
 	color:black;
 
@@ -66,7 +65,7 @@
 }
 
 body {
-	background-color: #FFC04D;
+	background-color: white;
 }
 
 
