@@ -4,6 +4,21 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
+.story-pics {
+    background: rgba(0,0,0,0.5);
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    padding: 50px;
+
+}
+
+#new_trip_from {
+
+}
+
 #sign-forms{
   background: rgba(0, 0, 0, 0.5);
   margin-top: 50px;
@@ -20,7 +35,7 @@ $visual-grid: true;
  #all-form-slider {
    margin-left: 50%;
   margin-top: 50px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.5);
   color: #E66028;
   font-size: 15vw;
   font-family: waterloo-relief;
@@ -30,13 +45,13 @@ $visual-grid: true;
 #sign_in_div {
    width: 50%;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.1)
+    background: rgba(0, 0, 0, 0.5)
 }
 
 
 
 #hidden_form {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #header {
@@ -72,12 +87,6 @@ $visual-grid: true;
 }
 
 #driver_story {
-background: rgba(0,0,0,0.8);
- display: block;
-    margin: 0 auto;
-    height: 675px;
-    padding: 50px;
-
 
   }
 
@@ -97,14 +106,12 @@ background: rgba(0,0,0,0.8);
 
 
   #driver_pic {
-  float: right;
+
 
   }
 
   #passenger_story {
-  background: rgba(0,0,0,0.8);
-  height: 675px;
-  padding: 50px;
+
   }
 
 #main-video {
