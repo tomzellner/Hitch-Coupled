@@ -59,10 +59,11 @@ background: rgba(0,0,0,0.8);
 }
 
 
-.menu-wrapper .stick {
+.menu-wrapper.stick {
   position: fixed;
   top: 50px;
   z-index: 1;
+  width: 80%;
 }
 
 

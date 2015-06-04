@@ -7,13 +7,15 @@
 				Your browser does not support the video tag.
 			</video>
 		</div>
-<nav>
+
 		<div class='container'>
-							<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+			<nav>
+				<% if user_signed_in? %>
+				<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 						<script>
 						function headerz_relocate() {
 							var window_top = $(window).scrollTop();
-							var div_top = 665
+							var div_top = $('.menu-anchor').offset().top;
 
 							if (window_top >= div_top) {
 								$('.menu-wrapper').addClass('stick');
@@ -26,10 +28,8 @@
 							headerz_relocate();
 						});
 						</script>
-			
-				<% if user_signed_in? %>
 
-				<div id="menu-anchor"></div>
+				<div class="menu-anchor"></div>
 
 				<div class="menu-wrapper">
 
@@ -45,9 +45,9 @@
 						<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
 					</div>
 			</div>
-		
+		</nav>
 		</div>
-</nav>
+
 	<% else %>
 	<h1>Please Sign In</h1>
 	<% end %>
@@ -83,7 +83,4 @@ $(function () {
         }
     })
 });
-
-							var div_top = $('#menu-anchor').offset().top;
-
  -->
