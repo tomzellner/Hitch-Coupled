@@ -33,6 +33,7 @@ $visual-grid: true;
   margin-top: 50px;
   width: 325px;
   margin: 0px auto;
+  padding-left: 50px;
 }
 
  #home_logo {
@@ -53,6 +54,8 @@ $visual-grid: true;
 }
 
 #sign_in_div {
+  // padding-left: 50px;
+  // float:right;
    width: 50%;
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.5)
@@ -95,9 +98,10 @@ video {
     background-size: cover;
 }
 
-#driver_story {
-
-  }
+#story_collections{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
 
 #headerz{
  background: #333;
