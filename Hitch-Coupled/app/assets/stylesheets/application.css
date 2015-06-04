@@ -172,12 +172,24 @@ footer {
 
 
 /*div {
+<<<<<<< HEAD
+	border: thin solid black
+}*/
+
+
+
+
+/*div {
+=======
+>>>>>>> master
   border: thin solid black;
 }*/
 
 
 .container {
-  max-width: 1240px;
+  background: rgba(0, 0, 0, 0.2)
+  margin-top: 50px;
+  max-width: 80%;
   background-color: white;
 
 }
@@ -185,21 +197,13 @@ footer {
 
 
 #header button{
-<<<<<<< HEAD
-border-radius: 25px;
--moz-box-shadow:    1px 1px 1px 1px #8080FF;
--webkit-box-shadow: 1px 1px 1px 1px #8080FF;
-box-shadow:         1px 1px 1px 1px #8080FF;
-transition: 1s;
-background: #FFB566;
 
-=======
   height: 3em;
 /*border-radius: 25px;*/
 /*-moz-box-shadow:    1px 1px 3px 5px #8080FF;
 -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
 box-shadow:         1px 1px 3px 5px #8080FF;*/
->>>>>>> master
+
 }
 
 #head_er {
