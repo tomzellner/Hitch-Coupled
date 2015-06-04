@@ -41,8 +41,8 @@ class TripsController < ApplicationController
 		@trip = Trip.new
 		respond_to do |format|
 
-	      format.html
-	      # format.json { render 'trips/new' }
+	      
+	      format.html { render "trips/new", :layout => false  }
 	  end
 	end
 
