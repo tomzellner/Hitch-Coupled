@@ -7,8 +7,9 @@ class CreateCars < ActiveRecord::Migration
       t.string :type_of
       t.integer :year
       t.integer :user_id
+      t.string :car_pic
 
-    	 
+
 
       t.timestamps null: false
     end
