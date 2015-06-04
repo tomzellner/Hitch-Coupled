@@ -8,15 +8,27 @@ function homeBindings(){
   $('#driver_pic').on('click', driverForm);
 
 
-  $('#new_car_link').on('click', showCarForm);
-  $('.car_form').on('submit', newCar)
+  $('nav').on('click', '#new_car_link', showCarForm);
+
+
+  $('nav').on('submit', '#new_car', newCar)
 }
 
 var driverForm = function(event) {
 	event.preventDefault()
-	debugger
+	
 	$(this).parent().parent().parent().slideUp()
 	$('#hidden_form').slideToggle()
+
+	$.ajax({
+		url: '/trips/new',
+		method: 'GET'
+		
+		}
+	).done(function(data) {
+		$('nav').append(data)
+		console.log(data)
+	})
 }
 
 var showCarForm = function(event) {
@@ -27,7 +39,7 @@ var showCarForm = function(event) {
 var newCar = function(event) {
 	event.preventDefault()
 	var cForm = $(this)
-	debugger
+	
 		
 	$.ajax({
 		method: 'POST',
