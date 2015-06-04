@@ -1,7 +1,7 @@
 <div  id='homediv'>
-	<div id='sticky' style="height: 100%;">
+	<div id='sticky' >
 
-<video controls muted autoplay loop style="width: 100%; position: fixed;">
+<video controls muted autoplay loop >
   <source src="/assets/cloud.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
@@ -10,15 +10,15 @@ Your browser does not support the video tag.
 	</div>
 <div class='container'>
 
-
+<div id='logo-container'>
   <%= link_to image_tag('hitch_logo.png', :class => '',  id: 'home_logo'), root_path %>
-
+</div>
 	<!-- <button href='#'  id='all-form-slider'  > hitch. </button> -->
 
 <% if !user_signed_in? %>
 
 
-
+<div id='test-wrapper'>
 	<div id='sign-forms' class='' >
 	<div class=''> </div>
 		<a href="#" id='hidden_sign_up'> Switch Sign In/Sign Out </a>
@@ -30,6 +30,7 @@ Your browser does not support the video tag.
 			<%= render "devise/partials/sign_up" %>
 		</div>
 	</div>
+</div>
 
 <% end %>
 
