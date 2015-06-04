@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150602174952) do
     t.string   "type_of"
     t.integer  "year"
     t.integer  "user_id"
+    t.string   "car_pic"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
