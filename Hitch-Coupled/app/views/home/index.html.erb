@@ -2,7 +2,7 @@
 	<div id='sticky' style="height: 100%;">
 
 <video controls muted autoplay loop style="width: 100%; position: fixed;">
-  <source src="/assets/drive.mp4" type="video/mp4">
+  <source src="/assets/cloud.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -10,8 +10,11 @@ Your browser does not support the video tag.
 	</div>
 <div class='container'>
 
-	<button href='#'  id='all-form-slider'  > hitch. </button>
-<nav>
+
+  <%= link_to image_tag('hitch_logo.png', :class => '',  id: 'home_logo'), root_path %>
+
+	<!-- <button href='#'  id='all-form-slider'  > hitch. </button> -->
+
 <% if !user_signed_in? %>
 
 
@@ -50,7 +53,7 @@ Your browser does not support the video tag.
 	</div>
 
 
-<!-- 
+<!--
     var top = $("#headerz").offset().top
 
     $(window).on('scroll', function () {
@@ -71,7 +74,7 @@ Your browser does not support the video tag.
 
 
 
-</nav>
+
 
 
 
