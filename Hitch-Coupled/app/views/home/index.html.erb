@@ -1,8 +1,8 @@
 <div  id='homediv'>
-	<div id='sticky' style="height: 100%;">
+	<div id='sticky' >
 
-<video controls muted autoplay loop style="width: 100%; position: fixed;">
-  <source src="/assets/drive.mp4" type="video/mp4">
+<video controls muted autoplay loop >
+  <source src="/assets/cloud.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -10,16 +10,19 @@ Your browser does not support the video tag.
 	</div>
 <div class='container'>
 
-	<button href='#'  id='all-form-slider'  > hitch. </button>
-<nav>
+<div id='logo-container'>
+  <%= link_to image_tag('hitch_logo.png', :class => '',  id: 'home_logo'), root_path %>
+</div>
+	<!-- <button href='#'  id='all-form-slider'  > hitch. </button> -->
+
 <% if !user_signed_in? %>
 
 
-
-	<div id='sign-forms' class='row' >
-	<div class='col span_3'> </div>
+<div id='test-wrapper'>
+	<div id='sign-forms' class='' >
+	<div class=''> </div>
 		<a href="#" id='hidden_sign_up'> Switch Sign In/Sign Out </a>
-		<div id ='sign-in-div' class='col span_3'>
+		<div id ='sign-in-div' class=''>
 			<%= render "devise/partials/sign_in" %>
 		</div>
 
@@ -27,6 +30,7 @@ Your browser does not support the video tag.
 			<%= render "devise/partials/sign_up" %>
 		</div>
 	</div>
+</div>
 
 <% end %>
 
@@ -40,17 +44,17 @@ Your browser does not support the video tag.
 
 
 	<div id = 'driver_story' class = 'col span_6'>
-		<%= link_to image_tag('steering_wheel_orange.png', :class => 'col span_6',  id: 'driver_pic'), new_trip_path %>
+		<%= link_to image_tag('steering_wheel_orange.png', :class => 'story-pics',  id: 'driver_pic'), new_trip_path %>
 	</div>
 
 	<div id = 'passenger_story' class = 'col span_6'>
-		<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
+		<%= link_to image_tag('passenger_orange.png',  :class => 'story-pics', id: 'passenger_pic'), trips_path %>
 	</div>
 
 	</div>
 
 
-<!-- 
+<!--
     var top = $("#headerz").offset().top
 
     $(window).on('scroll', function () {
@@ -71,7 +75,7 @@ Your browser does not support the video tag.
 
 
 
-</nav>
+
 
 
 
