@@ -149,19 +149,28 @@ function drop(ev) {
   <h3>Pending Passengers:</h3>
   <div id= "avatars">
     <% pending_passengers.each do |rider| %>
+    <% if current_user == @driver %>
     <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :trip => current_trip.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <% else %>
+    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :trip => current_trip.id%>
+    <%end%>
     <%end%>
 
   </div>
 </div>
 
 <div id="drag-stack">
-
+<% if current_user == @driver %>
 <%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
   <div id="passenger-container-outside" >
     <div id="passenger-container-inside">
       <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-
+<% else %>
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
+  <div id="passenger-container-outside" >
+    <div id="passenger-container-inside">
+      <li id="seat1"></li>
+<%end%>
     </div>
   </div>
 
