@@ -4,7 +4,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
- 
+
 #hidden_form {
     background: rgba(0, 0, 0, 0.1);
 }
@@ -47,13 +47,12 @@ background: rgba(0,0,0,0.8);
     margin: 0 auto;
     height: 675px;
     padding: 50px;
-   
+
+
   }
 
 #headerz{
  background: #333;
- border-top-left-radius: 90px 90px;
- border-top-right-radius: 90px 90px;
  color: white;
   padding: 1px;
 }
@@ -79,6 +78,6 @@ background: rgba(0,0,0,0.8);
   }
 
 #main-video {
-  width: 100%; 
+  width: 100%;
   position: fixed;
 }

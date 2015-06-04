@@ -24,34 +24,120 @@
 #header {
 height:50px;
     background:#333;
-    width:100%;
+    border:1px solid #CCC;
+    width:975px;
     margin:0px auto;
     font: white;
+    font-family:  LeagueGothicRegular, Helvetica, Arial, Sans Serif;
+    color: white;
+}
+
+a button{
+  color: white;
 }
 
 
 
-.nav_button{
-    display: absolute ;
-    height: 40px;
-    width: 35px;
-    /*background-color: #FFB566;*/
-    /*border-radius: 10px;*/
-    -webkit-border-ra/*dius: 50%;
-      -moz-border-radius: 50%;
-      -ms-border-radius: 50%;
-      -o-border-radius: 50%;
-      border-radius: 50%;*/
-   /* -moz-box-shadow:    1px 1px 3px 5px #8080FF;
-    -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
-    box-shadow:         1px 1px 3px 5px #8080FF;*/
-  }
+
+
+.nav_button1{
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: #FFB566;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;
+
+    -webkit-transition: width 1s;
+    transition:1s
+    transition:1s
+
+
+
+}
+
+.nav_button1:hover {
+    width: 45px;
+    height: 45px;
+    transition:1s
+
+}
+
+.nav_button2{
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: #FFB566;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;
+-webkit-transition:1s;
+    transition:1s
+    transition:1s
+
+}
+
+.nav_button2:hover {
+  width: 45px;
+  height: 45px;
+  transition:1s
+}
+
+.nav_button3{
+  display: inline-block;
+  height: 35px;
+  width: 35px;
+  background-color: #FFB566;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;
+  -webkit-transition: width 1s;
+  transition:1s
+  transition:1s
+
+}
+
+.nav_button3:hover{
+  width: 40px;
+  height: 40px;
+  transition: 1s
+
+}
+
+
+
+
 
 table#nav_buttons{
   float: right;
   padding: auto;
 }
 
+div#header h1 {
+  float:left;
+  padding:auto;
+
+
+}
 #header button{
   background:#EEEEEE;
   height: 100%;
@@ -93,23 +179,42 @@ footer {
 .container {
   max-width: 1240px;
   background-color: white;
-   border-radius: 90px;
+
 }
 
 
 
 #header button{
+<<<<<<< HEAD
+border-radius: 25px;
+-moz-box-shadow:    1px 1px 1px 1px #8080FF;
+-webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+box-shadow:         1px 1px 1px 1px #8080FF;
+transition: 1s;
+background: #FFB566;
+
+=======
   height: 3em;
 /*border-radius: 25px;*/
 /*-moz-box-shadow:    1px 1px 3px 5px #8080FF;
 -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
 box-shadow:         1px 1px 3px 5px #8080FF;*/
+>>>>>>> master
 }
 
 #head_er {
     background: #333;
-    border-top-left-radius: 90px 90px;
-    border-top-right-radius: 90px 90px;
     color: white;
 }
 
+td:nth-child(2){
+    padding-right: 10px;
+}
+
+td:nth-child(3) {
+    padding-right: 10px;
+}​
+
+td:nth-child(4) {
+    padding-right: 10px;
+}​

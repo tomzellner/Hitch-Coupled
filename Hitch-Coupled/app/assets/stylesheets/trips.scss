@@ -134,13 +134,18 @@ img.avatars {
   height: 100px;
   width: 100px;
   border: solid black 1px;
-  border-radius: 20px;
+  border-radius: 90px;
 }
 
 img#car_trip_show{
-  height:250px;
+  height:400px;
   width: 400px;
   margin: 15px auto;
   display: block;
-  border-radius: 15px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+
 }
