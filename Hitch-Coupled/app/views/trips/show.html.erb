@@ -22,7 +22,9 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     var droppedItem = event.currentTarget.firstChild
-    var trip = $(droppedItem).attr('trip')
+    var trip = $(droppedItem).attr('trip');
+    $(droppedItem).hide();
+
 
     var url = '/trips/' + trip + '/rider_relationships'
     var info = {"rider_relationship": {passenger_id: data, trip_id: trip}}
@@ -38,7 +40,7 @@ function drop(ev) {
       var source = $('#pass-template').html();
       var template = Handlebars.compile(source);
 
-      debugger
+
       $('#passengers').append(template(response))
     })
 }
@@ -48,7 +50,7 @@ function drop(ev) {
 
     <div style="border: thin solid black" >
 
-
+      <img src = {{this.profile_pic}} class="avatars">
       <p> {{this.first_name}} {{this.last_name}} </p>
     </div>
 
@@ -122,7 +124,9 @@ function drop(ev) {
 
 </div>
 
-
+<div>
+  <h3>Car: <%= @car.year.to_s + " " + @car.make + " " + @car.model + " (" + @car.seats.to_s + " Seats)" %></h3>
+</div>
 
  <!-- PASSENGERS DVIS -->
 <div id ="passengers">
@@ -136,12 +140,33 @@ function drop(ev) {
 
 
 <!-- Car DIV -->
-<div>
-  <h3>Car: <%= @car.year.to_s + " " + @car.make + " " + @car.model + " (" + @car.seats.to_s + " Seats)" %></h3>
+
+<div id = "conversations-container" >
+  <h3>Pending Passengers:</h3>
+  <div id= "avatars">
+    <% pending_passengers.each do |rider| %>
+    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :trip => current_trip.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <%end%>
+
+  </div>
 </div>
-<div>
-  <%= image_tag @car.car_pic, :id => "car_trip_show" %>
+
+<div id="drag-stack">
+
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
+  <div id="passenger-container-outside" >
+    <div id="passenger-container-inside">
+      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+      <li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+      <li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+      <li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+
+    </div>
+  </div>
+
+
 </div>
+
 
 
 
@@ -169,34 +194,9 @@ function drop(ev) {
 
 
 
-<div id = "conversations-container" >
-  <h3>Pending Passengers:</h3>
-  <div id= "avatars">
-    <% pending_passengers.each do |rider| %>
-    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :trip => current_trip.id, :dragable => "true", :ondragstart => "drag(event)" %>
-    <%end%>
-
-  </div>
-</div>
 
 
-<div id="drag-stack">
 
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
-	<div id="passenger-container-outside" >
-		<div id="passenger-container-inside">
-			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat5" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat6" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat7" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-		</div>
-	</div>
-
-	<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
-</div>
 
 
 </div>
