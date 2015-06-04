@@ -2,6 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+    div.prof-container{
+        width: 100%;
+    }
+
+    .profile {
+    width: 450px;
+    float: left;
+    height: 320px;
+    margin: auto;
+    padding-right: 400px;
+    }
+
+    .user_info {
+    padding-top: 50px;
+    width: 300px;
+    float: left;
+    height: 150px;
+    margin-right: auto;
+    font-size: 20px;
+    }
 
 
    .profile img {
@@ -16,18 +36,12 @@
     border-radius: 50%;
 }
 
-  #user_info {
-    line-height:30px;
-    height:150px;
-    width:250px;
-    margin-left: 446px;
 
-}
 
   #view_user {
     line-height:30px;
     height:150px;
-    width:250px;
+    width:50%;
     margin-left: 446px;
 
 }
@@ -39,20 +53,28 @@ position: center;
     z-index: -1;
 }
 
-.car_details img {
+div#car_details {
+    float: left;
+    width: 100%;
+    border-bottom: black 1px;
+
+}
+
+div#car_details img {
     position: static;
     display: inline;
-    float-left: 600px;
-    float-right: 200px;
-    margin-left: 300px;
-    height: 250px;
-    width: 250px;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
+    height: 150px;
+    width: 300px;
+    -webkit-border-radius: 5%;
+    -moz-border-radius: 5%;
+    -ms-border-radius: 5%;
+    -o-border-radius: 5%;
+    border-radius: 5%;
 
+}
+
+div#car_title {
+    border-bottom: solid black 1px;
 }
 
 .container h1{
@@ -63,15 +85,30 @@ position: center;
     margin-left: 25px;
 }
 
-
+div#trip {
+    margin-top: 50px;
+    width: 100%;
+    float: left;
+}
 
 
 a.upcoming_trip{
     text-decoration: none;
     color: black;
+
+}
+
+div.upcoming{
+    border-top: solid black 1px;
 }
 
 div.upcoming:hover{
-    background-color: red;
+    background-color: #EA9F1E;
+}
+
+.thumb_nail {
+    height:50px;
+    width:50px;
+    border-radius: 25px;
 }
 
