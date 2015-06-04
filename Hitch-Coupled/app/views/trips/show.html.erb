@@ -22,10 +22,14 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     var droppedItem = event.currentTarget.lastChild
+
     var trip = $(droppedItem).attr('trip');
     $(droppedItem).hide();
 
-    debugger
+    var seat = event.target.firstChild
+
+
+
     var url = '/trips/' + trip + '/rider_relationships'
     var info = {"rider_relationship": {passenger_id: data, trip_id: trip}}
 
@@ -48,7 +52,7 @@ function drop(ev) {
 </script>
   <script id="pass-template" type="text/x-handlebars-template">
 
-    <div style="border: thin solid black" >
+    <div >
 
       <img src = {{this.profile_pic}} class="avatars">
       <p> {{this.first_name}} {{this.last_name}} </p>
@@ -132,7 +136,7 @@ function drop(ev) {
 <div id ="passengers">
   <h3>Passengers:</h3>
    <% @trip.passengers.each do |p| %>
-      <div style="border: thin solid black" >
+      <div>
         <%= render partial: '/trips/passenger_template', locals: {p: p} %>
       </div>
   <% end %>
@@ -156,10 +160,7 @@ function drop(ev) {
 <%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
   <div id="passenger-container-outside" >
     <div id="passenger-container-inside">
-      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
-      <li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
-      <li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
-      <li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
+      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
 
     </div>
   </div>
