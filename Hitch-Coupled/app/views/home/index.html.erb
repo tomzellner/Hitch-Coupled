@@ -2,47 +2,85 @@
 <div  id='homediv'> 
 	<div id='sticky' style="height: 100%;">
 
-<video controls muted autoplay loop style="width: 100%; position: fixed;">
-  <source src="/assets/drive.mp4" type="video/mp4">
-Your browser does not support the video tag.
-</video>
+		<video id="main-video" controls muted autoplay loop>
+			<source src="/assets/drive.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
 
+		<div class='container'>
+			<nav>
+				<% if user_signed_in? %>
+				<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+						<script>
+						function headerz_relocate() {
+							var window_top = $(window).scrollTop();
+							var div_top = $('.menu-anchor').offset().top;
 
-	</div>
-<div class='container'>
-<nav>
-<% if user_signed_in? %>
+							if (window_top >= div_top) {
+								$('.menu-wrapper').addClass('stick');
+							} else {
+								$('.menu-wrapper').removeClass('stick');
+							}
+						}
+						$(function() {
+							$(window).scroll(headerz_relocate);
+							headerz_relocate();
+						});
+						</script>
 
-	<div id="headerz">
-	<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>
-</nav>
+				<div class="menu-anchor"></div>
 
+				<div class="menu-wrapper">
 
-	
+						<div id="headerz">
+						<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>			
+						</div>
+					<div id = 'driver_story' class = 'col span_6'>
 
+						<%= link_to image_tag('steering_wheel_orange.png', :class => 'col span_6', id: 'driver_pic'), new_trip_path%>
+					</div>
 
-	<div id = 'driver_story' class = 'col span_6'>
+					<div id = 'passenger_story' class = 'col span_6'>
+						<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
+					</div>
+			</div>
+		</nav>
+		</div>
 
-		<%= link_to image_tag('steering_wheel_orange.png', :class => 'col span_6', id: 'driver_pic'), new_trip_path%>
-	</div>
-
-	<div id = 'passenger_story' class = 'col span_6'>
-		<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
-	</div>
-</div>
-<% else %>
+	<% else %>
 	<h1>Please Sign In</h1>
+	<% end %>
 
-<% end %>
-
-
-<% if user_signed_in?  %>
-
+	<% if user_signed_in?  %>
 	<div class="row" hidden id = 'hidden_form' >
 		<%= render "trips/trip_form" %> 
-
 	</div>
+	<% end %>
+</div>
+</div>
 
-<% end %>
-</div>
-</div>
+
+
+
+
+<!-- 
+
+$(function () {
+    var top = 200; 
+    //this should be the offset of the top of your div 
+    //which can be found by doing the following line
+
+    var top = $("#headerz").offset().top
+
+    $(window).on('scroll', function () {
+        if (top <= $(window).scrollTop()) {
+            // if so, add the fixed class
+            $('#headerz').addClass('fixed');
+        } else {
+            // otherwise remove it
+            $('#headerz').removeClass('fixed');
+        }
+    })
+});
+ -->
