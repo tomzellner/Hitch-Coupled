@@ -116,16 +116,11 @@ img.avatars {
   border-radius: 90px;
 }
 
-img#car_trip_show{
-  height:400px;
-  width: 400px;
-  margin: 15px auto;
+img.car_trip_show{
+  height:240px;
+  width: 320;
+  border-radius: 15px;
   display: block;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  border-radius: 50%;
 
 }
 

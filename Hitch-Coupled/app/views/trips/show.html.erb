@@ -135,6 +135,7 @@ function drop(ev) {
 
 <div>
   <h3>Car: <%= @car.year.to_s + " " + @car.make + " " + @car.model + " (" + @car.seats.to_s + " Seats)" %></h3>
+  <%= image_tag @car.car_pic, :class => "car_trip_show" %>
 </div>
 
  <!-- PASSENGERS DVIS -->
