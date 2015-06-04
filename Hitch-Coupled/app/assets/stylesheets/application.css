@@ -24,7 +24,10 @@
 #header {
 height:50px;
     background:#333;
+    border:1px solid #CCC;
+
     width:100%;
+
     margin:0px auto;
     font: white;
 }
@@ -52,10 +55,6 @@ table#nav_buttons{
   padding: auto;
 }
 
-#header button{
-  background:#EEEEEE;
-  height: 100%;
-}
 
 #header a {
   color :#373737;
@@ -85,9 +84,9 @@ footer {
 }
 
 
-/*div {
+div {
   border: thin solid black;
-}*/
+}
 
 
 .container {
@@ -96,10 +95,22 @@ footer {
    border-radius: 90px;
 }
 
-
-
 #header button{
   height: 3em;
+  background: #2db34a;
+  background-color: green;
+  border-radius: 6px;
+  transition-property: background, border-radius;
+  transition-duration: .1s, 1s;
+  transition-timing-function: linear, ease-in;
+  height: 100%;
+
+}
+#header button:hover {
+  background: #ff7b29;
+  border-radius: 50%;
+}
+
 /*border-radius: 25px;*/
 /*-moz-box-shadow:    1px 1px 3px 5px #8080FF;
 -webkit-box-shadow: 1px 1px 3px 5px #8080FF;
