@@ -60,12 +60,12 @@
 
 
 
-  <div id="car_details">
+  <div class="car_details">
     <div id="car_title">
     <h2>Car Details</h2>
   </div>
     <% @user.cars.each do |car| %>
-    <div>
+    <div class="car_details">
       <p>Make: <%= car.make %></p>
       <p>Model: <%= car.model %></p>
       <p>Year: <%= car.year %></p>
