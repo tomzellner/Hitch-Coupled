@@ -33,10 +33,10 @@ var slideForms = function(event) {
 var ajaxSignIn = function(event) {
 	event.preventDefault()
 
-
+	// debugger	
 
 	$.ajax({
-		URL: '/users/sign_in',
+		URL: '/cars',
 		Method: 'POST',
 		data: $(this).serialize(),
 		contentType: 'JSON'
@@ -44,10 +44,15 @@ var ajaxSignIn = function(event) {
 
 		}
 	).done(function(response) {
+		
 		console.log(response)
+
+
 		$('#sign-forms').slideToggle()
+
 		$('#story-collections').slideToggle()
 	})
+
 
 }
 
