@@ -64,6 +64,13 @@ a button{
 
 }
 
+
+.nav_button_logo {
+  width: auto;
+    height: 45px;
+    padding-left: 5px;
+}
+
 .nav_button1:hover {
     width: 45px;
     height: 45px;

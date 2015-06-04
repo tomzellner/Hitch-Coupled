@@ -1,18 +1,18 @@
 $(document).on('ready page:load', function(){
-  
+
   signBindings();
 })
 
 var signBindings = function() {
 	$('#hidden_sign_up').on('click', showSignUp);
-	
-	$('#all-form-slider').on('click', slideForms)
+
+	$('#home_logo').on('click', slideForms)
 
 
 	$('#real-sign-in').on('submit', ajaxSignIn)
 
 
-	
+
 }
 
 var showSignUp = function(event) {
@@ -36,8 +36,8 @@ var ajaxSignIn = function(event) {
 
 
 	$.ajax({
-		URL: '/users/sign_in',  
-		Method: 'POST',  
+		URL: '/users/sign_in',
+		Method: 'POST',
 		data: $(this).serialize(),
 		contentType: 'JSON'
 
