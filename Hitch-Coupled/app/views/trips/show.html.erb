@@ -71,7 +71,7 @@ function drop(ev) {
 	<%= link_to 'edit trip', edit_trip_path %>
 
   	<% if !@trip.started %>
-  		<h3> Waiting for Trip to start </h3>
+  		<h3> WAITING FOR TRIPS TO START </h3>
   		<%= button_to "Start", { action: "start", trip_id: @trip.id },
                                   method: :patch, data: { confirm: "Are you sure?" } %>
     <% elsif @trip.ended %>
