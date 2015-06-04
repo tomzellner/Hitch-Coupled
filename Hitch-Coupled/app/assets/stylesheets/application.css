@@ -105,7 +105,6 @@ a button{
   width: 40px;
   margin-left: 5px;
   margin-right: 5px;
-  background-color: #FFB566;
   border-radius: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -197,8 +196,8 @@ footer {
 }
 
 
-#head_er {
-    background: #333;
+.head_er {
+    background: tomato;
     color: white;
 }
 
