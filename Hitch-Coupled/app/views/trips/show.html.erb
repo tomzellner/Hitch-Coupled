@@ -21,11 +21,11 @@ function drop(ev) {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
-    var droppedItem = event.currentTarget.firstChild
+    var droppedItem = event.currentTarget.lastChild
     var trip = $(droppedItem).attr('trip');
     $(droppedItem).hide();
 
-
+    debugger
     var url = '/trips/' + trip + '/rider_relationships'
     var info = {"rider_relationship": {passenger_id: data, trip_id: trip}}
 
@@ -156,10 +156,10 @@ function drop(ev) {
 <%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
   <div id="passenger-container-outside" >
     <div id="passenger-container-inside">
-      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-      <li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-      <li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-      <li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
+      <li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
+      <li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
+      <li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"><img src=""></li>
 
     </div>
   </div>
