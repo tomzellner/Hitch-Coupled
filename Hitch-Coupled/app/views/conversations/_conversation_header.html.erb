@@ -13,8 +13,9 @@
         <%end%>
 
     <% else %>
-
+    <div class="border_convo">
     <h3><%= "Convo w/ " + @conversation.driver.first_name.capitalize + " " + @conversation.driver.last_name.capitalize%> </h3>
+</div>
 
      <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
 

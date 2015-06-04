@@ -13,6 +13,7 @@
 	position: relative;
 	border: none;
   width:65%;
+
 }
 #rover-wrapper {
     position: absolute;
@@ -22,6 +23,9 @@
     background-color: red;
     width: 320px;
     height: 210px;
+
+
+
 }
 
 #passenger-container-outside {
@@ -129,3 +133,23 @@ h3{
  font-family:'Fjalla One', sans-serif;
  font-size:35px;
 }
+
+
+.trip_info {
+  border-bottom: solid black 1px;
+  border-top: solid black 1px;
+  padding-top: 10px;
+}
+
+.container{
+
+}
+
+#driver_profile {
+  border-bottom: solid black 1px;
+}
+
+.spaced_div {
+  padding-top: 10px;
+}
+
