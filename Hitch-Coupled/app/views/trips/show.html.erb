@@ -4,21 +4,61 @@
 
 </style>
 <script>
+
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
+
 }
 
 function drop(ev) {
     ev.preventDefault();
+
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
 
+    var droppedItem = event.currentTarget.lastChild
+
+    var trip = $(droppedItem).attr('trip');
+    $(droppedItem).hide();
+
+    var seat = event.target.firstChild
+
+
+
+    var url = '/trips/' + trip + '/rider_relationships'
+    var info = {"rider_relationship": {passenger_id: data, trip_id: trip}}
+
+
+    var request = $.ajax({
+      url: url,
+      type: 'post',
+      data: info,
+      dataType: 'json'
+    }).done(function(response){
+      console.log(response)
+      var source = $('#pass-template').html();
+      var template = Handlebars.compile(source);
+
+
+      $('#passengers').append(template(response))
+    })
 }
+
 </script>
+  <script id="pass-template" type="text/x-handlebars-template">
+
+    <div >
+
+      <img src = {{this.profile_pic}} class="avatars">
+      <p> {{this.first_name}} {{this.last_name}} </p>
+    </div>
+
+  </script>
 </head>
 
 <body>
@@ -79,90 +119,55 @@ function drop(ev) {
 
 </div>
 <!-- DRIVERS DIV -->
-<div>
+
 <div>
   <h3>Driver: </h3>
 </div>
-	<div id = 'driver_profile'>
+<div id = 'driver_profile'>
+  <%= render partial: '/trips/driver_template' %>
 
-<%= link_to user_path(@driver) do  %>
-		<%= image_tag @driver.profile_pic, :class => "avatars" %>
-<% end %>
-    <p><%= @driver.first_name.capitalize + " " + @driver.last_name.capitalize %></p>
-  <div>
-    <% if @trip.ended && @trip.passengers.include?(current_user) && current_user != @driver%>
-		<form action='/ratings' method='POST' class="ratings-form">
-			<p><h3>Ratings</h3></p>
-			<p class="starRating">
-				<input type="hidden" name="rating[rater_id]" value="<%= current_user.id %>">
-				<input type="hidden" name="rating[rated_id]" value="<%= @driver.id %>">
-				
-				<input id="rating5" type="radio" name="rating[score]" value=5>
-			    <label for="rating5">1</label>
-			    <input id="rating4" type="radio" name="rating[score]" value=4>
-			    <label for="rating4">2</label>
-			    <input id="rating3" type="radio" name="rating[score]" value=3>
-			    <label for="rating3">3</label>
-			    <input id="rating2" type="radio" name="rating[score]" value=2>
-			    <label for="rating2">4</label>
-			    <input id="rating1" type="radio" name="rating[score]" value=1 checked>
-			    <label for="rating1">5</label><br>
-			</p>
-		</form>
-
-			
-
-		<% end %>
-	</div>
-	</div>
 </div>
 
-
-
-
- <!-- PASSENGERS DVIS -->
-<div>
-  <h3>Passengers:</h3>
-</div>
-  <% @trip.passengers.each do |p| %>
-
-		<div style="border: thin solid black" >
-	 <%= link_to user_path(p) do  %>
-			<%= image_tag p.profile_pic, :class => "avatars" %>
-		<% end %>
-      <p><%= p.first_name.capitalize + " " + p.last_name.capitalize %></p>
-		<% if @trip.ended && (@trip.passengers.include?(current_user) || @driver == current_user) && p.id != current_user.id  %>
-				<form action='/ratings' method='POST' class="ratings-form">
-					<p><h3>Ratings</h3></p>
-					<p class="starRating">
-						<input type="hidden" name="rating[rater_id]" value="<%= current_user.id %>">
-						<input type="hidden" name="rating[rated_id]" value="<%= p.id %>">
-						
-						<input id="rating5" type="radio" name="rating[score]" value=5>
-					    <label for="rating5">1</label>
-					    <input id="rating4" type="radio" name="rating[score]" value=4>
-					    <label for="rating4">2</label>
-					    <input id="rating3" type="radio" name="rating[score]" value=3>
-					    <label for="rating3">3</label>
-					    <input id="rating2" type="radio" name="rating[score]" value=2>
-					    <label for="rating2">4</label>
-					    <input id="rating1" type="radio" name="rating[score]" value=1 checked>
-					    <label for="rating1">5</label><br>
-					</p>
-				</form>
-
-			
-		</div>
-	<% end %>
-<% end %>
-
-<!-- Car DIV -->
 <div>
   <h3>Car: <%= @car.year.to_s + " " + @car.make + " " + @car.model + " (" + @car.seats.to_s + " Seats)" %></h3>
 </div>
-<div>
-  <%= image_tag @car.car_pic, :id => "car_trip_show" %>
+
+ <!-- PASSENGERS DVIS -->
+<div id ="passengers">
+  <h3>Passengers:</h3>
+   <% @trip.passengers.each do |p| %>
+      <div>
+        <%= render partial: '/trips/passenger_template', locals: {p: p} %>
+      </div>
+  <% end %>
 </div>
+
+
+<!-- Car DIV -->
+
+<div id = "conversations-container" >
+  <h3>Pending Passengers:</h3>
+  <div id= "avatars">
+    <% pending_passengers.each do |rider| %>
+    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :trip => current_trip.id, :dragable => "true", :ondragstart => "drag(event)" %>
+    <%end%>
+
+  </div>
+</div>
+
+<div id="drag-stack">
+
+<%= image_tag 'landrover_seating.png', id: 'rover-wrapper'%>
+  <div id="passenger-container-outside" >
+    <div id="passenger-container-inside">
+      <li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
+
+    </div>
+  </div>
+
+
+</div>
+
 
 
 
@@ -190,34 +195,9 @@ function drop(ev) {
 
 
 
-<div id = "conversations-container" >
-  <h3>Pending Passengers:</h3>
-  <div id= "avatars">
-    <% pending_passengers.each do |rider| %>
-    <%= image_tag rider.profile_pic, :class => "avatars", :id => rider.id, :dragable => "true", :ondragstart => "drag(event)" %>
-    <%end%>
-
-  </div>
-</div>
 
 
-<div id="drag-stack">
 
-<%= image_tag 'landrover_seating.png', id: 'rover-wrapper', width: '600', height: '400' %>
-	<div id="passenger-container-outside" >
-		<div id="passenger-container-inside">
-			<li id="seat1" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat2" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat3" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat4" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat5" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat6" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-			<li id="seat7" ondrop="drop(event)" ondragover="allowDrop(event)"></li>
-		</div>
-	</div>
-
-	<img id="drag1" src="/assets/bug" draggable="true" ondragstart="drag(event)" >
-</div>
 
 
 </div>

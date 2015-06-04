@@ -4,7 +4,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 $visual-grid: true;
 
+
+ #all-form-slider{
+   margin-left: 50%;
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #E66028;
+  font-size: 15vw;
+  font-family: waterloo-relief;
+  
+}
+
+#sign_in_div {
+   width: 50%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.1)
+}
+
  
+
 #hidden_form {
     background: rgba(0, 0, 0, 0.1);
 }
@@ -14,7 +32,7 @@ $visual-grid: true;
   font-weight: bold;
   position: fixed;
   top: 0;
-  z-index: 999999;
+  z-index: 900;
 }
 
 #homediv{
@@ -28,7 +46,9 @@ $visual-grid: true;
 #homediv nav {
     margin-top: 825px;
     z-index: 1000;
-    background-color: white;
+
+    background: rgba(0,0,0,0.5)
+
 }
 
 #sticky {
@@ -36,32 +56,46 @@ $visual-grid: true;
     height: 500px;
     position: absolute;
     z-index: -1;
+    margin-top: 35px;
 }
 
 #driver_story {
-background: rgba(0,0,0,0.5);
+background: rgba(0,0,0,0.8);
  display: block;
     margin: 0 auto;
-    height: 625px;
-   
+    height: 675px;
+    padding: 50px;
+
+
   }
-
-
 
 #headerz{
  background: #333;
- border-top-left-radius: 90px 90px;
- border-top-right-radius: 90px 90px;
  color: white;
+  padding: 1px;
+}
+
+
+.menu-wrapper.stick {
+  position: fixed;
+  top: 50px;
+  z-index: 1;
+  width: 80%;
 }
 
 
   #driver_pic {
   float: right;
+
   }
 
   #passenger_story {
-  background: rgba(0,0,0,0.5);
-  height: 625px;
+  background: rgba(0,0,0,0.8);
+  height: 675px;
+  padding: 50px;
   }
 
+#main-video {
+  width: 100%;
+  position: fixed;
+}

@@ -97,5 +97,7 @@ end
     interested_parties - confirmed_passengers
   end
 
-
+  def current_trip
+    @current_trip = Trip.find(params[:id])
+  end
 end

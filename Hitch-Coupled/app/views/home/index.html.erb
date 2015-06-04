@@ -1,76 +1,56 @@
-
 <div  id='homediv'> 
 	<div id='sticky' style="height: 100%;">
 
-		<video id="main-video" controls muted autoplay loop>
-			<source src="/assets/drive.mp4" type="video/mp4">
-				Your browser does not support the video tag.
-			</video>
-		</div>
-<nav>
-		<div class='container'>
-							<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-						<script>
-						function headerz_relocate() {
-							var window_top = $(window).scrollTop();
-							var div_top = 665
+<video controls muted autoplay loop style="width: 100%; position: fixed;">
+  <source src="/assets/cloud.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
-							if (window_top >= div_top) {
-								$('.menu-wrapper').addClass('stick');
-							} else {
-								$('.menu-wrapper').removeClass('stick');
-							}
-						}
-						$(function() {
-							$(window).scroll(headerz_relocate);
-							headerz_relocate();
-						});
-						</script>
-			
-				<% if user_signed_in? %>
 
-				<div id="menu-anchor"></div>
-
-				<div class="menu-wrapper">
-
-						<div id="headerz">
-						<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>			
-						</div>
-					<div id = 'driver_story' class = 'col span_6'>
-
-						<%= link_to image_tag('steering_wheel_orange.png', :class => 'col span_6', id: 'driver_pic'), new_trip_path%>
-					</div>
-
-					<div id = 'passenger_story' class = 'col span_6'>
-						<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
-					</div>
-			</div>
-		
-		</div>
-</nav>
-	<% else %>
-	<h1>Please Sign In</h1>
-	<% end %>
-
-	<% if user_signed_in?  %>
-	<div class="row" hidden id = 'hidden_form' >
-		<%= render "trips/trip_form" %> 
 	</div>
-	<% end %>
-</div>
-</div>
+<div class='container'>
+
+	<button href='#'  id='all-form-slider'  > hitch. </button>
+<nav>
+<% if !user_signed_in? %>
+
+
+	
+	<div id='sign-forms' class='row' >
+	<div class='col span_3'> </div>
+		<a href="#" id='hidden_sign_up'> Switch Sign In/Sign Out </a>
+		<div id ='sign-in-div' class='col span_3'>
+			<%= render "devise/partials/sign_in" %>
+		</div>
+
+		<div hidden id='sign-up-div'>
+			<%= render "devise/partials/sign_up" %>
+		</div>
+	</div>
+
+<% end %>
 
 
 
+
+	<div <% if !user_signed_in? %> hidden <% end %> id='story-collections'>
+		<h1 style="margin: 0; text-align: center;">What would you like to do?</h1>
+
+
+	
+
+	<div id = 'driver_story' class = 'col span_6'>
+		<%= link_to image_tag('steering_wheel_orange.png', :class => 'col span_6',  id: 'driver_pic'), new_trip_path %>
+	</div>
+
+	<div id = 'passenger_story' class = 'col span_6'>
+		<%= link_to image_tag('passenger_orange.png',  :class => 'col span_6', id: 'passenger_pic'), trips_path %>
+	</div>
+
+	</div>
 
 
 <!-- 
-
-$(function () {
-    var top = 200; 
-    //this should be the offset of the top of your div 
-    //which can be found by doing the following line
-
     var top = $("#headerz").offset().top
 
     $(window).on('scroll', function () {
@@ -87,3 +67,17 @@ $(function () {
 							var div_top = $('#menu-anchor').offset().top;
 
  -->
+
+	
+
+
+</nav>
+
+
+
+
+	<div class="row" hidden id = 'hidden_form' >
+
+</div>
+</div>
+>>>>>>> 5d3aae7aa654689fe52d644bb2f121923d2507d4

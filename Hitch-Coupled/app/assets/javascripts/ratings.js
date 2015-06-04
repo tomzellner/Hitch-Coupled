@@ -1,5 +1,5 @@
 $(document).on('ready page:load', function(){
-  
+
   ratingBindings();
 })
 
@@ -8,9 +8,8 @@ var ratingBindings = function(){
 }
 
 var rateStar = function(){
-	var thiss $(this)
 
-	
+
 	$.ajax({
 		type: 'POST',
 		url: '/ratings',
@@ -19,11 +18,11 @@ var rateStar = function(){
 		}
 	).done(function(data){
 		debugger
-		
-		
+
+
 		}
 	).fail(function(data){
-		
+
 	})
 
 }
