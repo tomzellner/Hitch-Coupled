@@ -3,9 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #message_head {
   background: tomato;
- color: white;
-}
+  color: white;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Fjalla One', sans-serif;
+   }
 
-.messages-divider {
-  border-bottom: black 1px;
-}
+
+
+div.messages-divider {
+border-bottom: solid black 1px;}

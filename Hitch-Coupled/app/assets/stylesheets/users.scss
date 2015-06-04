@@ -21,6 +21,8 @@
     height: 150px;
     margin-right: auto;
     font-size: 20px;
+    font-family:'Fjalla One', sans-serif;
+    color: white;
     }
 
 
@@ -53,14 +55,14 @@ position: center;
     z-index: -1;
 }
 
-div#car_details {
+div.car_details {
     float: left;
     width: 100%;
     border-bottom: black 1px;
 
 }
 
-div#car_details img {
+div.car_details img {
     position: static;
     display: inline;
     height: 150px;
@@ -70,6 +72,8 @@ div#car_details img {
     -ms-border-radius: 5%;
     -o-border-radius: 5%;
     border-radius: 5%;
+
+
 
 }
 
