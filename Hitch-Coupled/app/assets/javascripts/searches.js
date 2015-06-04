@@ -44,7 +44,7 @@ var displaySearch = function(event) {
 		$('#hide_form').attr('id', 'show_form')
 		var context = {trip: data};
 		$('#all_trips div' ).empty();
-		debugger
+		// debugger
 		$('#all_trips').append(template(context));
 
 		}
