@@ -41,18 +41,20 @@ a button{
 
 .nav_button1{
   display: inline-block;
-  height: 35px;
-  width: 35px;
-  background-color: #FFB566;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #333;
   border-radius: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
   -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
-  box-shadow:         1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
 
     -webkit-transition: width 1s;
     transition:1s
@@ -65,14 +67,16 @@ a button{
 .nav_button1:hover {
     width: 45px;
     height: 45px;
-    transition:1s
+    transition:.3s
 
 }
 
 .nav_button2{
   display: inline-block;
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
   background-color: #FFB566;
   border-radius: 10px;
   -webkit-border-radius: 50%;
@@ -80,9 +84,9 @@ a button{
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
   -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
-  box-shadow:         1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
 -webkit-transition:1s;
     transition:1s
     transition:1s
@@ -92,13 +96,15 @@ a button{
 .nav_button2:hover {
   width: 45px;
   height: 45px;
-  transition:1s
+  transition:.3s
 }
 
 .nav_button3{
   display: inline-block;
-  height: 35px;
-  width: 35px;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
   background-color: #FFB566;
   border-radius: 10px;
   -webkit-border-radius: 50%;
@@ -106,9 +112,9 @@ a button{
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
   -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
-  box-shadow:         1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
   -webkit-transition: width 1s;
   transition:1s
   transition:1s
@@ -116,9 +122,9 @@ a button{
 }
 
 .nav_button3:hover{
-  width: 40px;
-  height: 40px;
-  transition: 1s
+  width: 45px;
+  height: 45px;
+  transition: .3s
 
 }
 
@@ -143,7 +149,7 @@ div#header h1 {
   background-color:#333;
   padding-right: 30px;
   padding-left: 20px;
-  margin-left: 20px;
+  margin-left: 10px;
   border: 0;
 }
 
