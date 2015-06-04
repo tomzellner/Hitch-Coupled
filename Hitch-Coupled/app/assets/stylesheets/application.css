@@ -205,7 +205,7 @@ footer {
 
 
 .head_er {
-    background: tomato;
+    background: #FFBF65;
     color: white;
 
   border-bottom-right-radius:10px;
@@ -227,5 +227,5 @@ td:nth-child(4) {
 }​
 
 body {
-  background-color: #CCFFCC;
+  background: rgba(0, 0, 0, 0.2);
 }
