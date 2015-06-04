@@ -66,9 +66,9 @@ a button{
 
 
 .nav_button_logo {
-  width: 85px;
-    height: 45px;
-    padding-left: 5px;
+  width: auto;
+  height: 45px;
+  padding-left: 5px;
 }
 
 .nav_button1:hover {
@@ -111,7 +111,7 @@ a button{
   height: 40px;
   width: 40px;
   margin-left: 5px;
-  margin-right: 5px;
+  margin-right: 0px;
   border-radius: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -153,10 +153,11 @@ div#header h1 {
   height: 3em;
   color: #FFB566;
   background-color:#333;
-  padding-right: 30px;
-  padding-left: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
   margin-left: 10px;
   border: 0;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 #header button:hover {
@@ -167,7 +168,7 @@ div#header h1 {
 
 #header a {
   color :#373737;
-  float: right;
+  /*float: right;*/
    height: 100%;
 }
 
@@ -206,6 +207,11 @@ footer {
 .head_er {
     background: tomato;
     color: white;
+
+  border-bottom-right-radius:10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Fjalla One', sans-serif;
+
 }
 
 td:nth-child(2){
@@ -219,3 +225,7 @@ td:nth-child(3) {
 td:nth-child(4) {
     padding-right: 10px;
 }​
+
+body {
+  background-color: #CCFFCC;
+}
