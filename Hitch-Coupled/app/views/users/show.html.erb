@@ -37,11 +37,11 @@
     </div>
 
     <% end %>
-
+    <% if current_user == @user %>
     <div id="trip">
   <h2>Upcoming Trips</h2>
 
-    <%current_user_trips.each do |trip| %>
+    <%current_user_trips do |trip| %>
     <%= link_to trip_path(trip), :class =>  "upcoming_trip" do %>
     <div class = "upcoming">
       <h3><%= trip.start_city + " to " + trip.end_city %> (<%=trip.start_date.to_time.strftime('%B %e 20%y')%>)</h3>
@@ -52,6 +52,7 @@
         <%= image_tag passenger.profile_pic, :class => "thumb_nail" %>
       <% end %>
     </div>
+    <% end %>
     <%end%>
     <%end%>
   </div>

@@ -166,6 +166,20 @@ div#header h1 {
 
 }
 
+/*.container input[type=button] {
+  color:black;
+  background-color: #FFB566;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.container input[type=button]:hover {
+  color:#FFB566;
+  background-color: black;
+  font-family: 'Fjalla One', sans-serif;
+}*/
+
+
+
 #header a {
   color :#373737;
   /*float: right;*/

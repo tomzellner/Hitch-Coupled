@@ -89,7 +89,7 @@ class TripsController < ApplicationController
 
 	def index
 			@search = Search.new
-			@trips = Trip.all
+			@trips = Trip.where(started: false)
 		
 		respond_to do |format|
       		format.html
