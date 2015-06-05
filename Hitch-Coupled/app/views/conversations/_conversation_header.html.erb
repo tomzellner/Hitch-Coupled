@@ -1,7 +1,7 @@
     <% if @conversation.driver == current_user %>
-    <h3><%= "Convo w/ " + @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
+    <h3   style='margin-top: 50px;'><%= "Convo w/ " + @conversation.passenger.first_name.capitalize + " " + @conversation.passenger.last_name.capitalize%> </h3>
 
-    <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
+    <h4> Trip: <a href=' /trips/<%=@conversation.trip.id%>'> <%= @conversation.trip.start_city %> </a>to  <%= @conversation.trip.end_city%>   on   <%=@conversation.trip.start_date.to_time.strftime('%B %e 20%y')%> </h4>
 
         <% if @trip.passengers.to_a.include?(@conversation.passenger) == false %>
         <%= form_for [@trip, @passenger] do |f| %>
@@ -14,10 +14,10 @@
 
     <% else %>
     <div class="border_convo">
-    <h3><%= "Convo w/ " + @conversation.driver.first_name.capitalize + " " + @conversation.driver.last_name.capitalize%> </h3>
+    <h3 style='margin-top: 50px;'><%= "Convo w/ " + @conversation.driver.first_name.capitalize + " " + @conversation.driver.last_name.capitalize%> </h3>
 </div>
 
-     <h4> <%= "Trip: " + @conversation.trip.start_city + " to " + @conversation.trip.end_city + " on " + @conversation.trip.start_date.to_s%> </h4>
+     <h4> Trip: <a href=' /trips/<%=@conversation.trip.id%>'> <%= @conversation.trip.start_city %> </a>to  <%= @conversation.trip.end_city%>   on   <%=@conversation.trip.start_date.to_time.strftime('%B %e 20%y')%> </h4>
 
         <% if @trip.passengers.to_a.include?(current_user)%>
         <%= form_for [@trip, @relationship], :method => :delete do |f| %>
