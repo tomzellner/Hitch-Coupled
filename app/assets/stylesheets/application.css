@@ -57,8 +57,8 @@ a button{
   box-shadow:         1px 1px 1px 1px #8080FF;*/
 
     -webkit-transition: width 1s;
-    transition:1s
-    transition:1s
+    transition:1s;
+    transition:1s;
 
 
 
@@ -74,7 +74,7 @@ a button{
 .nav_button1:hover {
     width: 45px;
     height: 45px;
-    transition:.3s
+    transition:.3s;
 
 }
 
@@ -95,15 +95,15 @@ a button{
   -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
   box-shadow:         1px 1px 1px 1px #8080FF;*/
 -webkit-transition:1s;
-    transition:1s
-    transition:1s
+    transition:1s;
+    transition:1s;
 
 }
 
 .nav_button2:hover {
   width: 45px;
   height: 45px;
-  transition:.3s
+  transition:.3s;
 }
 
 .nav_button3{
@@ -122,15 +122,15 @@ a button{
   -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
   box-shadow:         1px 1px 1px 1px #8080FF;*/
   -webkit-transition: width 1s;
-  transition:1s
-  transition:1s
+  transition:1s;
+  transition:1s;
 
 }
 
 .nav_button3:hover{
   width: 45px;
   height: 45px;
-  transition: .3s
+  transition: .3s;
 
 }
 
@@ -204,7 +204,7 @@ footer {
 
 
 #driver_profile:hover{
-  background-color: #FDC468
+  background-color: #FDC468;
 }
 
 
