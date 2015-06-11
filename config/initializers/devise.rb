@@ -2,6 +2,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
 
+config.secret_key = 'c40b6bf9132cc91c2fb9153e43d2151fa6cc06152d9f34dd6503fbdec2e6df3b98b2943ef5319b750bc90157d37b2c30a9415c67d507b82550d52a593cda57fb'
 
 
 
