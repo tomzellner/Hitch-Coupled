@@ -12,7 +12,7 @@ module HitchCoupled
 
 
     config.assets.precompile += [
-      'responsive.gs.12col.css'
+      'images/clod.mp4'
     ]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
