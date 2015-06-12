@@ -1,0 +1,253 @@
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+ *= require_self
+ *= require_tree
+ */
+ .hidden {
+  visibility: visible;
+ }
+
+
+#header {
+height:50px;
+    background:#333;
+    width:100%;
+    margin:0px auto;
+    font: white;
+    font-family:  LeagueGothicRegular, Helvetica, Arial, Sans Serif;
+    color: white;
+}
+
+a button{
+  color: white;
+}
+
+
+
+
+
+.nav_button1{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #333;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
+
+    -webkit-transition: width 1s;
+    transition:1s;
+    transition:1s;
+
+
+
+}
+
+
+.nav_button_logo {
+  width: auto;
+  height: 45px;
+  padding-left: 5px;
+}
+
+.nav_button1:hover {
+    width: 45px;
+    height: 45px;
+    transition:.3s;
+
+}
+
+.nav_button2{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #FFB566;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
+-webkit-transition:1s;
+    transition:1s;
+    transition:1s;
+
+}
+
+.nav_button2:hover {
+  width: 45px;
+  height: 45px;
+  transition:.3s;
+}
+
+.nav_button3{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 0px;
+  border-radius: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+/*  -moz-box-shadow:    1px 1px 1px 1px #8080FF;
+  -webkit-box-shadow: 1px 1px 1px 1px #8080FF;
+  box-shadow:         1px 1px 1px 1px #8080FF;*/
+  -webkit-transition: width 1s;
+  transition:1s;
+  transition:1s;
+
+}
+
+.nav_button3:hover{
+  width: 45px;
+  height: 45px;
+  transition: .3s;
+
+}
+
+
+
+
+
+table#nav_buttons{
+  float: right;
+  padding: auto;
+}
+
+div#header h1 {
+  float:left;
+  padding:auto;
+
+
+}
+#header button{
+  height: 3em;
+  color: #FFB566;
+  background-color:#333;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: 10px;
+  border: 0;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+#header button:hover {
+  color: #333;
+  background-color: #FFB566;
+
+}
+
+/*.container input[type=button] {
+  color:black;
+  background-color: #FFB566;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+.container input[type=button]:hover {
+  color:#FFB566;
+  background-color: black;
+  font-family: 'Fjalla One', sans-serif;
+}*/
+
+
+
+#header a {
+  color :#373737;
+  /*float: right;*/
+   height: 100%;
+}
+
+#header form {
+  color :#373737;
+  float: right;
+}
+
+footer {
+  line-height: 15em;
+  text-align: center;
+  background: #BBB;
+}
+
+
+#head {
+    background: #333;
+}
+
+
+#driver_profile:hover{
+  background-color: #FDC468;
+}
+
+
+
+.container {
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 50px;
+  max-width: 80%;
+  background-color: white;
+
+}
+
+
+.head_er {
+    background: #FFBF65;
+    color: white;
+    
+
+  border-bottom-right-radius:10px;
+  border-bottom-left-radius: 10px;
+  font-family: 'Fjalla One', sans-serif;
+
+}
+
+td:nth-child(2){
+    padding-right: 10px;
+}
+
+td:nth-child(3) {
+    padding-right: 10px;
+}​
+
+td:nth-child(4) {
+    padding-right: 10px;
+}​
+
+
+  /*background-color: #CCFFCC;
+}*/
+
+input {
+
+
+  background: rgba(0, 0, 0, 0.2);
+
+}
