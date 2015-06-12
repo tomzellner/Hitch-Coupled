@@ -9,7 +9,7 @@ var signBindings = function() {
 	$('#home_logo').on('click', slideForms)
 
 
-	$('#real-sign-in').on('submit', ajaxSignIn)
+	// $('#real-sign-in').on('submit', ajaxSignIn)
 
 
 
@@ -30,31 +30,31 @@ var slideForms = function(event) {
     }, 500);
 }
 
-var ajaxSignIn = function(event) {
-	event.preventDefault()
+// var ajaxSignIn = function(event) {
+// 	event.preventDefault()
 
-	// debugger	
+// 	// debugger	
 
-	$.ajax({
-		URL: '/cars',
-		Method: 'POST',
-		data: $(this).serialize(),
-		contentType: 'JSON'
+// 	$.ajax({
+// 		URL: '/cars',
+// 		Method: 'POST',
+// 		data: $(this).serialize(),
+// 		contentType: 'JSON'
 
 
-		}
-	).done(function(response) {
+// 		}
+// 	).done(function(response) {
 		
-		console.log(response)
+// 		console.log(response)
 
 
-		$('#sign-forms').slideToggle()
+// 		$('#sign-forms').slideToggle()
 
-		$('#story-collections').slideToggle()
-	})
+// 		$('#story-collections').slideToggle()
+// 	})
 
 
-}
+// }
 
 
 
